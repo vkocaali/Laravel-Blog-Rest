@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class RegisterRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    public function rules()
+    {
+        return [
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+            'device_name' => 'required',
+        ];
+    }
+    public function attributes()
+    {
+        return [
+            'name' => 'Ad Soyad',
+            'email' => 'E-mail',
+            'password' => 'Şifre',
+            'device_name' => 'Cihaz Adı',
+        ];
+    }
+}
