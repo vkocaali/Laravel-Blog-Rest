@@ -6,7 +6,7 @@ interface ArticlesRepositoryInterface{
 
     public function get($id);
 
-    public function all();
+    public function all($request);
 
     public function delete($id);
 

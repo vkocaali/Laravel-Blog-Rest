@@ -3,6 +3,8 @@
 namespace App\Repositories;
 
 use App\Models\Article;
+use App\Models\Categories;
+use App\Models\Tags;
 
 class ArticlesRepository implements ArticlesRepositoryInterface {
 
@@ -10,14 +12,33 @@ class ArticlesRepository implements ArticlesRepositoryInterface {
         return Article::find($id);
     }
 
-    public function all(){
-        return Article::all();
+    public function all($request){
+
+        // ?sortBy=id&sort=DESC&status=1&paginate=3
+        $paginate = $request->has('paginate') ? $request->paginate  : 10;
+
+        $query = Article::query();
+
+        if($request->has('search')){
+            $query->where('title' ,'like', '%'. $request->query('search'). '%');
+        }
+        if($request->has('sortBy')){
+            $query->orderBy($request->query('sortBy'),$request->query('sort','DESC'));
+        }
+        if($request->has('status') && $request->status !== 'all'){
+            if($request->has('status') !== "all"){
+                $query->where('is_active',$request->status);
+            }
+        }
+        $data = $request->paginate == "off" ? $query->get() : $query->paginate($paginate);
+        return $data;
     }
 
     public function create($data){
         return Article::create($data);
     }
     public function delete($id){
+        Tags::where('tag_id',$id)->where('tag_type',Article::class)->delete();
         Article::destroy($id);
     }
 

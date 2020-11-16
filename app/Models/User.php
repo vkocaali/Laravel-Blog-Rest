@@ -29,4 +29,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tokenExpire(){
+        return $this->tokens()->where('id',$this->id)->first()->last_used_at;
+    }
 }

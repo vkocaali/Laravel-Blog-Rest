@@ -21,9 +21,9 @@ class ArticleController extends Controller
         $this->articleRepository = $articleRepository;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return ArticleResource::collection($this->articleRepository->all());
+        return ArticleResource::collection($this->articleRepository->all($request));
     }
 
     public function create()
@@ -51,7 +51,7 @@ class ArticleController extends Controller
             Tags::create([
                 'tag_type' => Article::class,
                 'tag_id' => $create->id,
-                'tag_name' => $item,
+                'tag_name' => $item['text'],
                 'is_active' => 1,
             ]);
         }
@@ -63,8 +63,12 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        //
+        $articles = $this->articleRepository->get($id);
+
+        return new ArticleResource($articles);
+
     }
+
 
     public function edit($id)
     {
@@ -91,7 +95,7 @@ class ArticleController extends Controller
             Tags::create([
                'tag_type' => Article::class,
                'tag_id' => $id,
-               'tag_name' => $item,
+               'tag_name' => $item['text'],
                'is_active' => 1,
             ]);
         }

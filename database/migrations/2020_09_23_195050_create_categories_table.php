@@ -21,6 +21,8 @@ class CreateCategoriesTable extends Migration
             $table->integer('parent');
             $table->string('slug',600);
             $table->integer('is_active');
+            $table->unsignedBigInteger('storage_id');
+            $table->foreign('storage_id')->references('id')->on('storage')->onDelete('cascade');
             $table->integer('rank');
             $table->timestamps();
         });

@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory(5)->create();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('settings')->truncate();
+        DB::table('categories')->truncate();
+        DB::table('articles')->truncate();
+        DB::table('tags')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        //$this->call(CategoriesTableSeeder::class);
+        $this->call(SettingsTableSeeder::class);
     }
 }

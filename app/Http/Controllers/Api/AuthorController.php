@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AuthorRequest;
 use App\Http\Resources\AuthorResource;
 use App\Repositories\AuthorRepositoryInterface;
+use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
@@ -17,9 +18,9 @@ class AuthorController extends Controller
         $this->authorRepository = $authorRepository;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return AuthorResource::collection($this->authorRepository->all());
+        return AuthorResource::collection($this->authorRepository->all($request));
     }
 
 

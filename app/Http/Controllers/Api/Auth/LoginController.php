@@ -22,6 +22,8 @@ class LoginController extends Controller
     public function login(LoginRequest $request){
         $request->validated();
 
+
+
         $credentials = $request->only('email','password');
 
         if(!Auth::attempt($credentials)){
@@ -31,7 +33,9 @@ class LoginController extends Controller
         }
 
         $user = $this->userRepository->whereEmail($request->email)->first();
-        return $user->createToken($request->device_name)->plainTextToken;
+        $token = $user->createToken($request->device_name)->plainTextToken;
+
+        return response()->json(['user' => $user, 'token' => $token],200);
     }
 
     public function logout(){

@@ -5,6 +5,8 @@ use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\CategoriesController;
 use App\Http\Controllers\Api\AuthorController;
+use App\Http\Controllers\Api\SettingsController;
+use App\Http\Controllers\Api\UploadController;
 use App\Http\Controllers\SubscriptionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,8 +32,13 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
+    Route::resource('/settings',SettingsController::class);
     Route::resource('/categories',CategoriesController::class);
     Route::resource('/authors',AuthorController::class);
     Route::resource('/articles',ArticleController::class);
     Route::resource('/subscriptions',SubscriptionController::class);
+
+    // Other
+
+    Route::post('/upload-image' , [UploadController::class,'editorImage'])->name('upload.editor');
 });

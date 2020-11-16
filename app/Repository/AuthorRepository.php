@@ -10,8 +10,24 @@ class AuthorRepository implements AuthorRepositoryInterface {
         return Author::find($id);
     }
 
-    public function all(){
-        return Author::all();
+    public function all($request){
+        // ?sortBy=id&sort=DESC&status=1&paginate=3
+        $paginate = $request->has('paginate') ? $request->paginate  : 10;
+        $query = Author::query();
+
+        if($request->has('search')){
+            $query->where('author_name' ,'like', '%'. $request->query('search'). '%');
+        }
+        if($request->has('sortBy')){
+            $query->orderBy($request->query('sortBy'),$request->query('sort','DESC'));
+        }
+        if($request->has('status') && $request->status !== 'all'){
+            if($request->has('status') !== "all"){
+                $query->where('is_active',$request->status);
+            }
+        }
+        return $request->paginate == "off" ? $query->get() : $query->paginate($paginate);
+
     }
 
     public function create($data){

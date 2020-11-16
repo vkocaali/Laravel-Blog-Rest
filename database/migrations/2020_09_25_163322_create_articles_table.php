@@ -16,10 +16,12 @@ class CreateArticlesTable extends Migration
             $table->string('slug');
             $table->unsignedBigInteger('categories_id');
             $table->unsignedBigInteger('author_id');
+            $table->unsignedBigInteger('storage_id');
             $table->string('is_active');
             $table->string('rank');
-            $table->foreign('categories_id')->references('id')->on('categories');
-            $table->foreign('author_id')->references('id')->on('authors');
+            $table->foreign('storage_id')->references('id')->on('storage')->onDelete('cascade');
+            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
             $table->timestamps();
         });
     }

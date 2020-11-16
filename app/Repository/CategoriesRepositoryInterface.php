@@ -2,11 +2,15 @@
 
 namespace App\Repositories;
 
+use http\Env\Request;
+
 interface CategoriesRepositoryInterface{
 
     public function get($id);
 
-    public function all();
+    public function first($id);
+
+    public function all($request);
 
     public function delete($id);
 

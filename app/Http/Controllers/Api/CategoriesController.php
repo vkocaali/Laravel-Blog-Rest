@@ -8,6 +8,7 @@ use App\Http\Resources\CategoriesResource;
 use App\Models\Categories;
 use App\Models\Tags;
 use App\Repositories\CategoriesRepositoryInterface;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class CategoriesController extends Controller
@@ -19,9 +20,9 @@ class CategoriesController extends Controller
         $this->categoriesRepository = $categoriesRepository;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return CategoriesResource::collection($this->categoriesRepository->all());
+        return CategoriesResource::collection($this->categoriesRepository->all($request));
     }
 
     public function create()
@@ -44,11 +45,12 @@ class CategoriesController extends Controller
             'rank' => is_null($rank) ? 1 : $rank + 1,
         ]);
 
+
         foreach($request->tags as $item){
             Tags::create([
                 'tag_type' => Categories::class,
                 'tag_id' => $create->id,
-                'tag_name' => $item,
+                'tag_name' => $item['text'],
                 'is_active' => 1,
             ]);
         }
@@ -59,7 +61,10 @@ class CategoriesController extends Controller
 
     public function show($id)
     {
-        //
+        $categories = $this->categoriesRepository->get($id);
+
+        return new CategoriesResource($categories);
+
     }
 
     public function edit(CategoriesRequest $request)
@@ -70,7 +75,6 @@ class CategoriesController extends Controller
     public function update(CategoriesRequest $request, $id)
     {
         $request->validated();
-
         $this->categoriesRepository->update($id,[
             'name' => $request->post('name'),
             'description' => $request->post('description'),
@@ -87,7 +91,7 @@ class CategoriesController extends Controller
             Tags::create([
                 'tag_type' => Categories::class,
                 'tag_id' => $id,
-                'tag_name' => $item,
+                'tag_name' => $item['text'],
                 'is_active' => 1,
             ]);
         }
