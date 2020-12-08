@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Ramsey\Collection\Collection;
 
 class CategoriesResource extends JsonResource
 {
@@ -19,6 +20,7 @@ class CategoriesResource extends JsonResource
             'is_active' => $this->is_active,
             'rank' => $this->rank,
             'created_at' => $this->created_at,
+            'image' => $this->storage,
             'tags' => TagsResource::collection($this->tags),
         ];
     }

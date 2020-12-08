@@ -10,6 +10,7 @@ use App\Models\Article;
 use App\Models\Tags;
 use App\Repositories\ArticlesRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ArticleController extends Controller
@@ -39,8 +40,10 @@ class ArticleController extends Controller
 
         $create = $this->articleRepository->create([
             'title' => $request->post('title'),
+            'description' => $request->post('description'),
             'content' => $request->post('content'),
             'slug' => Str::slug($request->post('slug')),
+            'storage_id' => $request->post('image'),
             'categories_id' => $request->post('categories_id'),
             'author_id' => $request->post('author_id'),
             'is_active' => 1,
@@ -81,12 +84,24 @@ class ArticleController extends Controller
 
         $this->articleRepository->update($id,[
             'title' => $request->post('title'),
+            'description' => $request->post('description'),
             'content' => $request->post('content'),
             'slug' => Str::slug($request->post('slug')),
             'categories_id' => $request->post('categories_id'),
             'author_id' => $request->post('author_id'),
             'is_active' => 1,
         ]);
+
+        // delete old image this storage
+        $articles = $this->articleRepository->first($id);
+        $storage = \App\Models\Storage::find($articles->storage_id);
+
+        if($request->has('image')){
+            Storage::delete($storage->image_url);
+            $this->articleRepository->update($id,[
+                'storage_id' => $request->image,
+            ]);
+        }
 
         $tags = Tags::where('tag_id',$id)->where('tag_type',Article::class);
         $tags->delete();

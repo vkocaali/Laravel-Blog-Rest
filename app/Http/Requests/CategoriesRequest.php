@@ -15,14 +15,27 @@ class CategoriesRequest extends FormRequest
 
     public function rules()
     {
-        return [
-            'name' => 'required|max:200',
-            'description' => 'required|max:500',
-            'slug' => 'required',
-            'content' => 'required',
-            'parent' => 'required',
-            'tags' => 'required',
-        ];
+        if(request()->isMethod('put')){
+            return [
+                'name' => 'required|max:200',
+                'description' => 'required|max:500',
+                'slug' => 'required',
+                'content' => 'required',
+                'parent' => 'required',
+                'tags' => 'required',
+            ];
+        }
+        else{
+            return [
+                'name' => 'required|max:200',
+                'description' => 'required|max:500',
+                'slug' => 'required',
+                'content' => 'required',
+                'parent' => 'required',
+                'tags' => 'required',
+                'image' => 'required'
+            ];
+        }
     }
     public function attributes()
     {
@@ -33,6 +46,7 @@ class CategoriesRequest extends FormRequest
             'content' => 'Kategori İçeriği',
             'parent' => 'Alt Kategori',
             'tags' => 'Etiket',
+            'image' => 'Kategori Resim',
         ];
     }
 }

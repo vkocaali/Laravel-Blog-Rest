@@ -60,7 +60,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr v-for="item in 5" :key="item">
+                            <tr v-for="item in 1" :key="item">
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"></p>
                                 </td>

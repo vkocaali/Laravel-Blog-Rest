@@ -6,6 +6,10 @@ interface ArticlesRepositoryInterface{
 
     public function get($id);
 
+    public function first($id);
+
+    public function orderBy($column , $sort , $take);
+
     public function all($request);
 
     public function delete($id);

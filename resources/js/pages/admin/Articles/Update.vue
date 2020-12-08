@@ -81,6 +81,19 @@
                                             v-model="updateArticles.content"/>
                                 <validation-errors-help class="my-2 mx-1"  :status="this.status" :errors="this.errors" field-value="content"/>
                             </div>
+
+                            <div
+                                class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
+                                <label class="block text-sm text-gray-600" for="image">Yazı Resmi</label>
+                                <input class="w-full px-5 text-gray-700 bg-gray-200 rounded" @change="selectImage" id="image"
+                                       name="image" type="file" aria-label="Yazı Resim">
+                                <validation-errors-help class="my-2 mx-1"  :status="this.status" :errors="this.errors" field-value="image"/>
+                            </div>
+
+                            <div>
+                                <img class="rounded-lg md:w-56" v-if="this.imagePreview" :src="this.imagePreview" alt="Yazı Resmi">
+                            </div>
+
                         </div>
 
 
@@ -127,6 +140,7 @@
                 categories : {},
                 authors : {},
                 tag : '',
+                imagePreview : null,
                 updateArticles: {
                     title : '',
                     content : null,
@@ -134,6 +148,7 @@
                     author_id : '',
                     slug : '',
                     tags : [],
+                    image : null,
                 },
             }
         },
@@ -143,6 +158,25 @@
             this.articlesGet();
         },
         methods: {
+            selectImage: function(event){
+                this.imagePreview = URL.createObjectURL(event.target.files[0]);
+                var formData = new FormData();
+                formData.append("image", event.target.files[0]);
+                formData.append("folderName", 'articles');
+
+                const token = localStorage.getItem('token');
+                axios({
+                    url : 'upload-image',
+                    method : "POST",
+                    data: formData,
+                    headers: {Authorization: `Bearer ${token}`},
+                }).then(response => {
+                    this.updateArticles.image = response.data.data.id; // Get url from response
+                }).catch(error => {
+                    console.log(error);
+                });
+
+            },
             handleImageAdded: function (file, Editor, cursorLocation, resetUploader) {
                 var formData = new FormData();
                 formData.append("image", file);
@@ -233,6 +267,7 @@
                     this.updateArticles = response.data.data;
                     this.updateArticles.categories_id = response.data.data.categories.id;
                     this.updateArticles.author_id = response.data.data.author.id;
+                    this.imagePreview = response.data.data.image.image_url;
                 }).catch(error => {
                     if(422 === error.response.status){
                         this.errors = error.response.data.errors;

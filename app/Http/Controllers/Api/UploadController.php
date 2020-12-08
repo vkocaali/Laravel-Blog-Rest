@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UploadImageRequest;
-use App\Models\Stroage;
 use Illuminate\Support\Facades\Storage;
 use Image;
 use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
@@ -35,7 +34,9 @@ class UploadController extends Controller
             "mime" => $image->getClientMimeType(),
             'file_size' => $fileSize,
         );
-        Stroage::create($uploadedImageResponse);
+        // Storage model name..
+        $insert = \App\Models\Storage::create($uploadedImageResponse);
+        $uploadedImageResponse['id'] = $insert->id;
 
         return response()->json(['message' => 'Resim yükleme işlemi başarılı','messageType' => 'success','status' => 200,'data' => $uploadedImageResponse],200);
 

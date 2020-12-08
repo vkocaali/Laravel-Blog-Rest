@@ -75,6 +75,19 @@
                             </div>
                         </div>
 
+                        <div
+                            class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
+                            <label class="block text-sm text-gray-600" for="image">Kategori Resmi</label>
+                            <input class="w-full px-5 text-gray-700 bg-gray-200 rounded" @change="selectImage" id="image"
+                                   name="image" type="file" aria-label="Kategori Resim">
+                            <validation-errors-help class="my-2 mx-1"  :status="this.status" :errors="this.errors" field-value="image"/>
+                        </div>
+
+                        <div>
+                            <img class="rounded-lg md:w-56" v-if="this.imagePreview" :src="this.imagePreview" alt="Kategori Resmi">
+                        </div>
+
+
 
 
 
@@ -114,6 +127,7 @@
                 status : null,
                 tag : '',
                 success : false,
+                imagePreview : null,
                 categories: {
                     name : '',
                     description : '',
@@ -121,6 +135,7 @@
                     slug : '',
                     parent : 0,
                     tags : [],
+                    image : null,
                 },
             }
         },
@@ -128,6 +143,25 @@
           this.getCategories();
         },
         methods: {
+            selectImage: function(event){
+                this.imagePreview = URL.createObjectURL(event.target.files[0]);
+                var formData = new FormData();
+                formData.append("image", event.target.files[0]);
+                formData.append("folderName", 'categories');
+
+                const token = localStorage.getItem('token');
+                axios({
+                    url : 'upload-image',
+                    method : "POST",
+                    data: formData,
+                    headers: {Authorization: `Bearer ${token}`},
+                }).then(response => {
+                    this.categories.image = response.data.data.id; // Get url from response
+                }).catch(error => {
+                    console.log(error);
+                });
+
+            },
             handleImageAdded: function (file, Editor, cursorLocation, resetUploader) {
                 var formData = new FormData();
                 formData.append("image", file);
@@ -198,6 +232,7 @@
                     this.errors = null;
                     this.status = response.status;
                     this.categories = response.data.data;
+                    this.imagePreview = response.data.data.image.image_url;
                 }).catch(error => {
                     if(422 === error.response.status){
                         this.errors = error.response.data.errors;

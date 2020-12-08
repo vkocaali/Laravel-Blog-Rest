@@ -10,6 +10,7 @@ use App\Models\Tags;
 use App\Repositories\CategoriesRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class CategoriesController extends Controller
 {
@@ -41,10 +42,10 @@ class CategoriesController extends Controller
             'content' => $request->post('content'),
             'parent' => $request->post('parent'),
             'slug' => Str::slug($request->post('slug')),
+            'storage_id' => $request->post('image'),
             'is_active' => 1,
             'rank' => is_null($rank) ? 1 : $rank + 1,
         ]);
-
 
         foreach($request->tags as $item){
             Tags::create([
@@ -54,9 +55,7 @@ class CategoriesController extends Controller
                 'is_active' => 1,
             ]);
         }
-
         return response()->json(['result'=> 1 , 'message' => 'İşlem Başarılı'],200);
-
     }
 
     public function show($id)
@@ -75,6 +74,7 @@ class CategoriesController extends Controller
     public function update(CategoriesRequest $request, $id)
     {
         $request->validated();
+
         $this->categoriesRepository->update($id,[
             'name' => $request->post('name'),
             'description' => $request->post('description'),
@@ -83,6 +83,17 @@ class CategoriesController extends Controller
             'slug' => Str::slug($request->post('slug')),
             'is_active' => 1,
         ]);
+
+        // delete old image this storage
+        $categories = $this->categoriesRepository->first($id);
+        $storage = \App\Models\Storage::find($categories->storage_id);
+
+        if($request->has('image')){
+            Storage::delete($storage->image_url);
+            $this->categoriesRepository->update($id,[
+                'storage_id' => $request->image,
+            ]);
+        }
 
         $tags = Tags::where('tag_id',$id)->where('tag_type',Categories::class);
         $tags->delete();

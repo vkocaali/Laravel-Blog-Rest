@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from "./pages/front-end/Home";
+import List from "./pages/front-end/List";
 import Dashboard from "./pages/admin/Dashboard";
 import Login from "./pages/auth/Login";
 import Settings from './pages/admin/Settings/Index';
@@ -24,6 +25,14 @@ const routes = [
         name : 'home',
         meta : {
             title : 'Volkan Kocaali Blog'
+        }
+    },
+    {
+        path : '/yazilar/:id' ,
+        component: List ,
+        name : 'home.article.list',
+        meta : {
+            title : 'Yazı Listele'
         }
     },
     {

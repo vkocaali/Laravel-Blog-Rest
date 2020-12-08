@@ -24,6 +24,21 @@
                             </div>
 
                             <div
+                                class="bg-white p-2 rounded mt-1 border-b border-grey hover:bg-grey-lighter">
+                                <label class="block text-sm text-black" for="name">Yazı Açıklaması</label>
+                                <input v-model="createArticles.description"
+                                       class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="description"
+                                       name="description" type="text" placeholder="Yazı Açıklaması"
+                                       aria-label="Yazı Açıklaması">
+                                <validation-errors-help class="my-2 mx-1" :status="this.status" :errors="this.errors" field-value="description"/>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                            <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
                                 <label class="block text-sm text-black" for="slug">Slug</label>
                                 <input v-model="createArticles.slug"
@@ -32,13 +47,17 @@
                                 <validation-errors-help class="my-2 mx-1"  :status="this.status" :errors="this.errors" field-value="slug"/>
                             </div>
 
-
+                            <div
+                                class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
+                                <label class="block text-sm text-black" for="tag">Yazı Etiketleri</label>
+                                <vue-tags-input id="tag"
+                                                v-model="tag" :tags="createArticles.tags"
+                                                @tags-changed="newTags => createArticles.tags = newTags"/>
+                                <validation-errors-help class="my-2 mx-1"  :status="this.status" :errors="this.errors" field-value="tags"/>
+                            </div>
                         </div>
 
-
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
-
-
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey hover:bg-grey-lighter">
                                 <label class="block text-sm text-black" for="categories_id">Kategori Seçiniz</label>
@@ -65,21 +84,24 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-1 gap-6 mt-4">
 
-                            <div
-                                class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                <label class="block text-sm text-black" for="tag">Yazı Etiketleri</label>
-                                <vue-tags-input id="tag"
-                                                v-model="tag" :tags="createArticles.tags"
-                                                @tags-changed="newTags => createArticles.tags = newTags"/>
-                                <validation-errors-help class="my-2 mx-1"  :status="this.status" :errors="this.errors" field-value="tags"/>
-                            </div>
-
                             <div>
                                 <label class="block text-sm text-gray-600" for="editor">Yazı İçeriği</label>
                                 <vue-editor id="editor" useCustomImageHandler
                                             @image-added="handleImageAdded"
                                             v-model="createArticles.content"/>
                                 <validation-errors-help class="my-2 mx-1"  :status="this.status" :errors="this.errors" field-value="content"/>
+                            </div>
+
+                            <div
+                                class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
+                                <label class="block text-sm text-gray-600" for="image">Yazı Resmi</label>
+                                <input class="w-full px-5 text-gray-700 bg-gray-200 rounded" @change="selectImage" id="image"
+                                       name="image" type="file"  aria-label="Yazı Resim">
+                                <validation-errors-help class="my-2 mx-1"  :status="this.status" :errors="this.errors" field-value="image"/>
+                            </div>
+
+                            <div>
+                                <img class="rounded-lg md:w-56" v-if="this.imagePreview" :src="this.imagePreview" alt="Kategori Resmi">
                             </div>
                         </div>
 
@@ -128,13 +150,16 @@
                 categories : {},
                 authors : {},
                 tag : '',
+                imagePreview : null,
                 createArticles: {
                     title : '',
+                    description : '',
                     content : null,
                     categories_id : '',
                     author_id : '',
                     slug : '',
                     tags : [],
+                    image: null,
                 },
             }
         },
@@ -143,6 +168,26 @@
           this.authorsGet();
         },
         methods: {
+            selectImage: function(event){
+                this.imagePreview = URL.createObjectURL(event.target.files[0]);
+                var formData = new FormData();
+                formData.append("image", event.target.files[0]);
+                formData.append("folderName", 'articles');
+
+                const token = localStorage.getItem('token');
+                axios({
+                    url : 'upload-image',
+                    method : "POST",
+                    data: formData,
+                    headers: {Authorization: `Bearer ${token}`},
+                }).then(response => {
+                    this.createArticles.image = response.data.data.id; // Get url from response
+
+                }).catch(error => {
+                    console.log(error);
+                });
+
+            },
             handleImageAdded: function (file, Editor, cursorLocation, resetUploader) {
                 var formData = new FormData();
                 formData.append("image", file);

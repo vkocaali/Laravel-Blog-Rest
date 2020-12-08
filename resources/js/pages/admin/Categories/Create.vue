@@ -7,12 +7,11 @@
                         Geri Dön
                     </a>
 
-
                     <h2 class="text-lg text-gray-700 font-semibold capitalize">Yeni Kategori Ekleme</h2>
-
 
                     <form v-on:submit.prevent="createCategoriesSubmit">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey hover:bg-grey-lighter">
                                 <label class="block text-sm text-black" for="name">Kategori Adı</label>
@@ -66,8 +65,17 @@
                             </div>
                         </div>
 
+                        <div
+                            class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
+                            <label class="block text-sm text-gray-600" for="image">Kategori Resmi</label>
+                            <input class="w-full px-5 text-gray-700 bg-gray-200 rounded" @change="selectImage" id="image"
+                                   name="image" type="file"  aria-label="Kategori Resim">
+                            <validation-errors-help class="my-2 mx-1"  :status="this.status" :errors="this.errors" field-value="image"/>
+                        </div>
 
-
+                        <div>
+                            <img class="rounded-lg md:w-56" v-if="this.imagePreview" :src="this.imagePreview" alt="Kategori Resmi">
+                        </div>
 
                         <div class="flex justify-end mt-4">
                             <button class="px-4 py-2 bg-gray-800 text-gray-200 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
@@ -75,9 +83,6 @@
                                 <span v-else>Kaydet</span>
                             </button>
                         </div>
-
-
-
 
                     </form>
                 </div>
@@ -110,6 +115,7 @@
                 errors : null,
                 status : null,
                 tag : '',
+                imagePreview : null,
                 createCategories: {
                     name : '',
                     description : '',
@@ -117,10 +123,31 @@
                     slug : '',
                     parent : 0,
                     tags : [],
+                    image : null,
                 },
             }
         },
         methods: {
+            selectImage: function(event){
+                this.imagePreview = URL.createObjectURL(event.target.files[0]);
+                var formData = new FormData();
+                formData.append("image", event.target.files[0]);
+                formData.append("folderName", 'categories');
+
+                const token = localStorage.getItem('token');
+                axios({
+                    url : 'upload-image',
+                    method : "POST",
+                    data: formData,
+                    headers: {Authorization: `Bearer ${token}`},
+                }).then(response => {
+                    this.createCategories.image = response.data.data.id; // Get url from response
+
+                }).catch(error => {
+                    console.log(error);
+                });
+
+            },
             handleImageAdded: function (file, Editor, cursorLocation, resetUploader) {
                 var formData = new FormData();
                 formData.append("image", file);
@@ -153,6 +180,7 @@
                 slug = slug.replace(/\s+/g, '-');
                 this.createCategories.slug = slug;
             },
+
             createCategoriesSubmit : function(){
                 this.loading = false;
                 const token = localStorage.getItem('token');

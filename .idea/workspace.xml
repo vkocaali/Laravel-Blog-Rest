@@ -2,64 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d5e30a8-cbd5-470a-8ee7-8115683d5318" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/layout/AdminLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/layout/Footer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/layout/Front/Footer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/layout/Front/Layout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/layout/Front/Navbar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/layout/Header.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/layout/Navbar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/layout/Sidebar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/admin/Articles/Create.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/admin/Articles/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/admin/Articles/Update.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/admin/Categories/Create.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/admin/Categories/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/admin/Categories/Update.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/admin/Dashboard.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/admin/Settings/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/auth/Login.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/auth/Register.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/front-end/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/front-end/component/FeaturedPost.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/front-end/component/RecentPost.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/front-end/component/Subscribe.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/shared/Pagination.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/shared/ValidationErrors.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/shared/ValidationErrorsHelp.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/front-end/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthorController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/TagsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TagsResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UploadController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CategoriesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CategoriesRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ArticleResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ArticleResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/CategoriesResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CategoriesResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Stroage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Storage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repository/ArticlesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/ArticlesRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repository/ArticlesRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/ArticlesRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repository/AuthorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/AuthorRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repository/AuthorRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/AuthorRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repository/CategoriesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/CategoriesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repository/CategoriesRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/CategoriesRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_23_195050_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_23_195050_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_22_000000_create_stroages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_22_000000_create_storage_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_25_163322_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_25_163322_create_articles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/layout/Front/Layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/layout/Front/Layout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/admin/Articles/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/admin/Articles/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/admin/Articles/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/admin/Articles/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/admin/Articles/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/admin/Articles/Update.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/admin/Categories/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/admin/Categories/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/admin/Categories/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/admin/Categories/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/admin/Categories/Update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/admin/Categories/Update.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/auth/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/front-end/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/front-end/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/front-end/component/RecentPost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/front-end/component/RecentPost.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,118 +53,116 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
-      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
-      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
-      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
-      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
-      <path value="$PROJECT_DIR$/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
-      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
-      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
-      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
-      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
-      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
-      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
-      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/vendor/opis/closure" />
-      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
-      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
-      <path value="$PROJECT_DIR$/vendor/brick/math" />
-      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
-      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
-      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/vendor/sebastian/type" />
-      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
-      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
-      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-image-optimizer" />
       <path value="$PROJECT_DIR$/vendor/spatie/image-optimizer" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hvS2w2uFSklGJyTfCFpfrE314a" />
@@ -210,7 +184,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -236,7 +210,13 @@
       <updated>1600889869618</updated>
       <workItem from="1600889876499" duration="49898000" />
       <workItem from="1601915181111" duration="75944000" />
-      <workItem from="1602933042774" duration="64880000" />
+      <workItem from="1602933042774" duration="76295000" />
+      <workItem from="1605778460421" duration="3246000" />
+      <workItem from="1606821040345" duration="3527000" />
+      <workItem from="1607015364707" duration="18024000" />
+      <workItem from="1607336003410" duration="224000" />
+      <workItem from="1607350373824" duration="897000" />
+      <workItem from="1607373559437" duration="9449000" />
     </task>
     <servers />
   </component>
@@ -244,20 +224,31 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1496" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607373786936">
+      <screen x="-1920" y="25" width="1920" height="1008" />
+    </state>
+    <state x="-1496" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1280.775/-1920.25.1920.1008@-1920.25.1920.1008" timestamp="1607373786936" />
     <state x="494" y="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601900441760">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="494" y="397" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.837@0.23.1440.837" timestamp="1601900441760" />
-    <state x="2002" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600935184706">
-      <screen x="1280" y="23" width="1920" height="1017" />
+    <state x="542" y="23" width="476" height="840" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605557255457">
+      <screen x="0" y="23" width="1440" height="840" />
     </state>
     <state x="2002" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1280.777/1280.23.1920.1017@1280.23.1920.1017" timestamp="1600935184706" />
-    <state x="425" y="170" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603975352396">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state x="542" y="23" width="476" height="840" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.840@0.23.1440.840" timestamp="1605557255457" />
+    <state x="-1353" y="210" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607065894644">
+      <screen x="-1920" y="25" width="1920" height="1055" />
     </state>
     <state x="378" y="153" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.737/1280.23.1920.1057@0.23.1280.737" timestamp="1600930733154" />
     <state x="1847" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.737/1280.23.1920.1057@1280.23.1920.1057" timestamp="1602666909672" />
     <state x="425" y="170" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.837@0.23.1440.837" timestamp="1603975352396" />
+    <state x="-1353" y="210" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.730/-1920.25.1920.1055@-1920.25.1920.1055" timestamp="1607065894644" />
+    <state x="-1353" y="202" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.775/-1920.25.1920.1010@-1920.25.1920.1010" timestamp="1607027034169" />
+    <state x="-1311" y="199" key="#phpunit.xml" timestamp="1607373799887">
+      <screen x="-1920" y="25" width="1920" height="1008" />
+    </state>
+    <state x="-1311" y="199" key="#phpunit.xml/0.25.1280.775/-1920.25.1920.1008@-1920.25.1920.1008" timestamp="1607373799887" />
     <state x="293" y="227" key="EditFileWatcherDialog" timestamp="1601907032850">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
@@ -267,19 +258,23 @@
     </state>
     <state x="1909" y="375" key="NewPhpClassDialog/0.23.1280.737/1280.23.1920.1057@1280.23.1920.1057" timestamp="1601060206900" />
     <state x="419" y="282" key="NewPhpClassDialog/0.23.1280.777/1280.23.1920.1017@0.23.1280.777" timestamp="1601121381480" />
-    <state x="2193" y="76" key="SettingsEditor" timestamp="1604699309971">
-      <screen x="1280" y="23" width="1920" height="1017" />
+    <state x="-1461" y="189" width="900" height="728" key="SettingsEditor" timestamp="1607377192441">
+      <screen x="-1920" y="25" width="1920" height="1008" />
     </state>
     <state x="2193" y="76" key="SettingsEditor/0.23.1280.737/1280.23.1920.1017@1280.23.1920.1017" timestamp="1604699309971" />
+    <state x="443" y="67" key="SettingsEditor/0.23.1440.840@0.23.1440.840" timestamp="1605623387537" />
+    <state x="1842" y="254" width="900" height="728" key="SettingsEditor/0.25.1280.730/1280.25.1920.1010@0.25.1280.730" timestamp="1606846182145" />
+    <state x="-1461" y="189" width="900" height="728" key="SettingsEditor/0.25.1280.775/-1920.25.1920.1008@-1920.25.1920.1008" timestamp="1607377192441" />
     <state x="40" y="123" width="1240" height="537" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602602592503">
       <screen x="0" y="23" width="1280" height="737" />
     </state>
     <state x="40" y="123" width="1240" height="537" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1280.737/1280.23.1920.1057@0.23.1280.737" timestamp="1602602592503" />
-    <state x="357" y="251" key="com.intellij.ide.util.TipDialog" timestamp="1602933177319">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state x="-1444" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1607350379393">
+      <screen x="-1920" y="25" width="1920" height="1008" />
     </state>
     <state x="317" y="224" key="com.intellij.ide.util.TipDialog/0.23.1280.737/1280.23.1920.1057@0.23.1280.737" timestamp="1600889874669" />
     <state x="357" y="251" key="com.intellij.ide.util.TipDialog/0.23.1440.837@0.23.1440.837" timestamp="1602933177319" />
+    <state x="-1444" y="300" key="com.intellij.ide.util.TipDialog/0.25.1280.775/-1920.25.1920.1008@-1920.25.1920.1008" timestamp="1607350379393" />
     <state x="221" y="116" width="837" height="550" key="find.popup" timestamp="1602628623162">
       <screen x="0" y="23" width="1280" height="737" />
     </state>

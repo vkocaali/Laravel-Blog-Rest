@@ -2178,9 +2178,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Front_Navbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Front/Navbar */ "./resources/js/layout/Front/Navbar.vue");
 /* harmony import */ var _Front_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Front/Footer */ "./resources/js/layout/Front/Footer.vue");
-/* harmony import */ var _pages_front_end_component_FeaturedPost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pages/front-end/component/FeaturedPost */ "./resources/js/pages/front-end/component/FeaturedPost.vue");
-/* harmony import */ var _pages_front_end_component_RecentPost__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../pages/front-end/component/RecentPost */ "./resources/js/pages/front-end/component/RecentPost.vue");
-/* harmony import */ var _pages_front_end_component_Subscribe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../pages/front-end/component/Subscribe */ "./resources/js/pages/front-end/component/Subscribe.vue");
 //
 //
 //
@@ -2198,72 +2195,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Navbar: _Front_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Footer: _Front_Footer__WEBPACK_IMPORTED_MODULE_1__["default"],
-    FeaturedPost: _pages_front_end_component_FeaturedPost__WEBPACK_IMPORTED_MODULE_2__["default"],
-    RecentPost: _pages_front_end_component_RecentPost__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Subscribe: _pages_front_end_component_Subscribe__WEBPACK_IMPORTED_MODULE_4__["default"]
+    Footer: _Front_Footer__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2671,6 +2608,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2692,13 +2651,16 @@ __webpack_require__.r(__webpack_exports__);
       categories: {},
       authors: {},
       tag: '',
+      imagePreview: null,
       createArticles: {
         title: '',
+        description: '',
         content: null,
         categories_id: '',
         author_id: '',
         slug: '',
-        tags: []
+        tags: [],
+        image: null
       }
     };
   },
@@ -2707,6 +2669,27 @@ __webpack_require__.r(__webpack_exports__);
     this.authorsGet();
   },
   methods: {
+    selectImage: function selectImage(event) {
+      var _this = this;
+
+      this.imagePreview = URL.createObjectURL(event.target.files[0]);
+      var formData = new FormData();
+      formData.append("image", event.target.files[0]);
+      formData.append("folderName", 'articles');
+      var token = localStorage.getItem('token');
+      axios({
+        url: 'upload-image',
+        method: "POST",
+        data: formData,
+        headers: {
+          Authorization: "Bearer ".concat(token)
+        }
+      }).then(function (response) {
+        _this.createArticles.image = response.data.data.id; // Get url from response
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
     handleImageAdded: function handleImageAdded(file, Editor, cursorLocation, resetUploader) {
       var formData = new FormData();
       formData.append("image", file);
@@ -2741,7 +2724,7 @@ __webpack_require__.r(__webpack_exports__);
       this.createArticles.slug = slug;
     },
     createArticleSubmit: function createArticleSubmit() {
-      var _this = this;
+      var _this2 = this;
 
       this.loading = false;
       var token = localStorage.getItem('token');
@@ -2753,30 +2736,30 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        _this.loading = true;
-        _this.errors = null;
-        _this.status = response.status;
+        _this2.loading = true;
+        _this2.errors = null;
+        _this2.status = response.status;
 
-        _this.$router.push({
+        _this2.$router.push({
           name: 'yonetim.yazilar'
         });
 
-        _this.$notify({
+        _this2.$notify({
           group: "success",
           title: "Başarılı",
           text: "Yeni Kayıt Eklendi."
         }, 2000);
       })["catch"](function (error) {
         if (422 === error.response.status) {
-          _this.errors = error.response.data.errors;
+          _this2.errors = error.response.data.errors;
         }
 
-        _this.status = error.response.status;
-        _this.loading = true;
+        _this2.status = error.response.status;
+        _this2.loading = true;
       });
     },
     categoriesGet: function categoriesGet() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.loading = false;
       var token = localStorage.getItem('token');
@@ -2785,14 +2768,14 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        _this2.loading = true;
-        _this2.categories = response.data.data;
+        _this3.loading = true;
+        _this3.categories = response.data.data;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     authorsGet: function authorsGet() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.loading = false;
       var token = localStorage.getItem('token');
@@ -2801,8 +2784,8 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        _this3.loading = true;
-        _this3.authors = response.data.data;
+        _this4.loading = true;
+        _this4.authors = response.data.data;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -2823,7 +2806,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_AdminLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../layout/AdminLayout */ "./resources/js/layout/AdminLayout.vue");
 /* harmony import */ var _shared_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/Pagination */ "./resources/js/shared/Pagination.vue");
-//
 //
 //
 //
@@ -3043,6 +3025,32 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    deleteArticles: function deleteArticles(id) {
+      var _this2 = this;
+
+      this.loading = false;
+      var token = localStorage.getItem('token');
+      axios({
+        url: "/articles/".concat(id),
+        method: "DELETE",
+        headers: {
+          Authorization: "Bearer ".concat(token)
+        }
+      }).then(function (response) {
+        _this2.loading = true;
+        _this2.errors = null;
+        _this2.status = response.status;
+        _this2.success = true;
+
+        _this2.getArticles();
+
+        _this2.$notify({
+          group: "success",
+          title: "Başarılı",
+          text: "Kayıt silindi."
+        }, 2000);
+      });
     }
   }
 });
@@ -3064,6 +3072,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_ValidationErrorsHelp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../shared/ValidationErrorsHelp */ "./resources/js/shared/ValidationErrorsHelp.vue");
 /* harmony import */ var _johmun_vue_tags_input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @johmun/vue-tags-input */ "./node_modules/@johmun/vue-tags-input/dist/vue-tags-input.js");
 /* harmony import */ var _johmun_vue_tags_input__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_johmun_vue_tags_input__WEBPACK_IMPORTED_MODULE_4__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3191,13 +3212,15 @@ __webpack_require__.r(__webpack_exports__);
       categories: {},
       authors: {},
       tag: '',
+      imagePreview: null,
       updateArticles: {
         title: '',
         content: null,
         categories_id: '',
         author_id: '',
         slug: '',
-        tags: []
+        tags: [],
+        image: null
       }
     };
   },
@@ -3207,6 +3230,27 @@ __webpack_require__.r(__webpack_exports__);
     this.articlesGet();
   },
   methods: {
+    selectImage: function selectImage(event) {
+      var _this = this;
+
+      this.imagePreview = URL.createObjectURL(event.target.files[0]);
+      var formData = new FormData();
+      formData.append("image", event.target.files[0]);
+      formData.append("folderName", 'articles');
+      var token = localStorage.getItem('token');
+      axios({
+        url: 'upload-image',
+        method: "POST",
+        data: formData,
+        headers: {
+          Authorization: "Bearer ".concat(token)
+        }
+      }).then(function (response) {
+        _this.updateArticles.image = response.data.data.id; // Get url from response
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
     handleImageAdded: function handleImageAdded(file, Editor, cursorLocation, resetUploader) {
       var formData = new FormData();
       formData.append("image", file);
@@ -3241,7 +3285,7 @@ __webpack_require__.r(__webpack_exports__);
       this.updateArticles.slug = slug;
     },
     updateArticleSubmit: function updateArticleSubmit() {
-      var _this = this;
+      var _this2 = this;
 
       this.loading = false;
       var token = localStorage.getItem('token');
@@ -3253,25 +3297,25 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        _this.loading = true;
-        _this.errors = null;
-        _this.status = response.status;
+        _this2.loading = true;
+        _this2.errors = null;
+        _this2.status = response.status;
 
-        _this.$notify({
+        _this2.$notify({
           group: "success",
           title: "Başarılı",
           text: "Kayıt güncellendi."
         }, 2000);
       })["catch"](function (error) {
         if (422 === error.response.status) {
-          _this.errors = error.response.data.errors;
+          _this2.errors = error.response.data.errors;
         }
 
-        _this.status = error.response.status;
+        _this2.status = error.response.status;
       });
     },
     categoriesGet: function categoriesGet() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.loading = false;
       var token = localStorage.getItem('token');
@@ -3280,14 +3324,14 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        _this2.loading = true;
-        _this2.categories = response.data.data;
+        _this3.loading = true;
+        _this3.categories = response.data.data;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     authorsGet: function authorsGet() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.loading = false;
       var token = localStorage.getItem('token');
@@ -3296,14 +3340,14 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        _this3.loading = true;
-        _this3.authors = response.data.data;
+        _this4.loading = true;
+        _this4.authors = response.data.data;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     articlesGet: function articlesGet() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.loading = false;
       var token = localStorage.getItem('token');
@@ -3315,18 +3359,19 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        _this4.loading = true;
-        _this4.errors = null;
-        _this4.status = response.status;
-        _this4.updateArticles = response.data.data;
-        _this4.updateArticles.categories_id = response.data.data.categories.id;
-        _this4.updateArticles.author_id = response.data.data.author.id;
+        _this5.loading = true;
+        _this5.errors = null;
+        _this5.status = response.status;
+        _this5.updateArticles = response.data.data;
+        _this5.updateArticles.categories_id = response.data.data.categories.id;
+        _this5.updateArticles.author_id = response.data.data.author.id;
+        _this5.imagePreview = response.data.data.image.image_url;
       })["catch"](function (error) {
         if (422 === error.response.status) {
-          _this4.errors = error.response.data.errors;
+          _this5.errors = error.response.data.errors;
         }
 
-        _this4.status = error.response.status;
+        _this5.status = error.response.status;
       });
     }
   }
@@ -3440,6 +3485,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -3459,17 +3509,40 @@ __webpack_require__.r(__webpack_exports__);
       errors: null,
       status: null,
       tag: '',
+      imagePreview: null,
       createCategories: {
         name: '',
         description: '',
         content: null,
         slug: '',
         parent: 0,
-        tags: []
+        tags: [],
+        image: null
       }
     };
   },
   methods: {
+    selectImage: function selectImage(event) {
+      var _this = this;
+
+      this.imagePreview = URL.createObjectURL(event.target.files[0]);
+      var formData = new FormData();
+      formData.append("image", event.target.files[0]);
+      formData.append("folderName", 'categories');
+      var token = localStorage.getItem('token');
+      axios({
+        url: 'upload-image',
+        method: "POST",
+        data: formData,
+        headers: {
+          Authorization: "Bearer ".concat(token)
+        }
+      }).then(function (response) {
+        _this.createCategories.image = response.data.data.id; // Get url from response
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
     handleImageAdded: function handleImageAdded(file, Editor, cursorLocation, resetUploader) {
       var formData = new FormData();
       formData.append("image", file);
@@ -3504,7 +3577,7 @@ __webpack_require__.r(__webpack_exports__);
       this.createCategories.slug = slug;
     },
     createCategoriesSubmit: function createCategoriesSubmit() {
-      var _this = this;
+      var _this2 = this;
 
       this.loading = false;
       var token = localStorage.getItem('token');
@@ -3516,27 +3589,27 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        _this.loading = true;
-        _this.errors = null;
+        _this2.loading = true;
+        _this2.errors = null;
 
-        _this.$router.push({
+        _this2.$router.push({
           name: 'yonetim.kategoriler'
         });
 
-        _this.status = response.status;
+        _this2.status = response.status;
 
-        _this.$notify({
+        _this2.$notify({
           group: "success",
           title: "Başarılı",
           text: "Yeni Kayıt Eklendi."
         }, 2000);
       })["catch"](function (error) {
         if (422 === error.response.status) {
-          _this.errors = error.response.data.errors;
+          _this2.errors = error.response.data.errors;
         }
 
-        _this.status = error.response.status;
-        _this.loading = true;
+        _this2.status = error.response.status;
+        _this2.loading = true;
       });
     }
   }
@@ -3913,6 +3986,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3933,13 +4019,15 @@ __webpack_require__.r(__webpack_exports__);
       status: null,
       tag: '',
       success: false,
+      imagePreview: null,
       categories: {
         name: '',
         description: '',
         content: null,
         slug: '',
         parent: 0,
-        tags: []
+        tags: [],
+        image: null
       }
     };
   },
@@ -3947,6 +4035,27 @@ __webpack_require__.r(__webpack_exports__);
     this.getCategories();
   },
   methods: {
+    selectImage: function selectImage(event) {
+      var _this = this;
+
+      this.imagePreview = URL.createObjectURL(event.target.files[0]);
+      var formData = new FormData();
+      formData.append("image", event.target.files[0]);
+      formData.append("folderName", 'categories');
+      var token = localStorage.getItem('token');
+      axios({
+        url: 'upload-image',
+        method: "POST",
+        data: formData,
+        headers: {
+          Authorization: "Bearer ".concat(token)
+        }
+      }).then(function (response) {
+        _this.categories.image = response.data.data.id; // Get url from response
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
     handleImageAdded: function handleImageAdded(file, Editor, cursorLocation, resetUploader) {
       var formData = new FormData();
       formData.append("image", file);
@@ -3981,7 +4090,7 @@ __webpack_require__.r(__webpack_exports__);
       this.categories.slug = slug;
     },
     updateCategoriesSubmit: function updateCategoriesSubmit() {
-      var _this = this;
+      var _this2 = this;
 
       this.loading = false;
       var token = localStorage.getItem('token');
@@ -3993,27 +4102,27 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        _this.loading = true;
-        _this.errors = null;
-        _this.status = response.status;
-        _this.success = true;
+        _this2.loading = true;
+        _this2.errors = null;
+        _this2.status = response.status;
+        _this2.success = true;
 
-        _this.$notify({
+        _this2.$notify({
           group: "success",
           title: "Başarılı",
           text: "Kayıt güncellendi."
         }, 2000);
       })["catch"](function (error) {
         if (422 === error.response.status) {
-          _this.errors = error.response.data.errors;
+          _this2.errors = error.response.data.errors;
         }
 
-        _this.success = false;
-        _this.status = error.response.status;
+        _this2.success = false;
+        _this2.status = error.response.status;
       });
     },
     getCategories: function getCategories() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.loading = false;
       var token = localStorage.getItem('token');
@@ -4025,16 +4134,17 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (response) {
-        _this2.loading = true;
-        _this2.errors = null;
-        _this2.status = response.status;
-        _this2.categories = response.data.data;
+        _this3.loading = true;
+        _this3.errors = null;
+        _this3.status = response.status;
+        _this3.categories = response.data.data;
+        _this3.imagePreview = response.data.data.image.image_url;
       })["catch"](function (error) {
         if (422 === error.response.status) {
-          _this2.errors = error.response.data.errors;
+          _this3.errors = error.response.data.errors;
         }
 
-        _this2.status = error.response.status;
+        _this3.status = error.response.status;
       });
     }
   }
@@ -4749,43 +4859,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4840,6 +4913,95 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_Front_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layout/Front/Layout */ "./resources/js/layout/Front/Layout.vue");
+/* harmony import */ var _pages_front_end_component_FeaturedPost__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../pages/front-end/component/FeaturedPost */ "./resources/js/pages/front-end/component/FeaturedPost.vue");
+/* harmony import */ var _pages_front_end_component_RecentPost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pages/front-end/component/RecentPost */ "./resources/js/pages/front-end/component/RecentPost.vue");
+/* harmony import */ var _pages_front_end_component_Subscribe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../pages/front-end/component/Subscribe */ "./resources/js/pages/front-end/component/Subscribe.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Layout: _layout_Front_Layout__WEBPACK_IMPORTED_MODULE_0__["default"],
+    FeaturedPost: _pages_front_end_component_FeaturedPost__WEBPACK_IMPORTED_MODULE_1__["default"],
+    RecentPost: _pages_front_end_component_RecentPost__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Subscribe: _pages_front_end_component_Subscribe__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/front-end/List.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/front-end/List.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _layout_Front_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layout/Front/Layout */ "./resources/js/layout/Front/Layout.vue");
 //
 //
 //
@@ -4851,6 +5013,98 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Layout: _layout_Front_Layout__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/front-end/component/RecentPost.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/front-end/component/RecentPost.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      recentPost: {}
+    };
+  },
+  mounted: function mounted() {
+    this.getRecentPost();
+  },
+  methods: {
+    getRecentPost: function getRecentPost() {
+      var _this = this;
+
+      this.loading = false;
+      axios.get("/recent-post").then(function (response) {
+        _this.loading = true;
+        console.log(response.data.data);
+        _this.recentPost = response.data.data;
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+    }
   }
 });
 
@@ -61707,174 +61961,14 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c(
-        "main",
-        { staticClass: "mt-12" },
-        [
-          _c("FeaturedPost"),
-          _vm._v(" "),
-          _c("RecentPost"),
-          _vm._v(" "),
-          _c("Subscribe"),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1)
-        ],
-        1
-      ),
+      _c("main", { staticClass: "mt-12" }, [_vm._t("default")], 2),
       _vm._v(" "),
       _c("Footer")
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between"
-      },
-      [
-        _c("h2", { staticClass: "font-bold text-3xl" }, [
-          _vm._v("Popular news")
-        ]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "bg-gray-200 hover:bg-green-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
-          },
-          [_vm._v("\n                View all\n            ")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "block space-x-0 lg:flex lg:space-x-6" }, [
-      _c(
-        "div",
-        { staticClass: "rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0" },
-        [
-          _c("img", {
-            staticClass: "rounded",
-            attrs: {
-              src:
-                "https://images.unsplash.com/photo-1526666923127-b2970f64b422?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-              alt: "technology"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "p-4 pl-0" }, [
-            _c("h2", { staticClass: "font-bold text-2xl text-gray-800" }, [
-              _vm._v("Put all speaking her delicate recurred possible.")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-gray-700 mt-2" }, [
-              _vm._v(
-                "\n                        Set indulgence inquietude discretion insensible bed why announcing. Middleton fat two satisfied additions.\n                        So continued he or commanded household smallness delivered. Door poor on do walk in half. Roof his head the what.\n                    "
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "inline-block py-2 rounded text-green-900 mt-2 ml-auto",
-                attrs: { href: "#" }
-              },
-              [_vm._v(" Read more ")]
-            )
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0" },
-        [
-          _c("img", {
-            staticClass: "rounded",
-            attrs: {
-              src:
-                "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-              alt: "technology"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "p-4 pl-0" }, [
-            _c("h2", { staticClass: "font-bold text-2xl text-gray-800" }, [
-              _vm._v("Is at purse tried jokes china ready decay an. ")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-gray-700 mt-2" }, [
-              _vm._v(
-                "\n                        Small its shy way had woody downs power. To denoting admitted speaking learning my exercise so in.\n                        Procured shutters mr it feelings. To or three offer house begin taken am at.\n                    "
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "inline-block py-2 rounded text-green-900 mt-2 ml-auto",
-                attrs: { href: "#" }
-              },
-              [_vm._v(" Read more ")]
-            )
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0" },
-        [
-          _c("img", {
-            staticClass: "rounded",
-            attrs: {
-              src:
-                "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
-              alt: "technology"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "p-4 pl-0" }, [
-            _c("h2", { staticClass: "font-bold text-2xl text-gray-800" }, [
-              _vm._v(
-                "As dissuade cheerful overcame so of friendly he indulged unpacked."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-gray-700 mt-2" }, [
-              _vm._v(
-                "\n                        Alteration connection to so as collecting me.\n                        Difficult in delivered extensive at direction allowance.\n                        Alteration put use diminution can considered sentiments interested discretion.\n                    "
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "inline-block py-2 rounded text-green-900 mt-2 ml-auto",
-                attrs: { href: "#" }
-              },
-              [_vm._v(" Read more ")]
-            )
-          ])
-        ]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -62572,6 +62666,73 @@ var render = function() {
                     "div",
                     {
                       staticClass:
+                        "bg-white p-2 rounded mt-1 border-b border-grey hover:bg-grey-lighter"
+                    },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "block text-sm text-black",
+                          attrs: { for: "name" }
+                        },
+                        [_vm._v("Yazı Açıklaması")]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.createArticles.description,
+                            expression: "createArticles.description"
+                          }
+                        ],
+                        staticClass:
+                          "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
+                        attrs: {
+                          id: "description",
+                          name: "description",
+                          type: "text",
+                          placeholder: "Yazı Açıklaması",
+                          "aria-label": "Yazı Açıklaması"
+                        },
+                        domProps: { value: _vm.createArticles.description },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.createArticles,
+                              "description",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("validation-errors-help", {
+                        staticClass: "my-2 mx-1",
+                        attrs: {
+                          status: this.status,
+                          errors: this.errors,
+                          "field-value": "description"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4" },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
                         "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
                     },
                     [
@@ -62623,6 +62784,50 @@ var render = function() {
                           status: this.status,
                           errors: this.errors,
                           "field-value": "slug"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                    },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "block text-sm text-black",
+                          attrs: { for: "tag" }
+                        },
+                        [_vm._v("Yazı Etiketleri")]
+                      ),
+                      _vm._v(" "),
+                      _c("vue-tags-input", {
+                        attrs: { id: "tag", tags: _vm.createArticles.tags },
+                        on: {
+                          "tags-changed": function(newTags) {
+                            return (_vm.createArticles.tags = newTags)
+                          }
+                        },
+                        model: {
+                          value: _vm.tag,
+                          callback: function($$v) {
+                            _vm.tag = $$v
+                          },
+                          expression: "tag"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("validation-errors-help", {
+                        staticClass: "my-2 mx-1",
+                        attrs: {
+                          status: this.status,
+                          errors: this.errors,
+                          "field-value": "tags"
                         }
                       })
                     ],
@@ -62805,50 +63010,6 @@ var render = function() {
                 [
                   _c(
                     "div",
-                    {
-                      staticClass:
-                        "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
-                    },
-                    [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "block text-sm text-black",
-                          attrs: { for: "tag" }
-                        },
-                        [_vm._v("Yazı Etiketleri")]
-                      ),
-                      _vm._v(" "),
-                      _c("vue-tags-input", {
-                        attrs: { id: "tag", tags: _vm.createArticles.tags },
-                        on: {
-                          "tags-changed": function(newTags) {
-                            return (_vm.createArticles.tags = newTags)
-                          }
-                        },
-                        model: {
-                          value: _vm.tag,
-                          callback: function($$v) {
-                            _vm.tag = $$v
-                          },
-                          expression: "tag"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("validation-errors-help", {
-                        staticClass: "my-2 mx-1",
-                        attrs: {
-                          status: this.status,
-                          errors: this.errors,
-                          "field-value": "tags"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
                     [
                       _c(
                         "label",
@@ -62881,7 +63042,59 @@ var render = function() {
                       })
                     ],
                     1
-                  )
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                    },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "block text-sm text-gray-600",
+                          attrs: { for: "image" }
+                        },
+                        [_vm._v("Yazı Resmi")]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass:
+                          "w-full px-5 text-gray-700 bg-gray-200 rounded",
+                        attrs: {
+                          id: "image",
+                          name: "image",
+                          type: "file",
+                          "aria-label": "Yazı Resim"
+                        },
+                        on: { change: _vm.selectImage }
+                      }),
+                      _vm._v(" "),
+                      _c("validation-errors-help", {
+                        staticClass: "my-2 mx-1",
+                        attrs: {
+                          status: this.status,
+                          errors: this.errors,
+                          "field-value": "image"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", [
+                    this.imagePreview
+                      ? _c("img", {
+                          staticClass: "rounded-lg md:w-56",
+                          attrs: {
+                            src: this.imagePreview,
+                            alt: "Kategori Resmi"
+                          }
+                        })
+                      : _vm._e()
+                  ])
                 ]
               ),
               _vm._v(" "),
@@ -63225,7 +63438,7 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "tbody",
-                            _vm._l(5, function(item) {
+                            _vm._l(1, function(item) {
                               return _c("tr", { key: item }, [
                                 _c(
                                   "td",
@@ -63519,7 +63732,14 @@ var render = function() {
                                           "button",
                                           {
                                             staticClass:
-                                              "whitespace-no-wrap bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+                                              "whitespace-no-wrap bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded inline-flex items-center",
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.deleteArticles(
+                                                  article.id
+                                                )
+                                              }
+                                            }
                                           },
                                           [
                                             _c("span", [
@@ -64053,7 +64273,56 @@ var render = function() {
                       })
                     ],
                     1
-                  )
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                    },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "block text-sm text-gray-600",
+                          attrs: { for: "image" }
+                        },
+                        [_vm._v("Yazı Resmi")]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass:
+                          "w-full px-5 text-gray-700 bg-gray-200 rounded",
+                        attrs: {
+                          id: "image",
+                          name: "image",
+                          type: "file",
+                          "aria-label": "Yazı Resim"
+                        },
+                        on: { change: _vm.selectImage }
+                      }),
+                      _vm._v(" "),
+                      _c("validation-errors-help", {
+                        staticClass: "my-2 mx-1",
+                        attrs: {
+                          status: this.status,
+                          errors: this.errors,
+                          "field-value": "image"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", [
+                    this.imagePreview
+                      ? _c("img", {
+                          staticClass: "rounded-lg md:w-56",
+                          attrs: { src: this.imagePreview, alt: "Yazı Resmi" }
+                        })
+                      : _vm._e()
+                  ])
                 ]
               ),
               _vm._v(" "),
@@ -64415,6 +64684,55 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                },
+                [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "block text-sm text-gray-600",
+                      attrs: { for: "image" }
+                    },
+                    [_vm._v("Kategori Resmi")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass:
+                      "w-full px-5 text-gray-700 bg-gray-200 rounded",
+                    attrs: {
+                      id: "image",
+                      name: "image",
+                      type: "file",
+                      "aria-label": "Kategori Resim"
+                    },
+                    on: { change: _vm.selectImage }
+                  }),
+                  _vm._v(" "),
+                  _c("validation-errors-help", {
+                    staticClass: "my-2 mx-1",
+                    attrs: {
+                      status: this.status,
+                      errors: this.errors,
+                      "field-value": "image"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", [
+                this.imagePreview
+                  ? _c("img", {
+                      staticClass: "rounded-lg md:w-56",
+                      attrs: { src: this.imagePreview, alt: "Kategori Resmi" }
+                    })
+                  : _vm._e()
+              ]),
+              _vm._v(" "),
               _c("div", { staticClass: "flex justify-end mt-4" }, [
                 _c(
                   "button",
@@ -64755,7 +65073,7 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "tbody",
-                            _vm._l(5, function(item) {
+                            _vm._l(1, function(item) {
                               return _c("tr", { key: item }, [
                                 _c(
                                   "td",
@@ -65538,6 +65856,55 @@ var render = function() {
                   )
                 ]
               ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                },
+                [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "block text-sm text-gray-600",
+                      attrs: { for: "image" }
+                    },
+                    [_vm._v("Kategori Resmi")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass:
+                      "w-full px-5 text-gray-700 bg-gray-200 rounded",
+                    attrs: {
+                      id: "image",
+                      name: "image",
+                      type: "file",
+                      "aria-label": "Kategori Resim"
+                    },
+                    on: { change: _vm.selectImage }
+                  }),
+                  _vm._v(" "),
+                  _c("validation-errors-help", {
+                    staticClass: "my-2 mx-1",
+                    attrs: {
+                      status: this.status,
+                      errors: this.errors,
+                      "field-value": "image"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", [
+                this.imagePreview
+                  ? _c("img", {
+                      staticClass: "rounded-lg md:w-56",
+                      attrs: { src: this.imagePreview, alt: "Kategori Resmi" }
+                    })
+                  : _vm._e()
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "flex justify-end mt-4" }, [
                 _c(
@@ -67547,164 +67914,142 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container mx-auto" }, [
-    _c("div", { staticClass: "flex justify-center px-6 my-12" }, [
-      _c("div", { staticClass: "w-full xl:w-3/4 lg:w-11/12 flex" }, [
-        _c("div", {
-          staticClass:
-            "w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg",
-          staticStyle: {
-            "background-image":
-              "url('https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')"
-          }
-        }),
+  return _c("div", { staticClass: "grid min-h-screen place-items-center" }, [
+    _c(
+      "div",
+      { staticClass: "w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12" },
+      [
+        _vm._m(0),
         _vm._v(" "),
         _c(
-          "div",
+          "form",
           {
-            staticClass:
-              "w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none border"
+            staticClass: "mt-6",
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.loginCheck()
+              }
+            }
           },
           [
-            _c("h3", { staticClass: "pt-4 text-2xl text-center" }, [
-              _vm._v("Giriş Yap")
-            ]),
+            _c(
+              "label",
+              {
+                staticClass:
+                  "block text-xs font-semibold text-gray-600 uppercase",
+                attrs: { for: "email" }
+              },
+              [_vm._v("E-mail")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.login.email,
+                  expression: "login.email"
+                }
+              ],
+              staticClass:
+                "block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner",
+              attrs: {
+                id: "email",
+                type: "email",
+                name: "email",
+                placeholder: "E-mail adresinizi giriniz.",
+                autocomplete: "email"
+              },
+              domProps: { value: _vm.login.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.login, "email", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("validation-errors-help", {
+              attrs: {
+                status: this.status,
+                errors: this.errors,
+                "field-value": "email"
+              }
+            }),
             _vm._v(" "),
             _c(
-              "form",
+              "label",
               {
-                staticClass: "px-8 pt-6 pb-8 mb-4 mt-9 bg-white rounded",
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    return _vm.loginCheck()
-                  }
-                }
+                staticClass:
+                  "block mt-2 text-xs font-semibold text-gray-600 uppercase",
+                attrs: { for: "password" }
               },
-              [
-                _c(
-                  "div",
-                  { staticClass: "mb-4" },
-                  [
-                    _c(
-                      "label",
-                      {
-                        staticClass:
-                          "block mb-2 text-sm font-bold text-gray-700",
-                        attrs: { for: "email" }
-                      },
-                      [
-                        _vm._v(
-                          "\n                                E-mail\n                            "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.login.email,
-                          expression: "login.email"
-                        }
-                      ],
-                      staticClass:
-                        "w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline",
-                      attrs: {
-                        id: "email",
-                        name: "email",
-                        type: "email",
-                        placeholder: "E-mail"
-                      },
-                      domProps: { value: _vm.login.email },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.login, "email", $event.target.value)
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("validation-errors-help", {
-                      attrs: {
-                        status: this.status,
-                        errors: this.errors,
-                        "field-value": "email"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mb-4" },
-                  [
-                    _c(
-                      "label",
-                      {
-                        staticClass:
-                          "block mb-2 text-sm font-bold text-gray-700",
-                        attrs: { for: "password" }
-                      },
-                      [
-                        _vm._v(
-                          "\n                                Şifre\n                            "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.login.password,
-                          expression: "login.password"
-                        }
-                      ],
-                      staticClass:
-                        "w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline",
-                      attrs: {
-                        id: "password",
-                        type: "password",
-                        name: "password",
-                        placeholder: "Şifrenizi giriniz"
-                      },
-                      domProps: { value: _vm.login.password },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.login, "password", $event.target.value)
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("validation-errors-help", {
-                      attrs: {
-                        status: this.status,
-                        errors: this.errors,
-                        "field-value": "password"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm._m(0),
-                _vm._v(" "),
-                _c("hr", { staticClass: "mb-6 border-t" })
-              ]
+              [_vm._v("Şifre")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.login.password,
+                  expression: "login.password"
+                }
+              ],
+              staticClass:
+                "block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner",
+              attrs: {
+                id: "password",
+                type: "password",
+                name: "password",
+                placeholder: "********",
+                autocomplete: "password"
+              },
+              domProps: { value: _vm.login.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.login, "password", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("validation-errors-help", {
+              attrs: {
+                status: this.status,
+                errors: this.errors,
+                "field-value": "password"
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass:
+                  "w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none",
+                attrs: { type: "submit" }
+              },
+              [_vm._v("\n                Giriş Yap\n            ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                staticClass:
+                  "flex justify-between inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black"
+              },
+              [_vm._v("Şifremi unuttum?")]
             )
-          ]
+          ],
+          1
         )
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -67712,20 +68057,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-6 text-center" }, [
-      _c(
-        "button",
-        {
-          staticClass:
-            "w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline",
-          attrs: { type: "submit" }
-        },
-        [
-          _vm._v(
-            "\n                                Giriş Yap\n                            "
-          )
-        ]
-      )
+    return _c("h1", { staticClass: "text-xl text-center font-semibold" }, [
+      _c("span", { staticClass: "font-normal" }, [
+        _vm._v("Devam edebilmek için lütfen giriş bilgilerinizi giriniz.")
+      ])
     ])
   }
 ]
@@ -67750,7 +68085,178 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("layout", [_vm._v("\n    Test\n")])
+  return _c(
+    "layout",
+    [
+      _c("FeaturedPost"),
+      _vm._v(" "),
+      _c("RecentPost"),
+      _vm._v(" "),
+      _c("Subscribe"),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between"
+        },
+        [
+          _c("h2", { staticClass: "font-bold text-3xl" }, [
+            _vm._v("Popular news")
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "bg-gray-200 hover:bg-green-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
+            },
+            [_vm._v("\n            View all\n        ")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "block space-x-0 lg:flex lg:space-x-6" }, [
+        _c(
+          "div",
+          { staticClass: "rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0" },
+          [
+            _c("img", {
+              staticClass: "rounded",
+              attrs: {
+                src:
+                  "https://images.unsplash.com/photo-1526666923127-b2970f64b422?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+                alt: "technology"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-4 pl-0" }, [
+              _c("h2", { staticClass: "font-bold text-2xl text-gray-800" }, [
+                _vm._v("Put all speaking her delicate recurred possible.")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-gray-700 mt-2" }, [
+                _vm._v(
+                  "\n                    Set indulgence inquietude discretion insensible bed why announcing. Middleton fat two satisfied additions.\n                    So continued he or commanded household smallness delivered. Door poor on do walk in half. Roof his head the what.\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "inline-block py-2 rounded text-green-900 mt-2 ml-auto",
+                  attrs: { href: "#" }
+                },
+                [_vm._v(" Read more ")]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0" },
+          [
+            _c("img", {
+              staticClass: "rounded",
+              attrs: {
+                src:
+                  "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+                alt: "technology"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-4 pl-0" }, [
+              _c("h2", { staticClass: "font-bold text-2xl text-gray-800" }, [
+                _vm._v("Is at purse tried jokes china ready decay an. ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-gray-700 mt-2" }, [
+                _vm._v(
+                  "\n                    Small its shy way had woody downs power. To denoting admitted speaking learning my exercise so in.\n                    Procured shutters mr it feelings. To or three offer house begin taken am at.\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "inline-block py-2 rounded text-green-900 mt-2 ml-auto",
+                  attrs: { href: "#" }
+                },
+                [_vm._v(" Read more ")]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0" },
+          [
+            _c("img", {
+              staticClass: "rounded",
+              attrs: {
+                src:
+                  "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
+                alt: "technology"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-4 pl-0" }, [
+              _c("h2", { staticClass: "font-bold text-2xl text-gray-800" }, [
+                _vm._v(
+                  "As dissuade cheerful overcame so of friendly he indulged unpacked."
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-gray-700 mt-2" }, [
+                _vm._v(
+                  "\n                    Alteration connection to so as collecting me.\n                    Difficult in delivered extensive at direction allowance.\n                    Alteration put use diminution can considered sentiments interested discretion.\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "inline-block py-2 rounded text-green-900 mt-2 ml-auto",
+                  attrs: { href: "#" }
+                },
+                [_vm._v(" Read more ")]
+              )
+            ])
+          ]
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/front-end/List.vue?vue&type=template&id=98214982&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/front-end/List.vue?vue&type=template&id=98214982& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("layout", [_vm._v("\n    Listing\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -68062,151 +68568,168 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "block space-x-0 lg:flex lg:space-x-6" }, [
+      _c("section", { staticClass: "blog text-gray-700 body-font" }, [
+        _c("div", { staticClass: "container px-5 py-24 mx-auto" }, [
+          _c(
+            "div",
+            { staticClass: "flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4" },
+            _vm._l(_vm.recentPost, function(post, index) {
+              return _c(
+                "div",
+                {
+                  key: post.id,
+                  staticClass:
+                    "p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto"
+                },
+                [
+                  _c("div", {
+                    staticClass:
+                      "bg-gray-300 h-56 w-full rounded-lg shadow-md bg-cover bg-center",
+                    style: "background-image: url(" + post.image.image_url + ")"
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        " w-70 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden p-5"
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "header-content inline-flex " },
+                        [
+                          _vm._m(1, true),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "category-title flex-1 text-sm mt-1"
+                            },
+                            [_vm._v(" " + _vm._s(post.categories.name))]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "title-post font-extrabold mt-2" },
+                        [_c("strong", [_vm._v(_vm._s(post.title))])]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "summary-post text-base text-justify mt-3"
+                        },
+                        [
+                          _vm._v(
+                            _vm._s(post.description) +
+                              "\n\n                                "
+                          ),
+                          _c(
+                            "div",
+                            { staticClass: "m-2 text-center" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass:
+                                    "text-center bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center",
+                                  attrs: {
+                                    to: {
+                                      name: "home.article.list",
+                                      params: { id: post.slug }
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("span", { staticClass: "mr-2" }, [
+                                    _vm._v("İncele")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "svg",
+                                    {
+                                      attrs: {
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        width: "24",
+                                        height: "24",
+                                        viewBox: "0 0 24 24"
+                                      }
+                                    },
+                                    [
+                                      _c("path", {
+                                        attrs: {
+                                          fill: "currentcolor",
+                                          d:
+                                            "M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c(
-        "div",
-        {
-          staticClass:
-            "flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between"
-        },
-        [
-          _c("h2", { staticClass: "font-bold text-3xl" }, [
-            _vm._v("En Son Paylaşılanlar")
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass:
-                "bg-gray-200 hover:bg-red-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
-            },
-            [_vm._v("\n            Tümünü Görüntüle\n        ")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "block space-x-0 lg:flex lg:space-x-6" }, [
-        _c(
-          "div",
-          { staticClass: "rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0" },
-          [
-            _c("img", {
-              staticClass: "rounded",
-              attrs: {
-                src:
-                  "https://images.unsplash.com/photo-1526666923127-b2970f64b422?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-                alt: "technology"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "p-4 pl-0" }, [
-              _c("h2", { staticClass: "font-bold text-2xl text-gray-800" }, [
-                _vm._v("Put all speaking her delicate recurred possible.")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-gray-700 mt-2" }, [
-                _vm._v(
-                  "\n                    Set indulgence inquietude discretion insensible bed why announcing. Middleton fat two satisfied additions.\n                    So continued he or commanded household smallness delivered. Door poor on do walk in half. Roof his head the what.\n                "
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "inline-block py-2 rounded text-red-900 mt-2 ml-auto",
-                  attrs: { href: "#" }
-                },
-                [_vm._v(" Read more ")]
-              )
-            ])
-          ]
-        ),
+    return _c(
+      "div",
+      {
+        staticClass: "flex mt-16 mb-2 px-4 lg:px-0 items-center justify-between"
+      },
+      [
+        _c("h2", { staticClass: "font-bold text-3xl" }, [
+          _vm._v("En Son Paylaşılanlar")
+        ]),
         _vm._v(" "),
         _c(
-          "div",
-          { staticClass: "rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0" },
-          [
-            _c("img", {
-              staticClass: "rounded",
-              attrs: {
-                src:
-                  "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-                alt: "technology"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "p-4 pl-0" }, [
-              _c("h2", { staticClass: "font-bold text-2xl text-gray-800" }, [
-                _vm._v("Is at purse tried jokes china ready decay an. ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-gray-700 mt-2" }, [
-                _vm._v(
-                  "\n                    Small its shy way had woody downs power. To denoting admitted speaking learning my exercise so in.\n                    Procured shutters mr it feelings. To or three offer house begin taken am at.\n                "
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "inline-block py-2 rounded text-red-900 mt-2 ml-auto",
-                  attrs: { href: "#" }
-                },
-                [_vm._v(" Read more ")]
-              )
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0" },
-          [
-            _c("img", {
-              staticClass: "rounded",
-              attrs: {
-                src:
-                  "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
-                alt: "technology"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "p-4 pl-0" }, [
-              _c("h2", { staticClass: "font-bold text-2xl text-gray-800" }, [
-                _vm._v(
-                  "As dissuade cheerful overcame so of friendly he indulged unpacked."
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-gray-700 mt-2" }, [
-                _vm._v(
-                  "\n                    Alteration connection to so as collecting me.\n                    Difficult in delivered extensive at direction allowance.\n                    Alteration put use diminution can considered sentiments interested discretion.\n                "
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "inline-block py-2 rounded text-red-900 mt-2 ml-auto",
-                  attrs: { href: "#" }
-                },
-                [_vm._v(" Read more ")]
-              )
-            ])
-          ]
+          "a",
+          {
+            staticClass:
+              "bg-gray-200 hover:bg-red-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
+          },
+          [_vm._v("\n            Tümünü Görüntüle\n        ")]
         )
-      ])
-    ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "category-badge flex-1  h-4 w-4 m rounded-full m-1 bg-green-100"
+      },
+      [_c("div", { staticClass: "h-2 w-2 rounded-full m-1 bg-green-500 " })]
+    )
   }
 ]
 render._withStripped = true
@@ -88920,6 +89443,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/front-end/List.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/pages/front-end/List.vue ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _List_vue_vue_type_template_id_98214982___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./List.vue?vue&type=template&id=98214982& */ "./resources/js/pages/front-end/List.vue?vue&type=template&id=98214982&");
+/* harmony import */ var _List_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./List.vue?vue&type=script&lang=js& */ "./resources/js/pages/front-end/List.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _List_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _List_vue_vue_type_template_id_98214982___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _List_vue_vue_type_template_id_98214982___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/front-end/List.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/front-end/List.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/pages/front-end/List.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./List.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/front-end/List.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/front-end/List.vue?vue&type=template&id=98214982&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/pages/front-end/List.vue?vue&type=template&id=98214982& ***!
+  \******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_template_id_98214982___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./List.vue?vue&type=template&id=98214982& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/front-end/List.vue?vue&type=template&id=98214982&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_template_id_98214982___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_List_vue_vue_type_template_id_98214982___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/front-end/component/FeaturedPost.vue":
 /*!*****************************************************************!*\
   !*** ./resources/js/pages/front-end/component/FeaturedPost.vue ***!
@@ -88983,15 +89575,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RecentPost_vue_vue_type_template_id_6091330e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RecentPost.vue?vue&type=template&id=6091330e& */ "./resources/js/pages/front-end/component/RecentPost.vue?vue&type=template&id=6091330e&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _RecentPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RecentPost.vue?vue&type=script&lang=js& */ "./resources/js/pages/front-end/component/RecentPost.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RecentPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _RecentPost_vue_vue_type_template_id_6091330e___WEBPACK_IMPORTED_MODULE_0__["render"],
   _RecentPost_vue_vue_type_template_id_6091330e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -89005,6 +89599,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/pages/front-end/component/RecentPost.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/front-end/component/RecentPost.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/pages/front-end/component/RecentPost.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecentPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RecentPost.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/front-end/component/RecentPost.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecentPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -89092,16 +89700,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_front_end_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/front-end/Home */ "./resources/js/pages/front-end/Home.vue");
-/* harmony import */ var _pages_admin_Dashboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/admin/Dashboard */ "./resources/js/pages/admin/Dashboard.vue");
-/* harmony import */ var _pages_auth_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/auth/Login */ "./resources/js/pages/auth/Login.vue");
-/* harmony import */ var _pages_admin_Settings_Index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/admin/Settings/Index */ "./resources/js/pages/admin/Settings/Index.vue");
-/* harmony import */ var _pages_admin_Categories_Index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/admin/Categories/Index */ "./resources/js/pages/admin/Categories/Index.vue");
-/* harmony import */ var _pages_admin_Categories_Create__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/admin/Categories/Create */ "./resources/js/pages/admin/Categories/Create.vue");
-/* harmony import */ var _pages_admin_Categories_Update__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/admin/Categories/Update */ "./resources/js/pages/admin/Categories/Update.vue");
-/* harmony import */ var _pages_admin_Articles_Index__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/admin/Articles/Index */ "./resources/js/pages/admin/Articles/Index.vue");
-/* harmony import */ var _pages_admin_Articles_Create__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/admin/Articles/Create */ "./resources/js/pages/admin/Articles/Create.vue");
-/* harmony import */ var _pages_admin_Articles_Update__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/admin/Articles/Update */ "./resources/js/pages/admin/Articles/Update.vue");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./store */ "./resources/js/store.js");
+/* harmony import */ var _pages_front_end_List__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/front-end/List */ "./resources/js/pages/front-end/List.vue");
+/* harmony import */ var _pages_admin_Dashboard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/admin/Dashboard */ "./resources/js/pages/admin/Dashboard.vue");
+/* harmony import */ var _pages_auth_Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/auth/Login */ "./resources/js/pages/auth/Login.vue");
+/* harmony import */ var _pages_admin_Settings_Index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/admin/Settings/Index */ "./resources/js/pages/admin/Settings/Index.vue");
+/* harmony import */ var _pages_admin_Categories_Index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/admin/Categories/Index */ "./resources/js/pages/admin/Categories/Index.vue");
+/* harmony import */ var _pages_admin_Categories_Create__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/admin/Categories/Create */ "./resources/js/pages/admin/Categories/Create.vue");
+/* harmony import */ var _pages_admin_Categories_Update__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/admin/Categories/Update */ "./resources/js/pages/admin/Categories/Update.vue");
+/* harmony import */ var _pages_admin_Articles_Index__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/admin/Articles/Index */ "./resources/js/pages/admin/Articles/Index.vue");
+/* harmony import */ var _pages_admin_Articles_Create__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/admin/Articles/Create */ "./resources/js/pages/admin/Articles/Create.vue");
+/* harmony import */ var _pages_admin_Articles_Update__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/admin/Articles/Update */ "./resources/js/pages/admin/Articles/Update.vue");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./store */ "./resources/js/store.js");
+
 
 
 
@@ -89124,15 +89734,22 @@ var routes = [{
     title: 'Volkan Kocaali Blog'
   }
 }, {
+  path: '/yazilar/:id',
+  component: _pages_front_end_List__WEBPACK_IMPORTED_MODULE_3__["default"],
+  name: 'home.article.list',
+  meta: {
+    title: 'Yazı Listele'
+  }
+}, {
   path: '/giris-yap',
-  component: _pages_auth_Login__WEBPACK_IMPORTED_MODULE_4__["default"],
+  component: _pages_auth_Login__WEBPACK_IMPORTED_MODULE_5__["default"],
   name: 'login',
   meta: {
     title: 'Giriş Yap - VK Blog'
   }
 }, {
   path: '/yonetim',
-  component: _pages_admin_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"],
+  component: _pages_admin_Dashboard__WEBPACK_IMPORTED_MODULE_4__["default"],
   name: 'yonetim.anasayfa',
   meta: {
     title: 'Ana Sayfa - Yönetim Paneli',
@@ -89140,7 +89757,7 @@ var routes = [{
   }
 }, {
   path: '/yonetim/ayarlar',
-  component: _pages_admin_Settings_Index__WEBPACK_IMPORTED_MODULE_5__["default"],
+  component: _pages_admin_Settings_Index__WEBPACK_IMPORTED_MODULE_6__["default"],
   name: 'yonetim.ayarlar',
   meta: {
     title: 'Ayarlar - Yönetim Paneli',
@@ -89148,7 +89765,7 @@ var routes = [{
   }
 }, {
   path: '/yonetim/kategoriler',
-  component: _pages_admin_Categories_Index__WEBPACK_IMPORTED_MODULE_6__["default"],
+  component: _pages_admin_Categories_Index__WEBPACK_IMPORTED_MODULE_7__["default"],
   name: 'yonetim.kategoriler',
   meta: {
     title: 'Kategoriler - Yönetim Paneli',
@@ -89156,7 +89773,7 @@ var routes = [{
   }
 }, {
   path: '/yonetim/kategoriler/create',
-  component: _pages_admin_Categories_Create__WEBPACK_IMPORTED_MODULE_7__["default"],
+  component: _pages_admin_Categories_Create__WEBPACK_IMPORTED_MODULE_8__["default"],
   name: 'yonetim.kategoriler.create',
   meta: {
     title: 'Kategori Ekle - Yönetim Paneli',
@@ -89164,7 +89781,7 @@ var routes = [{
   }
 }, {
   path: '/yonetim/kategoriler/update/:id',
-  component: _pages_admin_Categories_Update__WEBPACK_IMPORTED_MODULE_8__["default"],
+  component: _pages_admin_Categories_Update__WEBPACK_IMPORTED_MODULE_9__["default"],
   name: 'yonetim.kategoriler.update',
   meta: {
     title: 'Kategori Güncelle - Yönetim Paneli',
@@ -89172,7 +89789,7 @@ var routes = [{
   }
 }, {
   path: '/yonetim/yazilar',
-  component: _pages_admin_Articles_Index__WEBPACK_IMPORTED_MODULE_9__["default"],
+  component: _pages_admin_Articles_Index__WEBPACK_IMPORTED_MODULE_10__["default"],
   name: 'yonetim.yazilar',
   meta: {
     title: 'Yazılar - Yönetim Paneli',
@@ -89180,7 +89797,7 @@ var routes = [{
   }
 }, {
   path: '/yonetim/yazilar/create',
-  component: _pages_admin_Articles_Create__WEBPACK_IMPORTED_MODULE_10__["default"],
+  component: _pages_admin_Articles_Create__WEBPACK_IMPORTED_MODULE_11__["default"],
   name: 'yonetim.yazilar.create',
   meta: {
     title: 'Yazı Ekle - Yönetim Paneli',
@@ -89188,7 +89805,7 @@ var routes = [{
   }
 }, {
   path: '/yonetim/yazilar/update/:id',
-  component: _pages_admin_Articles_Update__WEBPACK_IMPORTED_MODULE_11__["default"],
+  component: _pages_admin_Articles_Update__WEBPACK_IMPORTED_MODULE_12__["default"],
   name: 'yonetim.yazilar.update',
   meta: {
     title: 'Yazılar Güncelle - Yönetim Paneli',
@@ -89223,7 +89840,7 @@ router.beforeEach(function (to, from, next) {
   if (to.matched.some(function (record) {
     return record.meta.requiresAuth;
   })) {
-    if (_store__WEBPACK_IMPORTED_MODULE_12__["default"].getters.isLoggedIn) {
+    if (_store__WEBPACK_IMPORTED_MODULE_13__["default"].getters.isLoggedIn) {
       next();
       return;
     }
@@ -89471,7 +90088,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     token: localStorage.getItem('token') || '',
     userData: {},
     sideBarOpen: false,
-    testName: 'Volkan'
+    testName: 'Volkan',
+    recendPost: {}
   },
   mutations: {
     changeName: function changeName(state, payload) {
@@ -89548,6 +90166,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     }
   },
   getters: {
+    getRecentPost: function getRecentPost(state) {
+      return state;
+    },
     sayHello: function sayHello(state) {
       return "Ho\u015Fgeldiniz , ".concat(state.firstName);
     },

@@ -13,6 +13,7 @@ export default new Vuex.Store({
         userData : {},
         sideBarOpen: false,
         testName : 'Volkan',
+        recendPost : {},
     },
     mutations: {
         changeName(state, payload){
@@ -84,6 +85,9 @@ export default new Vuex.Store({
 
     },
     getters : {
+        getRecentPost : state => {
+          return state;
+        },
         sayHello : state => {
             return `Hoşgeldiniz , ${state.firstName}`;
         },

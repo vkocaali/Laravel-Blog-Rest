@@ -11,6 +11,7 @@ class ArticleResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
+            'description' => $this->description,
             'content' => $this->content,
             'slug' => $this->slug,
             'categories' => new CategoriesResource($this->categories),
@@ -18,6 +19,7 @@ class ArticleResource extends JsonResource
             'is_active' => $this->is_active,
             'rank' => $this->rank,
             'tags' => TagsResource::collection($this->tags),
+            'image' => $this->storage,
             'publish_date' => $this->created_at,
         ];
     }

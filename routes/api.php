@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\CategoriesController;
 use App\Http\Controllers\Api\AuthorController;
+use App\Http\Controllers\Api\Front\RecentPostController;
 use App\Http\Controllers\Api\SettingsController;
 use App\Http\Controllers\Api\UploadController;
 use App\Http\Controllers\SubscriptionController;
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('login',[LoginController::class,'login']);
 Route::post('register',[RegisterController::class,'register']);
 
+Route::get('recent-post',RecentPostController::class);
 
 Route::middleware('auth:sanctum')->group(function () {
 

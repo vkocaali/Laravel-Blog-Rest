@@ -1,60 +1,23 @@
 <template>
     <!-- Container -->
-    <div class="container mx-auto">
-            <div class="flex justify-center px-6 my-12">
-                <!-- Row -->
-                <div class="w-full xl:w-3/4 lg:w-11/12 flex">
-                    <!-- Col -->
-                    <div
-                        class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
-                        style="background-image: url('https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')"
-                    />
-                    <!-- Col -->
-                    <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none border">
-                        <h3 class="pt-4 text-2xl text-center">Giriş Yap</h3>
-                        <form class="px-8 pt-6 pb-8 mb-4 mt-9 bg-white rounded" @submit.prevent="loginCheck()">
-                            <div class="mb-4">
-                                <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
-                                    E-mail
-                                </label>
-                                <input
-                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    v-model="login.email"
-                                    placeholder="E-mail"
-                                />
-                                <validation-errors-help :status="this.status" :errors="this.errors" field-value="email"/>
-                            </div>
-                            <div class="mb-4">
-                                <label class="block mb-2 text-sm font-bold text-gray-700" for="password">
-                                    Şifre
-                                </label>
-                                <input
-                                    class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                    id="password"
-                                    type="password"
-                                    name="password"
-                                    v-model="login.password"
-                                    placeholder="Şifrenizi giriniz"
-                                />
-                                <validation-errors-help :status="this.status" :errors="this.errors" field-value="password"/>
-                            </div>
-                            <div class="mb-6 text-center">
-                                <button
-                                    class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-                                    type="submit"
-                                >
-                                    Giriş Yap
-                                </button>
-                            </div>
-                            <hr class="mb-6 border-t" />
-                        </form>
-                    </div>
-                </div>
-            </div>
+
+    <div class="grid min-h-screen place-items-center">
+        <div class="w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12">
+            <h1 class="text-xl text-center font-semibold"><span class="font-normal">Devam edebilmek için lütfen giriş bilgilerinizi giriniz.</span></h1>
+            <form class="mt-6" @submit.prevent="loginCheck()">
+                <label for="email" class="block text-xs font-semibold text-gray-600 uppercase">E-mail</label>
+                <input id="email" type="email" name="email" v-model="login.email" placeholder="E-mail adresinizi giriniz." autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" />
+                <validation-errors-help :status="this.status" :errors="this.errors" field-value="email"/>
+                <label for="password" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Şifre</label>
+                <input id="password" type="password" v-model="login.password" name="password" placeholder="********" autocomplete="password" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" />
+                <validation-errors-help :status="this.status" :errors="this.errors" field-value="password"/>
+                <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                    Giriş Yap
+                </button>
+                <p class="flex justify-between inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black">Şifremi unuttum?</p>
+            </form>
         </div>
+    </div>
 
 </template>
 

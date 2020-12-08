@@ -12,6 +12,15 @@ class ArticlesRepository implements ArticlesRepositoryInterface {
         return Article::find($id);
     }
 
+    public function first($id){
+        return Article::find($id)->firstOrFail();
+    }
+
+    public function orderBy($column, $sort, $take)
+    {
+        return Article::orderBy($column,$sort)->take($take)->get();
+    }
+
     public function all($request){
 
         // ?sortBy=id&sort=DESC&status=1&paginate=3

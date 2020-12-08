@@ -63,7 +63,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr v-for="item in 5" :key="item">
+                            <tr v-for="item in 1" :key="item">
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"></p>
                                 </td>
@@ -126,8 +126,7 @@
                                         <span><i class="fa fa-edit"></i></span>
                                     </router-link>
 
-
-                                    <button class="whitespace-no-wrap bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded inline-flex items-center">
+                                    <button @click="deleteArticles(article.id)" class="whitespace-no-wrap bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded inline-flex items-center">
                                         <span><i class="fa fa-trash"></i></span>
                                     </button>
 
@@ -204,6 +203,25 @@
                 }).catch(error => {
                     console.log(error);
                 });
+            },
+            deleteArticles(id){
+                this.loading = false;
+                var token = localStorage.getItem('token');
+                axios({
+                    url: `/articles/${id}`,
+                    method: "DELETE",
+                    headers: {Authorization: `Bearer ${token}`},
+                }).then(response => {
+                    this.loading = true;
+                    this.errors = null;
+                    this.status = response.status;
+                    this.success = true;
+                    this.getArticles();
+                    this.$notify(
+                        { group: "success", title: "Başarılı", text: "Kayıt silindi." },
+                        2000
+                    );
+                })
             },
         },
     }
