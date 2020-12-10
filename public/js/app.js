@@ -2194,7 +2194,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2806,6 +2805,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_AdminLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../layout/AdminLayout */ "./resources/js/layout/AdminLayout.vue");
 /* harmony import */ var _shared_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/Pagination */ "./resources/js/shared/Pagination.vue");
+/* harmony import */ var _components_Spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Spinner */ "./resources/js/components/Spinner.vue");
 //
 //
 //
@@ -2935,43 +2935,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
+    Spinner: _components_Spinner__WEBPACK_IMPORTED_MODULE_2__["default"],
     AdminLayout: _layout_AdminLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     Pagination: _shared_Pagination__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
@@ -3628,6 +3597,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_AdminLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../layout/AdminLayout */ "./resources/js/layout/AdminLayout.vue");
 /* harmony import */ var _shared_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/Pagination */ "./resources/js/shared/Pagination.vue");
+/* harmony import */ var _components_Spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Spinner */ "./resources/js/components/Spinner.vue");
 //
 //
 //
@@ -3756,42 +3726,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
+    Spinner: _components_Spinner__WEBPACK_IMPORTED_MODULE_2__["default"],
     AdminLayout: _layout_AdminLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     Pagination: _shared_Pagination__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
@@ -4598,6 +4538,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue2_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue2-editor */ "./node_modules/vue2-editor/dist/vue2-editor.esm.js");
 /* harmony import */ var vue2_dropzone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue2-dropzone */ "./node_modules/vue2-dropzone/dist/vue2Dropzone.js");
 /* harmony import */ var vue2_dropzone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue2_dropzone__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Spinner */ "./resources/js/components/Spinner.vue");
 //
 //
 //
@@ -4744,12 +4685,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
+    Spinner: _components_Spinner__WEBPACK_IMPORTED_MODULE_3__["default"],
     AdminLayout: _layout_AdminLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
@@ -5083,6 +5025,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5348,9 +5309,7 @@ function fromByteArray (uint8) {
 
   // go through the array every three bytes, we'll deal with trailing stuff later
   for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
-    parts.push(encodeChunk(
-      uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)
-    ))
+    parts.push(encodeChunk(uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)))
   }
 
   // pad the end with zeros, but make sure to not forget the extra bytes
@@ -7292,6 +7251,7 @@ function toComment(sourceMap) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = (nBytes * 8) - mLen - 1
@@ -24570,8 +24530,6 @@ module.exports = Array.isArray || function (arr) {
 
 var map = {
 	"./af": "./node_modules/moment/locale/af.js",
-	"./af 2": "./node_modules/moment/locale/af 2.js",
-	"./af 2.js": "./node_modules/moment/locale/af 2.js",
 	"./af.js": "./node_modules/moment/locale/af.js",
 	"./ar": "./node_modules/moment/locale/ar.js",
 	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
@@ -24744,8 +24702,6 @@ var map = {
 	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
 	"./ms.js": "./node_modules/moment/locale/ms.js",
 	"./mt": "./node_modules/moment/locale/mt.js",
-	"./mt 2": "./node_modules/moment/locale/mt 2.js",
-	"./mt 2.js": "./node_modules/moment/locale/mt 2.js",
 	"./mt.js": "./node_modules/moment/locale/mt.js",
 	"./my": "./node_modules/moment/locale/my.js",
 	"./my.js": "./node_modules/moment/locale/my.js",
@@ -24806,80 +24762,42 @@ var map = {
 	"./th": "./node_modules/moment/locale/th.js",
 	"./th.js": "./node_modules/moment/locale/th.js",
 	"./tk": "./node_modules/moment/locale/tk.js",
-	"./tk 2": "./node_modules/moment/locale/tk 2.js",
-	"./tk 2.js": "./node_modules/moment/locale/tk 2.js",
 	"./tk.js": "./node_modules/moment/locale/tk.js",
 	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
-	"./tl-ph 2": "./node_modules/moment/locale/tl-ph 2.js",
-	"./tl-ph 2.js": "./node_modules/moment/locale/tl-ph 2.js",
 	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
 	"./tlh": "./node_modules/moment/locale/tlh.js",
-	"./tlh 2": "./node_modules/moment/locale/tlh 2.js",
-	"./tlh 2.js": "./node_modules/moment/locale/tlh 2.js",
 	"./tlh.js": "./node_modules/moment/locale/tlh.js",
 	"./tr": "./node_modules/moment/locale/tr.js",
-	"./tr 2": "./node_modules/moment/locale/tr 2.js",
-	"./tr 2.js": "./node_modules/moment/locale/tr 2.js",
 	"./tr.js": "./node_modules/moment/locale/tr.js",
 	"./tzl": "./node_modules/moment/locale/tzl.js",
-	"./tzl 2": "./node_modules/moment/locale/tzl 2.js",
-	"./tzl 2.js": "./node_modules/moment/locale/tzl 2.js",
 	"./tzl.js": "./node_modules/moment/locale/tzl.js",
 	"./tzm": "./node_modules/moment/locale/tzm.js",
-	"./tzm 2": "./node_modules/moment/locale/tzm 2.js",
-	"./tzm 2.js": "./node_modules/moment/locale/tzm 2.js",
 	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
-	"./tzm-latn 2": "./node_modules/moment/locale/tzm-latn 2.js",
-	"./tzm-latn 2.js": "./node_modules/moment/locale/tzm-latn 2.js",
 	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
 	"./tzm.js": "./node_modules/moment/locale/tzm.js",
 	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
-	"./ug-cn 2": "./node_modules/moment/locale/ug-cn 2.js",
-	"./ug-cn 2.js": "./node_modules/moment/locale/ug-cn 2.js",
 	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
 	"./uk": "./node_modules/moment/locale/uk.js",
-	"./uk 2": "./node_modules/moment/locale/uk 2.js",
-	"./uk 2.js": "./node_modules/moment/locale/uk 2.js",
 	"./uk.js": "./node_modules/moment/locale/uk.js",
 	"./ur": "./node_modules/moment/locale/ur.js",
-	"./ur 2": "./node_modules/moment/locale/ur 2.js",
-	"./ur 2.js": "./node_modules/moment/locale/ur 2.js",
 	"./ur.js": "./node_modules/moment/locale/ur.js",
 	"./uz": "./node_modules/moment/locale/uz.js",
-	"./uz 2": "./node_modules/moment/locale/uz 2.js",
-	"./uz 2.js": "./node_modules/moment/locale/uz 2.js",
 	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
-	"./uz-latn 2": "./node_modules/moment/locale/uz-latn 2.js",
-	"./uz-latn 2.js": "./node_modules/moment/locale/uz-latn 2.js",
 	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
 	"./uz.js": "./node_modules/moment/locale/uz.js",
 	"./vi": "./node_modules/moment/locale/vi.js",
-	"./vi 2": "./node_modules/moment/locale/vi 2.js",
-	"./vi 2.js": "./node_modules/moment/locale/vi 2.js",
 	"./vi.js": "./node_modules/moment/locale/vi.js",
 	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
-	"./x-pseudo 2": "./node_modules/moment/locale/x-pseudo 2.js",
-	"./x-pseudo 2.js": "./node_modules/moment/locale/x-pseudo 2.js",
 	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
 	"./yo": "./node_modules/moment/locale/yo.js",
-	"./yo 2": "./node_modules/moment/locale/yo 2.js",
-	"./yo 2.js": "./node_modules/moment/locale/yo 2.js",
 	"./yo.js": "./node_modules/moment/locale/yo.js",
 	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
-	"./zh-cn 2": "./node_modules/moment/locale/zh-cn 2.js",
-	"./zh-cn 2.js": "./node_modules/moment/locale/zh-cn 2.js",
 	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
 	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
-	"./zh-hk 2": "./node_modules/moment/locale/zh-hk 2.js",
-	"./zh-hk 2.js": "./node_modules/moment/locale/zh-hk 2.js",
 	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
 	"./zh-mo": "./node_modules/moment/locale/zh-mo.js",
-	"./zh-mo 2": "./node_modules/moment/locale/zh-mo 2.js",
-	"./zh-mo 2.js": "./node_modules/moment/locale/zh-mo 2.js",
 	"./zh-mo.js": "./node_modules/moment/locale/zh-mo.js",
 	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
-	"./zh-tw 2": "./node_modules/moment/locale/zh-tw 2.js",
-	"./zh-tw 2.js": "./node_modules/moment/locale/zh-tw 2.js",
 	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
 };
 
@@ -24902,97 +24820,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
-
-/***/ }),
-
-/***/ "./node_modules/moment/locale/af 2.js":
-/*!********************************************!*\
-  !*** ./node_modules/moment/locale/af 2.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Afrikaans [af]
-//! author : Werner Mollentze : https://github.com/wernerm
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var af = moment.defineLocale('af', {
-        months: 'Januarie_Februarie_Maart_April_Mei_Junie_Julie_Augustus_September_Oktober_November_Desember'.split(
-            '_'
-        ),
-        monthsShort: 'Jan_Feb_Mrt_Apr_Mei_Jun_Jul_Aug_Sep_Okt_Nov_Des'.split('_'),
-        weekdays: 'Sondag_Maandag_Dinsdag_Woensdag_Donderdag_Vrydag_Saterdag'.split(
-            '_'
-        ),
-        weekdaysShort: 'Son_Maa_Din_Woe_Don_Vry_Sat'.split('_'),
-        weekdaysMin: 'So_Ma_Di_Wo_Do_Vr_Sa'.split('_'),
-        meridiemParse: /vm|nm/i,
-        isPM: function (input) {
-            return /^nm$/i.test(input);
-        },
-        meridiem: function (hours, minutes, isLower) {
-            if (hours < 12) {
-                return isLower ? 'vm' : 'VM';
-            } else {
-                return isLower ? 'nm' : 'NM';
-            }
-        },
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD/MM/YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm',
-        },
-        calendar: {
-            sameDay: '[Vandag om] LT',
-            nextDay: '[Môre om] LT',
-            nextWeek: 'dddd [om] LT',
-            lastDay: '[Gister om] LT',
-            lastWeek: '[Laas] dddd [om] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'oor %s',
-            past: '%s gelede',
-            s: "'n paar sekondes",
-            ss: '%d sekondes',
-            m: "'n minuut",
-            mm: '%d minute',
-            h: "'n uur",
-            hh: '%d ure',
-            d: "'n dag",
-            dd: '%d dae',
-            M: "'n maand",
-            MM: '%d maande',
-            y: "'n jaar",
-            yy: '%d jaar',
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}(ste|de)/,
-        ordinal: function (number) {
-            return (
-                number +
-                (number === 1 || number === 8 || number >= 20 ? 'ste' : 'de')
-            ); // Thanks to Joris Röling : https://github.com/jjupiter
-        },
-        week: {
-            dow: 1, // Maandag is die eerste dag van die week.
-            doy: 4, // Die week wat die 4de Januarie bevat is die eerste week van die jaar.
-        },
-    });
-
-    return af;
-
-})));
-
 
 /***/ }),
 
@@ -35125,81 +34952,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/mt 2.js":
-/*!********************************************!*\
-  !*** ./node_modules/moment/locale/mt 2.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Maltese (Malta) [mt]
-//! author : Alessandro Maruccia : https://github.com/alesma
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var mt = moment.defineLocale('mt', {
-        months: 'Jannar_Frar_Marzu_April_Mejju_Ġunju_Lulju_Awwissu_Settembru_Ottubru_Novembru_Diċembru'.split(
-            '_'
-        ),
-        monthsShort: 'Jan_Fra_Mar_Apr_Mej_Ġun_Lul_Aww_Set_Ott_Nov_Diċ'.split('_'),
-        weekdays: 'Il-Ħadd_It-Tnejn_It-Tlieta_L-Erbgħa_Il-Ħamis_Il-Ġimgħa_Is-Sibt'.split(
-            '_'
-        ),
-        weekdaysShort: 'Ħad_Tne_Tli_Erb_Ħam_Ġim_Sib'.split('_'),
-        weekdaysMin: 'Ħa_Tn_Tl_Er_Ħa_Ġi_Si'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD/MM/YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm',
-        },
-        calendar: {
-            sameDay: '[Illum fil-]LT',
-            nextDay: '[Għada fil-]LT',
-            nextWeek: 'dddd [fil-]LT',
-            lastDay: '[Il-bieraħ fil-]LT',
-            lastWeek: 'dddd [li għadda] [fil-]LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'f’ %s',
-            past: '%s ilu',
-            s: 'ftit sekondi',
-            ss: '%d sekondi',
-            m: 'minuta',
-            mm: '%d minuti',
-            h: 'siegħa',
-            hh: '%d siegħat',
-            d: 'ġurnata',
-            dd: '%d ġranet',
-            M: 'xahar',
-            MM: '%d xhur',
-            y: 'sena',
-            yy: '%d sni',
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}º/,
-        ordinal: '%dº',
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 4, // The week that contains Jan 4th is the first week of the year.
-        },
-    });
-
-    return mt;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/mt.js":
 /*!******************************************!*\
   !*** ./node_modules/moment/locale/mt.js ***!
@@ -38623,117 +38375,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/tk 2.js":
-/*!********************************************!*\
-  !*** ./node_modules/moment/locale/tk 2.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Turkmen [tk]
-//! author : Atamyrat Abdyrahmanov : https://github.com/atamyratabdy
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var suffixes = {
-        1: "'inji",
-        5: "'inji",
-        8: "'inji",
-        70: "'inji",
-        80: "'inji",
-        2: "'nji",
-        7: "'nji",
-        20: "'nji",
-        50: "'nji",
-        3: "'ünji",
-        4: "'ünji",
-        100: "'ünji",
-        6: "'njy",
-        9: "'unjy",
-        10: "'unjy",
-        30: "'unjy",
-        60: "'ynjy",
-        90: "'ynjy",
-    };
-
-    var tk = moment.defineLocale('tk', {
-        months: 'Ýanwar_Fewral_Mart_Aprel_Maý_Iýun_Iýul_Awgust_Sentýabr_Oktýabr_Noýabr_Dekabr'.split(
-            '_'
-        ),
-        monthsShort: 'Ýan_Few_Mar_Apr_Maý_Iýn_Iýl_Awg_Sen_Okt_Noý_Dek'.split('_'),
-        weekdays: 'Ýekşenbe_Duşenbe_Sişenbe_Çarşenbe_Penşenbe_Anna_Şenbe'.split(
-            '_'
-        ),
-        weekdaysShort: 'Ýek_Duş_Siş_Çar_Pen_Ann_Şen'.split('_'),
-        weekdaysMin: 'Ýk_Dş_Sş_Çr_Pn_An_Şn'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD.MM.YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm',
-        },
-        calendar: {
-            sameDay: '[bugün sagat] LT',
-            nextDay: '[ertir sagat] LT',
-            nextWeek: '[indiki] dddd [sagat] LT',
-            lastDay: '[düýn] LT',
-            lastWeek: '[geçen] dddd [sagat] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: '%s soň',
-            past: '%s öň',
-            s: 'birnäçe sekunt',
-            m: 'bir minut',
-            mm: '%d minut',
-            h: 'bir sagat',
-            hh: '%d sagat',
-            d: 'bir gün',
-            dd: '%d gün',
-            M: 'bir aý',
-            MM: '%d aý',
-            y: 'bir ýyl',
-            yy: '%d ýyl',
-        },
-        ordinal: function (number, period) {
-            switch (period) {
-                case 'd':
-                case 'D':
-                case 'Do':
-                case 'DD':
-                    return number;
-                default:
-                    if (number === 0) {
-                        // special case for zero
-                        return number + "'unjy";
-                    }
-                    var a = number % 10,
-                        b = (number % 100) - a,
-                        c = number >= 100 ? 100 : null;
-                    return number + (suffixes[a] || suffixes[b] || suffixes[c]);
-            }
-        },
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 7, // The week that contains Jan 7th is the first week of the year.
-        },
-    });
-
-    return tk;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/tk.js":
 /*!******************************************!*\
   !*** ./node_modules/moment/locale/tk.js ***!
@@ -38845,83 +38486,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/tl-ph 2.js":
-/*!***********************************************!*\
-  !*** ./node_modules/moment/locale/tl-ph 2.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Tagalog (Philippines) [tl-ph]
-//! author : Dan Hagman : https://github.com/hagmandan
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var tlPh = moment.defineLocale('tl-ph', {
-        months: 'Enero_Pebrero_Marso_Abril_Mayo_Hunyo_Hulyo_Agosto_Setyembre_Oktubre_Nobyembre_Disyembre'.split(
-            '_'
-        ),
-        monthsShort: 'Ene_Peb_Mar_Abr_May_Hun_Hul_Ago_Set_Okt_Nob_Dis'.split('_'),
-        weekdays: 'Linggo_Lunes_Martes_Miyerkules_Huwebes_Biyernes_Sabado'.split(
-            '_'
-        ),
-        weekdaysShort: 'Lin_Lun_Mar_Miy_Huw_Biy_Sab'.split('_'),
-        weekdaysMin: 'Li_Lu_Ma_Mi_Hu_Bi_Sab'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'MM/D/YYYY',
-            LL: 'MMMM D, YYYY',
-            LLL: 'MMMM D, YYYY HH:mm',
-            LLLL: 'dddd, MMMM DD, YYYY HH:mm',
-        },
-        calendar: {
-            sameDay: 'LT [ngayong araw]',
-            nextDay: '[Bukas ng] LT',
-            nextWeek: 'LT [sa susunod na] dddd',
-            lastDay: 'LT [kahapon]',
-            lastWeek: 'LT [noong nakaraang] dddd',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'sa loob ng %s',
-            past: '%s ang nakalipas',
-            s: 'ilang segundo',
-            ss: '%d segundo',
-            m: 'isang minuto',
-            mm: '%d minuto',
-            h: 'isang oras',
-            hh: '%d oras',
-            d: 'isang araw',
-            dd: '%d araw',
-            M: 'isang buwan',
-            MM: '%d buwan',
-            y: 'isang taon',
-            yy: '%d taon',
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}/,
-        ordinal: function (number) {
-            return number;
-        },
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 4, // The week that contains Jan 4th is the first week of the year.
-        },
-    });
-
-    return tlPh;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/tl-ph.js":
 /*!*********************************************!*\
   !*** ./node_modules/moment/locale/tl-ph.js ***!
@@ -38993,151 +38557,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     });
 
     return tlPh;
-
-})));
-
-
-/***/ }),
-
-/***/ "./node_modules/moment/locale/tlh 2.js":
-/*!*********************************************!*\
-  !*** ./node_modules/moment/locale/tlh 2.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Klingon [tlh]
-//! author : Dominika Kruk : https://github.com/amaranthrose
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var numbersNouns = 'pagh_wa’_cha’_wej_loS_vagh_jav_Soch_chorgh_Hut'.split('_');
-
-    function translateFuture(output) {
-        var time = output;
-        time =
-            output.indexOf('jaj') !== -1
-                ? time.slice(0, -3) + 'leS'
-                : output.indexOf('jar') !== -1
-                ? time.slice(0, -3) + 'waQ'
-                : output.indexOf('DIS') !== -1
-                ? time.slice(0, -3) + 'nem'
-                : time + ' pIq';
-        return time;
-    }
-
-    function translatePast(output) {
-        var time = output;
-        time =
-            output.indexOf('jaj') !== -1
-                ? time.slice(0, -3) + 'Hu’'
-                : output.indexOf('jar') !== -1
-                ? time.slice(0, -3) + 'wen'
-                : output.indexOf('DIS') !== -1
-                ? time.slice(0, -3) + 'ben'
-                : time + ' ret';
-        return time;
-    }
-
-    function translate(number, withoutSuffix, string, isFuture) {
-        var numberNoun = numberAsNoun(number);
-        switch (string) {
-            case 'ss':
-                return numberNoun + ' lup';
-            case 'mm':
-                return numberNoun + ' tup';
-            case 'hh':
-                return numberNoun + ' rep';
-            case 'dd':
-                return numberNoun + ' jaj';
-            case 'MM':
-                return numberNoun + ' jar';
-            case 'yy':
-                return numberNoun + ' DIS';
-        }
-    }
-
-    function numberAsNoun(number) {
-        var hundred = Math.floor((number % 1000) / 100),
-            ten = Math.floor((number % 100) / 10),
-            one = number % 10,
-            word = '';
-        if (hundred > 0) {
-            word += numbersNouns[hundred] + 'vatlh';
-        }
-        if (ten > 0) {
-            word += (word !== '' ? ' ' : '') + numbersNouns[ten] + 'maH';
-        }
-        if (one > 0) {
-            word += (word !== '' ? ' ' : '') + numbersNouns[one];
-        }
-        return word === '' ? 'pagh' : word;
-    }
-
-    var tlh = moment.defineLocale('tlh', {
-        months: 'tera’ jar wa’_tera’ jar cha’_tera’ jar wej_tera’ jar loS_tera’ jar vagh_tera’ jar jav_tera’ jar Soch_tera’ jar chorgh_tera’ jar Hut_tera’ jar wa’maH_tera’ jar wa’maH wa’_tera’ jar wa’maH cha’'.split(
-            '_'
-        ),
-        monthsShort: 'jar wa’_jar cha’_jar wej_jar loS_jar vagh_jar jav_jar Soch_jar chorgh_jar Hut_jar wa’maH_jar wa’maH wa’_jar wa’maH cha’'.split(
-            '_'
-        ),
-        monthsParseExact: true,
-        weekdays: 'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split(
-            '_'
-        ),
-        weekdaysShort: 'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split(
-            '_'
-        ),
-        weekdaysMin: 'lojmItjaj_DaSjaj_povjaj_ghItlhjaj_loghjaj_buqjaj_ghInjaj'.split(
-            '_'
-        ),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD.MM.YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm',
-        },
-        calendar: {
-            sameDay: '[DaHjaj] LT',
-            nextDay: '[wa’leS] LT',
-            nextWeek: 'LLL',
-            lastDay: '[wa’Hu’] LT',
-            lastWeek: 'LLL',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: translateFuture,
-            past: translatePast,
-            s: 'puS lup',
-            ss: translate,
-            m: 'wa’ tup',
-            mm: translate,
-            h: 'wa’ rep',
-            hh: translate,
-            d: 'wa’ jaj',
-            dd: translate,
-            M: 'wa’ jar',
-            MM: translate,
-            y: 'wa’ DIS',
-            yy: translate,
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}\./,
-        ordinal: '%d.',
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 4, // The week that contains Jan 4th is the first week of the year.
-        },
-    });
-
-    return tlh;
 
 })));
 
@@ -39289,132 +38708,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/tr 2.js":
-/*!********************************************!*\
-  !*** ./node_modules/moment/locale/tr 2.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Turkish [tr]
-//! authors : Erhan Gundogan : https://github.com/erhangundogan,
-//!           Burak Yiğit Kaya: https://github.com/BYK
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var suffixes = {
-        1: "'inci",
-        5: "'inci",
-        8: "'inci",
-        70: "'inci",
-        80: "'inci",
-        2: "'nci",
-        7: "'nci",
-        20: "'nci",
-        50: "'nci",
-        3: "'üncü",
-        4: "'üncü",
-        100: "'üncü",
-        6: "'ncı",
-        9: "'uncu",
-        10: "'uncu",
-        30: "'uncu",
-        60: "'ıncı",
-        90: "'ıncı",
-    };
-
-    var tr = moment.defineLocale('tr', {
-        months: 'Ocak_Şubat_Mart_Nisan_Mayıs_Haziran_Temmuz_Ağustos_Eylül_Ekim_Kasım_Aralık'.split(
-            '_'
-        ),
-        monthsShort: 'Oca_Şub_Mar_Nis_May_Haz_Tem_Ağu_Eyl_Eki_Kas_Ara'.split('_'),
-        weekdays: 'Pazar_Pazartesi_Salı_Çarşamba_Perşembe_Cuma_Cumartesi'.split(
-            '_'
-        ),
-        weekdaysShort: 'Paz_Pts_Sal_Çar_Per_Cum_Cts'.split('_'),
-        weekdaysMin: 'Pz_Pt_Sa_Ça_Pe_Cu_Ct'.split('_'),
-        meridiem: function (hours, minutes, isLower) {
-            if (hours < 12) {
-                return isLower ? 'öö' : 'ÖÖ';
-            } else {
-                return isLower ? 'ös' : 'ÖS';
-            }
-        },
-        meridiemParse: /öö|ÖÖ|ös|ÖS/,
-        isPM: function (input) {
-            return input === 'ös' || input === 'ÖS';
-        },
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD.MM.YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm',
-        },
-        calendar: {
-            sameDay: '[bugün saat] LT',
-            nextDay: '[yarın saat] LT',
-            nextWeek: '[gelecek] dddd [saat] LT',
-            lastDay: '[dün] LT',
-            lastWeek: '[geçen] dddd [saat] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: '%s sonra',
-            past: '%s önce',
-            s: 'birkaç saniye',
-            ss: '%d saniye',
-            m: 'bir dakika',
-            mm: '%d dakika',
-            h: 'bir saat',
-            hh: '%d saat',
-            d: 'bir gün',
-            dd: '%d gün',
-            w: 'bir hafta',
-            ww: '%d hafta',
-            M: 'bir ay',
-            MM: '%d ay',
-            y: 'bir yıl',
-            yy: '%d yıl',
-        },
-        ordinal: function (number, period) {
-            switch (period) {
-                case 'd':
-                case 'D':
-                case 'Do':
-                case 'DD':
-                    return number;
-                default:
-                    if (number === 0) {
-                        // special case for zero
-                        return number + "'ıncı";
-                    }
-                    var a = number % 10,
-                        b = (number % 100) - a,
-                        c = number >= 100 ? 100 : null;
-                    return number + (suffixes[a] || suffixes[b] || suffixes[c]);
-            }
-        },
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 7, // The week that contains Jan 7th is the first week of the year.
-        },
-    });
-
-    return tr;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/tr.js":
 /*!******************************************!*\
   !*** ./node_modules/moment/locale/tr.js ***!
@@ -39541,115 +38834,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/tzl 2.js":
-/*!*********************************************!*\
-  !*** ./node_modules/moment/locale/tzl 2.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Talossan [tzl]
-//! author : Robin van der Vliet : https://github.com/robin0van0der0v
-//! author : Iustì Canun
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    // After the year there should be a slash and the amount of years since December 26, 1979 in Roman numerals.
-    // This is currently too difficult (maybe even impossible) to add.
-    var tzl = moment.defineLocale('tzl', {
-        months: 'Januar_Fevraglh_Març_Avrïu_Mai_Gün_Julia_Guscht_Setemvar_Listopäts_Noemvar_Zecemvar'.split(
-            '_'
-        ),
-        monthsShort: 'Jan_Fev_Mar_Avr_Mai_Gün_Jul_Gus_Set_Lis_Noe_Zec'.split('_'),
-        weekdays: 'Súladi_Lúneçi_Maitzi_Márcuri_Xhúadi_Viénerçi_Sáturi'.split('_'),
-        weekdaysShort: 'Súl_Lún_Mai_Már_Xhú_Vié_Sát'.split('_'),
-        weekdaysMin: 'Sú_Lú_Ma_Má_Xh_Vi_Sá'.split('_'),
-        longDateFormat: {
-            LT: 'HH.mm',
-            LTS: 'HH.mm.ss',
-            L: 'DD.MM.YYYY',
-            LL: 'D. MMMM [dallas] YYYY',
-            LLL: 'D. MMMM [dallas] YYYY HH.mm',
-            LLLL: 'dddd, [li] D. MMMM [dallas] YYYY HH.mm',
-        },
-        meridiemParse: /d\'o|d\'a/i,
-        isPM: function (input) {
-            return "d'o" === input.toLowerCase();
-        },
-        meridiem: function (hours, minutes, isLower) {
-            if (hours > 11) {
-                return isLower ? "d'o" : "D'O";
-            } else {
-                return isLower ? "d'a" : "D'A";
-            }
-        },
-        calendar: {
-            sameDay: '[oxhi à] LT',
-            nextDay: '[demà à] LT',
-            nextWeek: 'dddd [à] LT',
-            lastDay: '[ieiri à] LT',
-            lastWeek: '[sür el] dddd [lasteu à] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'osprei %s',
-            past: 'ja%s',
-            s: processRelativeTime,
-            ss: processRelativeTime,
-            m: processRelativeTime,
-            mm: processRelativeTime,
-            h: processRelativeTime,
-            hh: processRelativeTime,
-            d: processRelativeTime,
-            dd: processRelativeTime,
-            M: processRelativeTime,
-            MM: processRelativeTime,
-            y: processRelativeTime,
-            yy: processRelativeTime,
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}\./,
-        ordinal: '%d.',
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 4, // The week that contains Jan 4th is the first week of the year.
-        },
-    });
-
-    function processRelativeTime(number, withoutSuffix, key, isFuture) {
-        var format = {
-            s: ['viensas secunds', "'iensas secunds"],
-            ss: [number + ' secunds', '' + number + ' secunds'],
-            m: ["'n míut", "'iens míut"],
-            mm: [number + ' míuts', '' + number + ' míuts'],
-            h: ["'n þora", "'iensa þora"],
-            hh: [number + ' þoras', '' + number + ' þoras'],
-            d: ["'n ziua", "'iensa ziua"],
-            dd: [number + ' ziuas', '' + number + ' ziuas'],
-            M: ["'n mes", "'iens mes"],
-            MM: [number + ' mesen', '' + number + ' mesen'],
-            y: ["'n ar", "'iens ar"],
-            yy: [number + ' ars', '' + number + ' ars'],
-        };
-        return isFuture
-            ? format[key][0]
-            : withoutSuffix
-            ? format[key][0]
-            : format[key][1];
-    }
-
-    return tzl;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/tzl.js":
 /*!*******************************************!*\
   !*** ./node_modules/moment/locale/tzl.js ***!
@@ -39753,152 +38937,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     }
 
     return tzl;
-
-})));
-
-
-/***/ }),
-
-/***/ "./node_modules/moment/locale/tzm 2.js":
-/*!*********************************************!*\
-  !*** ./node_modules/moment/locale/tzm 2.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Central Atlas Tamazight [tzm]
-//! author : Abdel Said : https://github.com/abdelsaid
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var tzm = moment.defineLocale('tzm', {
-        months: 'ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ'.split(
-            '_'
-        ),
-        monthsShort: 'ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ'.split(
-            '_'
-        ),
-        weekdays: 'ⴰⵙⴰⵎⴰⵙ_ⴰⵢⵏⴰⵙ_ⴰⵙⵉⵏⴰⵙ_ⴰⴽⵔⴰⵙ_ⴰⴽⵡⴰⵙ_ⴰⵙⵉⵎⵡⴰⵙ_ⴰⵙⵉⴹⵢⴰⵙ'.split('_'),
-        weekdaysShort: 'ⴰⵙⴰⵎⴰⵙ_ⴰⵢⵏⴰⵙ_ⴰⵙⵉⵏⴰⵙ_ⴰⴽⵔⴰⵙ_ⴰⴽⵡⴰⵙ_ⴰⵙⵉⵎⵡⴰⵙ_ⴰⵙⵉⴹⵢⴰⵙ'.split('_'),
-        weekdaysMin: 'ⴰⵙⴰⵎⴰⵙ_ⴰⵢⵏⴰⵙ_ⴰⵙⵉⵏⴰⵙ_ⴰⴽⵔⴰⵙ_ⴰⴽⵡⴰⵙ_ⴰⵙⵉⵎⵡⴰⵙ_ⴰⵙⵉⴹⵢⴰⵙ'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD/MM/YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm',
-        },
-        calendar: {
-            sameDay: '[ⴰⵙⴷⵅ ⴴ] LT',
-            nextDay: '[ⴰⵙⴽⴰ ⴴ] LT',
-            nextWeek: 'dddd [ⴴ] LT',
-            lastDay: '[ⴰⵚⴰⵏⵜ ⴴ] LT',
-            lastWeek: 'dddd [ⴴ] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'ⴷⴰⴷⵅ ⵙ ⵢⴰⵏ %s',
-            past: 'ⵢⴰⵏ %s',
-            s: 'ⵉⵎⵉⴽ',
-            ss: '%d ⵉⵎⵉⴽ',
-            m: 'ⵎⵉⵏⵓⴺ',
-            mm: '%d ⵎⵉⵏⵓⴺ',
-            h: 'ⵙⴰⵄⴰ',
-            hh: '%d ⵜⴰⵙⵙⴰⵄⵉⵏ',
-            d: 'ⴰⵙⵙ',
-            dd: '%d oⵙⵙⴰⵏ',
-            M: 'ⴰⵢoⵓⵔ',
-            MM: '%d ⵉⵢⵢⵉⵔⵏ',
-            y: 'ⴰⵙⴳⴰⵙ',
-            yy: '%d ⵉⵙⴳⴰⵙⵏ',
-        },
-        week: {
-            dow: 6, // Saturday is the first day of the week.
-            doy: 12, // The week that contains Jan 12th is the first week of the year.
-        },
-    });
-
-    return tzm;
-
-})));
-
-
-/***/ }),
-
-/***/ "./node_modules/moment/locale/tzm-latn 2.js":
-/*!**************************************************!*\
-  !*** ./node_modules/moment/locale/tzm-latn 2.js ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Central Atlas Tamazight Latin [tzm-latn]
-//! author : Abdel Said : https://github.com/abdelsaid
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var tzmLatn = moment.defineLocale('tzm-latn', {
-        months: 'innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir'.split(
-            '_'
-        ),
-        monthsShort: 'innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir'.split(
-            '_'
-        ),
-        weekdays: 'asamas_aynas_asinas_akras_akwas_asimwas_asiḍyas'.split('_'),
-        weekdaysShort: 'asamas_aynas_asinas_akras_akwas_asimwas_asiḍyas'.split('_'),
-        weekdaysMin: 'asamas_aynas_asinas_akras_akwas_asimwas_asiḍyas'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD/MM/YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd D MMMM YYYY HH:mm',
-        },
-        calendar: {
-            sameDay: '[asdkh g] LT',
-            nextDay: '[aska g] LT',
-            nextWeek: 'dddd [g] LT',
-            lastDay: '[assant g] LT',
-            lastWeek: 'dddd [g] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'dadkh s yan %s',
-            past: 'yan %s',
-            s: 'imik',
-            ss: '%d imik',
-            m: 'minuḍ',
-            mm: '%d minuḍ',
-            h: 'saɛa',
-            hh: '%d tassaɛin',
-            d: 'ass',
-            dd: '%d ossan',
-            M: 'ayowr',
-            MM: '%d iyyirn',
-            y: 'asgas',
-            yy: '%d isgasn',
-        },
-        week: {
-            dow: 6, // Saturday is the first day of the week.
-            doy: 12, // The week that contains Jan 12th is the first week of the year.
-        },
-    });
-
-    return tzmLatn;
 
 })));
 
@@ -40051,136 +39089,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/ug-cn 2.js":
-/*!***********************************************!*\
-  !*** ./node_modules/moment/locale/ug-cn 2.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Uyghur (China) [ug-cn]
-//! author: boyaq : https://github.com/boyaq
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var ugCn = moment.defineLocale('ug-cn', {
-        months: 'يانۋار_فېۋرال_مارت_ئاپرېل_ماي_ئىيۇن_ئىيۇل_ئاۋغۇست_سېنتەبىر_ئۆكتەبىر_نويابىر_دېكابىر'.split(
-            '_'
-        ),
-        monthsShort: 'يانۋار_فېۋرال_مارت_ئاپرېل_ماي_ئىيۇن_ئىيۇل_ئاۋغۇست_سېنتەبىر_ئۆكتەبىر_نويابىر_دېكابىر'.split(
-            '_'
-        ),
-        weekdays: 'يەكشەنبە_دۈشەنبە_سەيشەنبە_چارشەنبە_پەيشەنبە_جۈمە_شەنبە'.split(
-            '_'
-        ),
-        weekdaysShort: 'يە_دۈ_سە_چا_پە_جۈ_شە'.split('_'),
-        weekdaysMin: 'يە_دۈ_سە_چا_پە_جۈ_شە'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'YYYY-MM-DD',
-            LL: 'YYYY-يىلىM-ئاينىڭD-كۈنى',
-            LLL: 'YYYY-يىلىM-ئاينىڭD-كۈنى، HH:mm',
-            LLLL: 'dddd، YYYY-يىلىM-ئاينىڭD-كۈنى، HH:mm',
-        },
-        meridiemParse: /يېرىم كېچە|سەھەر|چۈشتىن بۇرۇن|چۈش|چۈشتىن كېيىن|كەچ/,
-        meridiemHour: function (hour, meridiem) {
-            if (hour === 12) {
-                hour = 0;
-            }
-            if (
-                meridiem === 'يېرىم كېچە' ||
-                meridiem === 'سەھەر' ||
-                meridiem === 'چۈشتىن بۇرۇن'
-            ) {
-                return hour;
-            } else if (meridiem === 'چۈشتىن كېيىن' || meridiem === 'كەچ') {
-                return hour + 12;
-            } else {
-                return hour >= 11 ? hour : hour + 12;
-            }
-        },
-        meridiem: function (hour, minute, isLower) {
-            var hm = hour * 100 + minute;
-            if (hm < 600) {
-                return 'يېرىم كېچە';
-            } else if (hm < 900) {
-                return 'سەھەر';
-            } else if (hm < 1130) {
-                return 'چۈشتىن بۇرۇن';
-            } else if (hm < 1230) {
-                return 'چۈش';
-            } else if (hm < 1800) {
-                return 'چۈشتىن كېيىن';
-            } else {
-                return 'كەچ';
-            }
-        },
-        calendar: {
-            sameDay: '[بۈگۈن سائەت] LT',
-            nextDay: '[ئەتە سائەت] LT',
-            nextWeek: '[كېلەركى] dddd [سائەت] LT',
-            lastDay: '[تۆنۈگۈن] LT',
-            lastWeek: '[ئالدىنقى] dddd [سائەت] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: '%s كېيىن',
-            past: '%s بۇرۇن',
-            s: 'نەچچە سېكونت',
-            ss: '%d سېكونت',
-            m: 'بىر مىنۇت',
-            mm: '%d مىنۇت',
-            h: 'بىر سائەت',
-            hh: '%d سائەت',
-            d: 'بىر كۈن',
-            dd: '%d كۈن',
-            M: 'بىر ئاي',
-            MM: '%d ئاي',
-            y: 'بىر يىل',
-            yy: '%d يىل',
-        },
-
-        dayOfMonthOrdinalParse: /\d{1,2}(-كۈنى|-ئاي|-ھەپتە)/,
-        ordinal: function (number, period) {
-            switch (period) {
-                case 'd':
-                case 'D':
-                case 'DDD':
-                    return number + '-كۈنى';
-                case 'w':
-                case 'W':
-                    return number + '-ھەپتە';
-                default:
-                    return number;
-            }
-        },
-        preparse: function (string) {
-            return string.replace(/،/g, ',');
-        },
-        postformat: function (string) {
-            return string.replace(/,/g, '،');
-        },
-        week: {
-            // GB/T 7408-1994《数据元和交换格式·信息交换·日期和时间表示法》与ISO 8601:1988等效
-            dow: 1, // Monday is the first day of the week.
-            doy: 7, // The week that contains Jan 1st is the first week of the year.
-        },
-    });
-
-    return ugCn;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/ug-cn.js":
 /*!*********************************************!*\
   !*** ./node_modules/moment/locale/ug-cn.js ***!
@@ -40305,189 +39213,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     });
 
     return ugCn;
-
-})));
-
-
-/***/ }),
-
-/***/ "./node_modules/moment/locale/uk 2.js":
-/*!********************************************!*\
-  !*** ./node_modules/moment/locale/uk 2.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Ukrainian [uk]
-//! author : zemlanin : https://github.com/zemlanin
-//! Author : Menelion Elensúle : https://github.com/Oire
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    function plural(word, num) {
-        var forms = word.split('_');
-        return num % 10 === 1 && num % 100 !== 11
-            ? forms[0]
-            : num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)
-            ? forms[1]
-            : forms[2];
-    }
-    function relativeTimeWithPlural(number, withoutSuffix, key) {
-        var format = {
-            ss: withoutSuffix ? 'секунда_секунди_секунд' : 'секунду_секунди_секунд',
-            mm: withoutSuffix ? 'хвилина_хвилини_хвилин' : 'хвилину_хвилини_хвилин',
-            hh: withoutSuffix ? 'година_години_годин' : 'годину_години_годин',
-            dd: 'день_дні_днів',
-            MM: 'місяць_місяці_місяців',
-            yy: 'рік_роки_років',
-        };
-        if (key === 'm') {
-            return withoutSuffix ? 'хвилина' : 'хвилину';
-        } else if (key === 'h') {
-            return withoutSuffix ? 'година' : 'годину';
-        } else {
-            return number + ' ' + plural(format[key], +number);
-        }
-    }
-    function weekdaysCaseReplace(m, format) {
-        var weekdays = {
-                nominative: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
-                    '_'
-                ),
-                accusative: 'неділю_понеділок_вівторок_середу_четвер_п’ятницю_суботу'.split(
-                    '_'
-                ),
-                genitive: 'неділі_понеділка_вівторка_середи_четверга_п’ятниці_суботи'.split(
-                    '_'
-                ),
-            },
-            nounCase;
-
-        if (m === true) {
-            return weekdays['nominative']
-                .slice(1, 7)
-                .concat(weekdays['nominative'].slice(0, 1));
-        }
-        if (!m) {
-            return weekdays['nominative'];
-        }
-
-        nounCase = /(\[[ВвУу]\]) ?dddd/.test(format)
-            ? 'accusative'
-            : /\[?(?:минулої|наступної)? ?\] ?dddd/.test(format)
-            ? 'genitive'
-            : 'nominative';
-        return weekdays[nounCase][m.day()];
-    }
-    function processHoursFunction(str) {
-        return function () {
-            return str + 'о' + (this.hours() === 11 ? 'б' : '') + '] LT';
-        };
-    }
-
-    var uk = moment.defineLocale('uk', {
-        months: {
-            format: 'січня_лютого_березня_квітня_травня_червня_липня_серпня_вересня_жовтня_листопада_грудня'.split(
-                '_'
-            ),
-            standalone: 'січень_лютий_березень_квітень_травень_червень_липень_серпень_вересень_жовтень_листопад_грудень'.split(
-                '_'
-            ),
-        },
-        monthsShort: 'січ_лют_бер_квіт_трав_черв_лип_серп_вер_жовт_лист_груд'.split(
-            '_'
-        ),
-        weekdays: weekdaysCaseReplace,
-        weekdaysShort: 'нд_пн_вт_ср_чт_пт_сб'.split('_'),
-        weekdaysMin: 'нд_пн_вт_ср_чт_пт_сб'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD.MM.YYYY',
-            LL: 'D MMMM YYYY р.',
-            LLL: 'D MMMM YYYY р., HH:mm',
-            LLLL: 'dddd, D MMMM YYYY р., HH:mm',
-        },
-        calendar: {
-            sameDay: processHoursFunction('[Сьогодні '),
-            nextDay: processHoursFunction('[Завтра '),
-            lastDay: processHoursFunction('[Вчора '),
-            nextWeek: processHoursFunction('[У] dddd ['),
-            lastWeek: function () {
-                switch (this.day()) {
-                    case 0:
-                    case 3:
-                    case 5:
-                    case 6:
-                        return processHoursFunction('[Минулої] dddd [').call(this);
-                    case 1:
-                    case 2:
-                    case 4:
-                        return processHoursFunction('[Минулого] dddd [').call(this);
-                }
-            },
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'за %s',
-            past: '%s тому',
-            s: 'декілька секунд',
-            ss: relativeTimeWithPlural,
-            m: relativeTimeWithPlural,
-            mm: relativeTimeWithPlural,
-            h: 'годину',
-            hh: relativeTimeWithPlural,
-            d: 'день',
-            dd: relativeTimeWithPlural,
-            M: 'місяць',
-            MM: relativeTimeWithPlural,
-            y: 'рік',
-            yy: relativeTimeWithPlural,
-        },
-        // M. E.: those two are virtually unused but a user might want to implement them for his/her website for some reason
-        meridiemParse: /ночі|ранку|дня|вечора/,
-        isPM: function (input) {
-            return /^(дня|вечора)$/.test(input);
-        },
-        meridiem: function (hour, minute, isLower) {
-            if (hour < 4) {
-                return 'ночі';
-            } else if (hour < 12) {
-                return 'ранку';
-            } else if (hour < 17) {
-                return 'дня';
-            } else {
-                return 'вечора';
-            }
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}-(й|го)/,
-        ordinal: function (number, period) {
-            switch (period) {
-                case 'M':
-                case 'd':
-                case 'DDD':
-                case 'w':
-                case 'W':
-                    return number + '-й';
-                case 'D':
-                    return number + '-го';
-                default:
-                    return number;
-            }
-        },
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 7, // The week that contains Jan 7th is the first week of the year.
-        },
-    });
-
-    return uk;
 
 })));
 
@@ -40677,108 +39402,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/ur 2.js":
-/*!********************************************!*\
-  !*** ./node_modules/moment/locale/ur 2.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Urdu [ur]
-//! author : Sawood Alam : https://github.com/ibnesayeed
-//! author : Zack : https://github.com/ZackVision
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var months = [
-            'جنوری',
-            'فروری',
-            'مارچ',
-            'اپریل',
-            'مئی',
-            'جون',
-            'جولائی',
-            'اگست',
-            'ستمبر',
-            'اکتوبر',
-            'نومبر',
-            'دسمبر',
-        ],
-        days = ['اتوار', 'پیر', 'منگل', 'بدھ', 'جمعرات', 'جمعہ', 'ہفتہ'];
-
-    var ur = moment.defineLocale('ur', {
-        months: months,
-        monthsShort: months,
-        weekdays: days,
-        weekdaysShort: days,
-        weekdaysMin: days,
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD/MM/YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd، D MMMM YYYY HH:mm',
-        },
-        meridiemParse: /صبح|شام/,
-        isPM: function (input) {
-            return 'شام' === input;
-        },
-        meridiem: function (hour, minute, isLower) {
-            if (hour < 12) {
-                return 'صبح';
-            }
-            return 'شام';
-        },
-        calendar: {
-            sameDay: '[آج بوقت] LT',
-            nextDay: '[کل بوقت] LT',
-            nextWeek: 'dddd [بوقت] LT',
-            lastDay: '[گذشتہ روز بوقت] LT',
-            lastWeek: '[گذشتہ] dddd [بوقت] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: '%s بعد',
-            past: '%s قبل',
-            s: 'چند سیکنڈ',
-            ss: '%d سیکنڈ',
-            m: 'ایک منٹ',
-            mm: '%d منٹ',
-            h: 'ایک گھنٹہ',
-            hh: '%d گھنٹے',
-            d: 'ایک دن',
-            dd: '%d دن',
-            M: 'ایک ماہ',
-            MM: '%d ماہ',
-            y: 'ایک سال',
-            yy: '%d سال',
-        },
-        preparse: function (string) {
-            return string.replace(/،/g, ',');
-        },
-        postformat: function (string) {
-            return string.replace(/,/g, '،');
-        },
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 4, // The week that contains Jan 4th is the first week of the year.
-        },
-    });
-
-    return ur;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/ur.js":
 /*!******************************************!*\
   !*** ./node_modules/moment/locale/ur.js ***!
@@ -40875,150 +39498,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     });
 
     return ur;
-
-})));
-
-
-/***/ }),
-
-/***/ "./node_modules/moment/locale/uz 2.js":
-/*!********************************************!*\
-  !*** ./node_modules/moment/locale/uz 2.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Uzbek [uz]
-//! author : Sardor Muminov : https://github.com/muminoff
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var uz = moment.defineLocale('uz', {
-        months: 'январ_феврал_март_апрел_май_июн_июл_август_сентябр_октябр_ноябр_декабр'.split(
-            '_'
-        ),
-        monthsShort: 'янв_фев_мар_апр_май_июн_июл_авг_сен_окт_ноя_дек'.split('_'),
-        weekdays: 'Якшанба_Душанба_Сешанба_Чоршанба_Пайшанба_Жума_Шанба'.split('_'),
-        weekdaysShort: 'Якш_Душ_Сеш_Чор_Пай_Жум_Шан'.split('_'),
-        weekdaysMin: 'Як_Ду_Се_Чо_Па_Жу_Ша'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD/MM/YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'D MMMM YYYY, dddd HH:mm',
-        },
-        calendar: {
-            sameDay: '[Бугун соат] LT [да]',
-            nextDay: '[Эртага] LT [да]',
-            nextWeek: 'dddd [куни соат] LT [да]',
-            lastDay: '[Кеча соат] LT [да]',
-            lastWeek: '[Утган] dddd [куни соат] LT [да]',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'Якин %s ичида',
-            past: 'Бир неча %s олдин',
-            s: 'фурсат',
-            ss: '%d фурсат',
-            m: 'бир дакика',
-            mm: '%d дакика',
-            h: 'бир соат',
-            hh: '%d соат',
-            d: 'бир кун',
-            dd: '%d кун',
-            M: 'бир ой',
-            MM: '%d ой',
-            y: 'бир йил',
-            yy: '%d йил',
-        },
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 7, // The week that contains Jan 4th is the first week of the year.
-        },
-    });
-
-    return uz;
-
-})));
-
-
-/***/ }),
-
-/***/ "./node_modules/moment/locale/uz-latn 2.js":
-/*!*************************************************!*\
-  !*** ./node_modules/moment/locale/uz-latn 2.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Uzbek Latin [uz-latn]
-//! author : Rasulbek Mirzayev : github.com/Rasulbeeek
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var uzLatn = moment.defineLocale('uz-latn', {
-        months: 'Yanvar_Fevral_Mart_Aprel_May_Iyun_Iyul_Avgust_Sentabr_Oktabr_Noyabr_Dekabr'.split(
-            '_'
-        ),
-        monthsShort: 'Yan_Fev_Mar_Apr_May_Iyun_Iyul_Avg_Sen_Okt_Noy_Dek'.split('_'),
-        weekdays: 'Yakshanba_Dushanba_Seshanba_Chorshanba_Payshanba_Juma_Shanba'.split(
-            '_'
-        ),
-        weekdaysShort: 'Yak_Dush_Sesh_Chor_Pay_Jum_Shan'.split('_'),
-        weekdaysMin: 'Ya_Du_Se_Cho_Pa_Ju_Sha'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD/MM/YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'D MMMM YYYY, dddd HH:mm',
-        },
-        calendar: {
-            sameDay: '[Bugun soat] LT [da]',
-            nextDay: '[Ertaga] LT [da]',
-            nextWeek: 'dddd [kuni soat] LT [da]',
-            lastDay: '[Kecha soat] LT [da]',
-            lastWeek: "[O'tgan] dddd [kuni soat] LT [da]",
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'Yaqin %s ichida',
-            past: 'Bir necha %s oldin',
-            s: 'soniya',
-            ss: '%d soniya',
-            m: 'bir daqiqa',
-            mm: '%d daqiqa',
-            h: 'bir soat',
-            hh: '%d soat',
-            d: 'bir kun',
-            dd: '%d kun',
-            M: 'bir oy',
-            MM: '%d oy',
-            y: 'bir yil',
-            yy: '%d yil',
-        },
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 7, // The week that contains Jan 7th is the first week of the year.
-        },
-    });
-
-    return uzLatn;
 
 })));
 
@@ -41169,105 +39648,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/vi 2.js":
-/*!********************************************!*\
-  !*** ./node_modules/moment/locale/vi 2.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Vietnamese [vi]
-//! author : Bang Nguyen : https://github.com/bangnk
-//! author : Chien Kira : https://github.com/chienkira
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var vi = moment.defineLocale('vi', {
-        months: 'tháng 1_tháng 2_tháng 3_tháng 4_tháng 5_tháng 6_tháng 7_tháng 8_tháng 9_tháng 10_tháng 11_tháng 12'.split(
-            '_'
-        ),
-        monthsShort: 'Thg 01_Thg 02_Thg 03_Thg 04_Thg 05_Thg 06_Thg 07_Thg 08_Thg 09_Thg 10_Thg 11_Thg 12'.split(
-            '_'
-        ),
-        monthsParseExact: true,
-        weekdays: 'chủ nhật_thứ hai_thứ ba_thứ tư_thứ năm_thứ sáu_thứ bảy'.split(
-            '_'
-        ),
-        weekdaysShort: 'CN_T2_T3_T4_T5_T6_T7'.split('_'),
-        weekdaysMin: 'CN_T2_T3_T4_T5_T6_T7'.split('_'),
-        weekdaysParseExact: true,
-        meridiemParse: /sa|ch/i,
-        isPM: function (input) {
-            return /^ch$/i.test(input);
-        },
-        meridiem: function (hours, minutes, isLower) {
-            if (hours < 12) {
-                return isLower ? 'sa' : 'SA';
-            } else {
-                return isLower ? 'ch' : 'CH';
-            }
-        },
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD/MM/YYYY',
-            LL: 'D MMMM [năm] YYYY',
-            LLL: 'D MMMM [năm] YYYY HH:mm',
-            LLLL: 'dddd, D MMMM [năm] YYYY HH:mm',
-            l: 'DD/M/YYYY',
-            ll: 'D MMM YYYY',
-            lll: 'D MMM YYYY HH:mm',
-            llll: 'ddd, D MMM YYYY HH:mm',
-        },
-        calendar: {
-            sameDay: '[Hôm nay lúc] LT',
-            nextDay: '[Ngày mai lúc] LT',
-            nextWeek: 'dddd [tuần tới lúc] LT',
-            lastDay: '[Hôm qua lúc] LT',
-            lastWeek: 'dddd [tuần trước lúc] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: '%s tới',
-            past: '%s trước',
-            s: 'vài giây',
-            ss: '%d giây',
-            m: 'một phút',
-            mm: '%d phút',
-            h: 'một giờ',
-            hh: '%d giờ',
-            d: 'một ngày',
-            dd: '%d ngày',
-            w: 'một tuần',
-            ww: '%d tuần',
-            M: 'một tháng',
-            MM: '%d tháng',
-            y: 'một năm',
-            yy: '%d năm',
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}/,
-        ordinal: function (number) {
-            return number;
-        },
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 4, // The week that contains Jan 4th is the first week of the year.
-        },
-    });
-
-    return vi;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/vi.js":
 /*!******************************************!*\
   !*** ./node_modules/moment/locale/vi.js ***!
@@ -41367,97 +39747,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/x-pseudo 2.js":
-/*!**************************************************!*\
-  !*** ./node_modules/moment/locale/x-pseudo 2.js ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Pseudo [x-pseudo]
-//! author : Andrew Hood : https://github.com/andrewhood125
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var xPseudo = moment.defineLocale('x-pseudo', {
-        months: 'J~áñúá~rý_F~ébrú~árý_~Márc~h_Áp~ríl_~Máý_~Júñé~_Júl~ý_Áú~gúst~_Sép~témb~ér_Ó~ctób~ér_Ñ~óvém~bér_~Décé~mbér'.split(
-            '_'
-        ),
-        monthsShort: 'J~áñ_~Féb_~Már_~Ápr_~Máý_~Júñ_~Júl_~Áúg_~Sép_~Óct_~Ñóv_~Déc'.split(
-            '_'
-        ),
-        monthsParseExact: true,
-        weekdays: 'S~úñdá~ý_Mó~ñdáý~_Túé~sdáý~_Wéd~ñésd~áý_T~húrs~dáý_~Fríd~áý_S~átúr~dáý'.split(
-            '_'
-        ),
-        weekdaysShort: 'S~úñ_~Móñ_~Túé_~Wéd_~Thú_~Frí_~Sát'.split('_'),
-        weekdaysMin: 'S~ú_Mó~_Tú_~Wé_T~h_Fr~_Sá'.split('_'),
-        weekdaysParseExact: true,
-        longDateFormat: {
-            LT: 'HH:mm',
-            L: 'DD/MM/YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY HH:mm',
-            LLLL: 'dddd, D MMMM YYYY HH:mm',
-        },
-        calendar: {
-            sameDay: '[T~ódá~ý át] LT',
-            nextDay: '[T~ómó~rró~w át] LT',
-            nextWeek: 'dddd [át] LT',
-            lastDay: '[Ý~ést~érdá~ý át] LT',
-            lastWeek: '[L~ást] dddd [át] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'í~ñ %s',
-            past: '%s á~gó',
-            s: 'á ~féw ~sécó~ñds',
-            ss: '%d s~écóñ~ds',
-            m: 'á ~míñ~úté',
-            mm: '%d m~íñú~tés',
-            h: 'á~ñ hó~úr',
-            hh: '%d h~óúrs',
-            d: 'á ~dáý',
-            dd: '%d d~áýs',
-            M: 'á ~móñ~th',
-            MM: '%d m~óñt~hs',
-            y: 'á ~ýéár',
-            yy: '%d ý~éárs',
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}(th|st|nd|rd)/,
-        ordinal: function (number) {
-            var b = number % 10,
-                output =
-                    ~~((number % 100) / 10) === 1
-                        ? 'th'
-                        : b === 1
-                        ? 'st'
-                        : b === 2
-                        ? 'nd'
-                        : b === 3
-                        ? 'rd'
-                        : 'th';
-            return number + output;
-        },
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 4, // The week that contains Jan 4th is the first week of the year.
-        },
-    });
-
-    return xPseudo;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/x-pseudo.js":
 /*!************************************************!*\
   !*** ./node_modules/moment/locale/x-pseudo.js ***!
@@ -41549,79 +39838,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/yo 2.js":
-/*!********************************************!*\
-  !*** ./node_modules/moment/locale/yo 2.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Yoruba Nigeria [yo]
-//! author : Atolagbe Abisoye : https://github.com/andela-batolagbe
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var yo = moment.defineLocale('yo', {
-        months: 'Sẹ́rẹ́_Èrèlè_Ẹrẹ̀nà_Ìgbé_Èbibi_Òkùdu_Agẹmo_Ògún_Owewe_Ọ̀wàrà_Bélú_Ọ̀pẹ̀̀'.split(
-            '_'
-        ),
-        monthsShort: 'Sẹ́r_Èrl_Ẹrn_Ìgb_Èbi_Òkù_Agẹ_Ògú_Owe_Ọ̀wà_Bél_Ọ̀pẹ̀̀'.split('_'),
-        weekdays: 'Àìkú_Ajé_Ìsẹ́gun_Ọjọ́rú_Ọjọ́bọ_Ẹtì_Àbámẹ́ta'.split('_'),
-        weekdaysShort: 'Àìk_Ajé_Ìsẹ́_Ọjr_Ọjb_Ẹtì_Àbá'.split('_'),
-        weekdaysMin: 'Àì_Aj_Ìs_Ọr_Ọb_Ẹt_Àb'.split('_'),
-        longDateFormat: {
-            LT: 'h:mm A',
-            LTS: 'h:mm:ss A',
-            L: 'DD/MM/YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY h:mm A',
-            LLLL: 'dddd, D MMMM YYYY h:mm A',
-        },
-        calendar: {
-            sameDay: '[Ònì ni] LT',
-            nextDay: '[Ọ̀la ni] LT',
-            nextWeek: "dddd [Ọsẹ̀ tón'bọ] [ni] LT",
-            lastDay: '[Àna ni] LT',
-            lastWeek: 'dddd [Ọsẹ̀ tólọ́] [ni] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'ní %s',
-            past: '%s kọjá',
-            s: 'ìsẹjú aayá die',
-            ss: 'aayá %d',
-            m: 'ìsẹjú kan',
-            mm: 'ìsẹjú %d',
-            h: 'wákati kan',
-            hh: 'wákati %d',
-            d: 'ọjọ́ kan',
-            dd: 'ọjọ́ %d',
-            M: 'osù kan',
-            MM: 'osù %d',
-            y: 'ọdún kan',
-            yy: 'ọdún %d',
-        },
-        dayOfMonthOrdinalParse: /ọjọ́\s\d{1,2}/,
-        ordinal: 'ọjọ́ %d',
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 4, // The week that contains Jan 4th is the first week of the year.
-        },
-    });
-
-    return yo;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/yo.js":
 /*!******************************************!*\
   !*** ./node_modules/moment/locale/yo.js ***!
@@ -41689,146 +39905,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     });
 
     return yo;
-
-})));
-
-
-/***/ }),
-
-/***/ "./node_modules/moment/locale/zh-cn 2.js":
-/*!***********************************************!*\
-  !*** ./node_modules/moment/locale/zh-cn 2.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Chinese (China) [zh-cn]
-//! author : suupic : https://github.com/suupic
-//! author : Zeno Zeng : https://github.com/zenozeng
-//! author : uu109 : https://github.com/uu109
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var zhCn = moment.defineLocale('zh-cn', {
-        months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
-            '_'
-        ),
-        monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split(
-            '_'
-        ),
-        weekdays: '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
-        weekdaysShort: '周日_周一_周二_周三_周四_周五_周六'.split('_'),
-        weekdaysMin: '日_一_二_三_四_五_六'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'YYYY/MM/DD',
-            LL: 'YYYY年M月D日',
-            LLL: 'YYYY年M月D日Ah点mm分',
-            LLLL: 'YYYY年M月D日ddddAh点mm分',
-            l: 'YYYY/M/D',
-            ll: 'YYYY年M月D日',
-            lll: 'YYYY年M月D日 HH:mm',
-            llll: 'YYYY年M月D日dddd HH:mm',
-        },
-        meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
-        meridiemHour: function (hour, meridiem) {
-            if (hour === 12) {
-                hour = 0;
-            }
-            if (meridiem === '凌晨' || meridiem === '早上' || meridiem === '上午') {
-                return hour;
-            } else if (meridiem === '下午' || meridiem === '晚上') {
-                return hour + 12;
-            } else {
-                // '中午'
-                return hour >= 11 ? hour : hour + 12;
-            }
-        },
-        meridiem: function (hour, minute, isLower) {
-            var hm = hour * 100 + minute;
-            if (hm < 600) {
-                return '凌晨';
-            } else if (hm < 900) {
-                return '早上';
-            } else if (hm < 1130) {
-                return '上午';
-            } else if (hm < 1230) {
-                return '中午';
-            } else if (hm < 1800) {
-                return '下午';
-            } else {
-                return '晚上';
-            }
-        },
-        calendar: {
-            sameDay: '[今天]LT',
-            nextDay: '[明天]LT',
-            nextWeek: function (now) {
-                if (now.week() !== this.week()) {
-                    return '[下]dddLT';
-                } else {
-                    return '[本]dddLT';
-                }
-            },
-            lastDay: '[昨天]LT',
-            lastWeek: function (now) {
-                if (this.week() !== now.week()) {
-                    return '[上]dddLT';
-                } else {
-                    return '[本]dddLT';
-                }
-            },
-            sameElse: 'L',
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}(日|月|周)/,
-        ordinal: function (number, period) {
-            switch (period) {
-                case 'd':
-                case 'D':
-                case 'DDD':
-                    return number + '日';
-                case 'M':
-                    return number + '月';
-                case 'w':
-                case 'W':
-                    return number + '周';
-                default:
-                    return number;
-            }
-        },
-        relativeTime: {
-            future: '%s后',
-            past: '%s前',
-            s: '几秒',
-            ss: '%d 秒',
-            m: '1 分钟',
-            mm: '%d 分钟',
-            h: '1 小时',
-            hh: '%d 小时',
-            d: '1 天',
-            dd: '%d 天',
-            w: '1 周',
-            ww: '%d 周',
-            M: '1 个月',
-            MM: '%d 个月',
-            y: '1 年',
-            yy: '%d 年',
-        },
-        week: {
-            // GB/T 7408-1994《数据元和交换格式·信息交换·日期和时间表示法》与ISO 8601:1988等效
-            dow: 1, // Monday is the first day of the week.
-            doy: 4, // The week that contains Jan 4th is the first week of the year.
-        },
-    });
-
-    return zhCn;
 
 })));
 
@@ -41975,127 +40051,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/zh-hk 2.js":
-/*!***********************************************!*\
-  !*** ./node_modules/moment/locale/zh-hk 2.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Chinese (Hong Kong) [zh-hk]
-//! author : Ben : https://github.com/ben-lin
-//! author : Chris Lam : https://github.com/hehachris
-//! author : Konstantin : https://github.com/skfd
-//! author : Anthony : https://github.com/anthonylau
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var zhHk = moment.defineLocale('zh-hk', {
-        months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
-            '_'
-        ),
-        monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split(
-            '_'
-        ),
-        weekdays: '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
-        weekdaysShort: '週日_週一_週二_週三_週四_週五_週六'.split('_'),
-        weekdaysMin: '日_一_二_三_四_五_六'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'YYYY/MM/DD',
-            LL: 'YYYY年M月D日',
-            LLL: 'YYYY年M月D日 HH:mm',
-            LLLL: 'YYYY年M月D日dddd HH:mm',
-            l: 'YYYY/M/D',
-            ll: 'YYYY年M月D日',
-            lll: 'YYYY年M月D日 HH:mm',
-            llll: 'YYYY年M月D日dddd HH:mm',
-        },
-        meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
-        meridiemHour: function (hour, meridiem) {
-            if (hour === 12) {
-                hour = 0;
-            }
-            if (meridiem === '凌晨' || meridiem === '早上' || meridiem === '上午') {
-                return hour;
-            } else if (meridiem === '中午') {
-                return hour >= 11 ? hour : hour + 12;
-            } else if (meridiem === '下午' || meridiem === '晚上') {
-                return hour + 12;
-            }
-        },
-        meridiem: function (hour, minute, isLower) {
-            var hm = hour * 100 + minute;
-            if (hm < 600) {
-                return '凌晨';
-            } else if (hm < 900) {
-                return '早上';
-            } else if (hm < 1200) {
-                return '上午';
-            } else if (hm === 1200) {
-                return '中午';
-            } else if (hm < 1800) {
-                return '下午';
-            } else {
-                return '晚上';
-            }
-        },
-        calendar: {
-            sameDay: '[今天]LT',
-            nextDay: '[明天]LT',
-            nextWeek: '[下]ddddLT',
-            lastDay: '[昨天]LT',
-            lastWeek: '[上]ddddLT',
-            sameElse: 'L',
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}(日|月|週)/,
-        ordinal: function (number, period) {
-            switch (period) {
-                case 'd':
-                case 'D':
-                case 'DDD':
-                    return number + '日';
-                case 'M':
-                    return number + '月';
-                case 'w':
-                case 'W':
-                    return number + '週';
-                default:
-                    return number;
-            }
-        },
-        relativeTime: {
-            future: '%s後',
-            past: '%s前',
-            s: '幾秒',
-            ss: '%d 秒',
-            m: '1 分鐘',
-            mm: '%d 分鐘',
-            h: '1 小時',
-            hh: '%d 小時',
-            d: '1 天',
-            dd: '%d 天',
-            M: '1 個月',
-            MM: '%d 個月',
-            y: '1 年',
-            yy: '%d 年',
-        },
-    });
-
-    return zhHk;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/zh-hk.js":
 /*!*********************************************!*\
   !*** ./node_modules/moment/locale/zh-hk.js ***!
@@ -42217,126 +40172,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/zh-mo 2.js":
-/*!***********************************************!*\
-  !*** ./node_modules/moment/locale/zh-mo 2.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Chinese (Macau) [zh-mo]
-//! author : Ben : https://github.com/ben-lin
-//! author : Chris Lam : https://github.com/hehachris
-//! author : Tan Yuanhong : https://github.com/le0tan
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var zhMo = moment.defineLocale('zh-mo', {
-        months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
-            '_'
-        ),
-        monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split(
-            '_'
-        ),
-        weekdays: '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
-        weekdaysShort: '週日_週一_週二_週三_週四_週五_週六'.split('_'),
-        weekdaysMin: '日_一_二_三_四_五_六'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'DD/MM/YYYY',
-            LL: 'YYYY年M月D日',
-            LLL: 'YYYY年M月D日 HH:mm',
-            LLLL: 'YYYY年M月D日dddd HH:mm',
-            l: 'D/M/YYYY',
-            ll: 'YYYY年M月D日',
-            lll: 'YYYY年M月D日 HH:mm',
-            llll: 'YYYY年M月D日dddd HH:mm',
-        },
-        meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
-        meridiemHour: function (hour, meridiem) {
-            if (hour === 12) {
-                hour = 0;
-            }
-            if (meridiem === '凌晨' || meridiem === '早上' || meridiem === '上午') {
-                return hour;
-            } else if (meridiem === '中午') {
-                return hour >= 11 ? hour : hour + 12;
-            } else if (meridiem === '下午' || meridiem === '晚上') {
-                return hour + 12;
-            }
-        },
-        meridiem: function (hour, minute, isLower) {
-            var hm = hour * 100 + minute;
-            if (hm < 600) {
-                return '凌晨';
-            } else if (hm < 900) {
-                return '早上';
-            } else if (hm < 1130) {
-                return '上午';
-            } else if (hm < 1230) {
-                return '中午';
-            } else if (hm < 1800) {
-                return '下午';
-            } else {
-                return '晚上';
-            }
-        },
-        calendar: {
-            sameDay: '[今天] LT',
-            nextDay: '[明天] LT',
-            nextWeek: '[下]dddd LT',
-            lastDay: '[昨天] LT',
-            lastWeek: '[上]dddd LT',
-            sameElse: 'L',
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}(日|月|週)/,
-        ordinal: function (number, period) {
-            switch (period) {
-                case 'd':
-                case 'D':
-                case 'DDD':
-                    return number + '日';
-                case 'M':
-                    return number + '月';
-                case 'w':
-                case 'W':
-                    return number + '週';
-                default:
-                    return number;
-            }
-        },
-        relativeTime: {
-            future: '%s內',
-            past: '%s前',
-            s: '幾秒',
-            ss: '%d 秒',
-            m: '1 分鐘',
-            mm: '%d 分鐘',
-            h: '1 小時',
-            hh: '%d 小時',
-            d: '1 天',
-            dd: '%d 天',
-            M: '1 個月',
-            MM: '%d 個月',
-            y: '1 年',
-            yy: '%d 年',
-        },
-    });
-
-    return zhMo;
-
-})));
-
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/zh-mo.js":
 /*!*********************************************!*\
   !*** ./node_modules/moment/locale/zh-mo.js ***!
@@ -42451,125 +40286,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     });
 
     return zhMo;
-
-})));
-
-
-/***/ }),
-
-/***/ "./node_modules/moment/locale/zh-tw 2.js":
-/*!***********************************************!*\
-  !*** ./node_modules/moment/locale/zh-tw 2.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-//! moment.js locale configuration
-//! locale : Chinese (Taiwan) [zh-tw]
-//! author : Ben : https://github.com/ben-lin
-//! author : Chris Lam : https://github.com/hehachris
-
-;(function (global, factory) {
-    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
-   undefined
-}(this, (function (moment) { 'use strict';
-
-    //! moment.js locale configuration
-
-    var zhTw = moment.defineLocale('zh-tw', {
-        months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split(
-            '_'
-        ),
-        monthsShort: '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split(
-            '_'
-        ),
-        weekdays: '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
-        weekdaysShort: '週日_週一_週二_週三_週四_週五_週六'.split('_'),
-        weekdaysMin: '日_一_二_三_四_五_六'.split('_'),
-        longDateFormat: {
-            LT: 'HH:mm',
-            LTS: 'HH:mm:ss',
-            L: 'YYYY/MM/DD',
-            LL: 'YYYY年M月D日',
-            LLL: 'YYYY年M月D日 HH:mm',
-            LLLL: 'YYYY年M月D日dddd HH:mm',
-            l: 'YYYY/M/D',
-            ll: 'YYYY年M月D日',
-            lll: 'YYYY年M月D日 HH:mm',
-            llll: 'YYYY年M月D日dddd HH:mm',
-        },
-        meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
-        meridiemHour: function (hour, meridiem) {
-            if (hour === 12) {
-                hour = 0;
-            }
-            if (meridiem === '凌晨' || meridiem === '早上' || meridiem === '上午') {
-                return hour;
-            } else if (meridiem === '中午') {
-                return hour >= 11 ? hour : hour + 12;
-            } else if (meridiem === '下午' || meridiem === '晚上') {
-                return hour + 12;
-            }
-        },
-        meridiem: function (hour, minute, isLower) {
-            var hm = hour * 100 + minute;
-            if (hm < 600) {
-                return '凌晨';
-            } else if (hm < 900) {
-                return '早上';
-            } else if (hm < 1130) {
-                return '上午';
-            } else if (hm < 1230) {
-                return '中午';
-            } else if (hm < 1800) {
-                return '下午';
-            } else {
-                return '晚上';
-            }
-        },
-        calendar: {
-            sameDay: '[今天] LT',
-            nextDay: '[明天] LT',
-            nextWeek: '[下]dddd LT',
-            lastDay: '[昨天] LT',
-            lastWeek: '[上]dddd LT',
-            sameElse: 'L',
-        },
-        dayOfMonthOrdinalParse: /\d{1,2}(日|月|週)/,
-        ordinal: function (number, period) {
-            switch (period) {
-                case 'd':
-                case 'D':
-                case 'DDD':
-                    return number + '日';
-                case 'M':
-                    return number + '月';
-                case 'w':
-                case 'W':
-                    return number + '週';
-                default:
-                    return number;
-            }
-        },
-        relativeTime: {
-            future: '%s後',
-            past: '%s前',
-            s: '幾秒',
-            ss: '%d 秒',
-            m: '1 分鐘',
-            mm: '%d 分鐘',
-            h: '1 小時',
-            hh: '%d 小時',
-            d: '1 天',
-            dd: '%d 天',
-            M: '1 個月',
-            MM: '%d 個月',
-            y: '1 年',
-            yy: '%d 年',
-        },
-    });
-
-    return zhTw;
 
 })));
 
@@ -61567,6 +59283,49 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Spinner.vue?vue&type=template&id=7ae326fe&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Spinner.vue?vue&type=template&id=7ae326fe& ***!
+  \**********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "fixed top-0 right-0 h-screen w-screen z-50 flex justify-center items-center"
+      },
+      [
+        _c("img", {
+          staticClass: "text-center",
+          attrs: { src: "/images/spinner.gif", width: "100" }
+        })
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/layout/AdminLayout.vue?vue&type=template&id=3a2a0cd2&":
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/layout/AdminLayout.vue?vue&type=template&id=3a2a0cd2& ***!
@@ -61956,7 +59715,7 @@ var render = function() {
     [
       _c(
         "header",
-        { staticClass: "flex items-center justify-between py-2" },
+        { staticClass: "flex items-center  justify-between py-2" },
         [_c("navbar")],
         1
       ),
@@ -62001,7 +59760,7 @@ var render = function() {
         "a",
         {
           staticClass:
-            "font-extrabold m-3 uppercase inline-flex hover:text-pink-700 transition-all duration-500",
+            "font-extrabold m-3 inline-flex hover:text-pink-700 transition-all duration-500",
           attrs: { href: "#" }
         },
         [
@@ -62114,7 +59873,7 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "bg-white font-semibold z-10 rounded-bl-md flex absolute top-0 right-0 transition-all duration-500 transform translate-x-0\n                                          w-1/2 md:w-auto\n                                          px-3 md:px-0\n                                          flex-col md:flex-row\n                                          -translate-y-full md:translate-y-0\n                                          md:mt-1 md:items-center md:mx-1 md:uppercase",
+          "bg-white z-10 rounded-bl-md flex absolute top-0 right-0 transition-all duration-500 transform translate-x-0\n                                          w-1/2 md:w-auto\n                                          px-3 md:px-0\n                                          flex-col md:flex-row\n                                          -translate-y-full md:translate-y-0\n                                          md:mt-1 md:items-center md:mx-1 ",
         attrs: { id: "sideMenuHideOnMobile" }
       },
       [
@@ -63368,158 +61127,8 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          !_vm.loading
+          _vm.loading
             ? _c(
-                "div",
-                {
-                  staticClass:
-                    "-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto"
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "inline-block min-w-full shadow rounded-lg overflow-hidden"
-                    },
-                    [
-                      _c(
-                        "table",
-                        { staticClass: "min-w-full leading-normal" },
-                        [
-                          _c("thead", [
-                            _c("tr", [
-                              _c(
-                                "th",
-                                {
-                                  staticClass:
-                                    "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                },
-                                [_vm._v("ID")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass:
-                                    "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                },
-                                [_vm._v("Kategori Adı")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass:
-                                    "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                },
-                                [_vm._v("Tarih")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass:
-                                    "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                },
-                                [_vm._v("Aktif")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass:
-                                    "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                },
-                                [_vm._v("İşlemler")]
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "tbody",
-                            _vm._l(1, function(item) {
-                              return _c("tr", { key: item }, [
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                  },
-                                  [
-                                    _c("p", {
-                                      staticClass:
-                                        "text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                  },
-                                  [
-                                    _c("p", {
-                                      staticClass:
-                                        "text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                  },
-                                  [
-                                    _c("p", {
-                                      staticClass:
-                                        "text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                  },
-                                  [
-                                    _c("p", {
-                                      staticClass:
-                                        "text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                  },
-                                  [
-                                    _c("p", {
-                                      staticClass:
-                                        "text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"
-                                    })
-                                  ]
-                                )
-                              ])
-                            }),
-                            0
-                          )
-                        ]
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _c(
                 "div",
                 {
                   staticClass:
@@ -63829,6 +61438,7 @@ var render = function() {
                   )
                 ]
               )
+            : _c("Spinner")
         ],
         1
       )
@@ -65003,158 +62613,8 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          !_vm.loading
+          _vm.loading
             ? _c(
-                "div",
-                {
-                  staticClass:
-                    "-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto"
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "inline-block min-w-full shadow rounded-lg overflow-hidden"
-                    },
-                    [
-                      _c(
-                        "table",
-                        { staticClass: "min-w-full leading-normal" },
-                        [
-                          _c("thead", [
-                            _c("tr", [
-                              _c(
-                                "th",
-                                {
-                                  staticClass:
-                                    "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                },
-                                [_vm._v("ID")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass:
-                                    "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                },
-                                [_vm._v("Kategori Adı")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass:
-                                    "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                },
-                                [_vm._v("Tarih")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass:
-                                    "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                },
-                                [_vm._v("Aktif")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass:
-                                    "px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                },
-                                [_vm._v("İşlemler")]
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "tbody",
-                            _vm._l(1, function(item) {
-                              return _c("tr", { key: item }, [
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                  },
-                                  [
-                                    _c("p", {
-                                      staticClass:
-                                        "text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                  },
-                                  [
-                                    _c("p", {
-                                      staticClass:
-                                        "text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                  },
-                                  [
-                                    _c("p", {
-                                      staticClass:
-                                        "text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                  },
-                                  [
-                                    _c("p", {
-                                      staticClass:
-                                        "text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "td",
-                                  {
-                                    staticClass:
-                                      "px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                  },
-                                  [
-                                    _c("p", {
-                                      staticClass:
-                                        "text-gray-900 whitespace-no-wrap h-4 bg-gray-400 rounded"
-                                    })
-                                  ]
-                                )
-                              ])
-                            }),
-                            0
-                          )
-                        ]
-                      )
-                    ]
-                  )
-                ]
-              )
-            : _c(
                 "div",
                 {
                   staticClass:
@@ -65465,6 +62925,7 @@ var render = function() {
                   )
                 ]
               )
+            : _c("Spinner")
         ],
         1
       )
@@ -67220,677 +64681,693 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("admin-layout", [
-    !_vm.loading
-      ? _c(
-          "div",
-          {
-            staticClass:
-              "fixed top-0 right-0 h-screen w-screen z-50 flex justify-center items-center"
-          },
-          [
-            _c("div", {
-              staticClass:
-                "animate-spin rounded-full h-20 w-20 border-t-2 border-b-2 border-gray-900"
-            })
-          ]
-        )
-      : _c("div", [
-          _c("div", { staticClass: "mt-8" }, [
-            _c("div", { staticClass: "mt-4" }, [
-              _c("div", { staticClass: "p-6 bg-white rounded-md shadow-md" }, [
+  return _c(
+    "admin-layout",
+    [
+      !_vm.loading
+        ? _c("Spinner")
+        : _c("div", [
+            _c("div", { staticClass: "mt-8" }, [
+              _c("div", { staticClass: "mt-4" }, [
                 _c(
-                  "h2",
-                  {
-                    staticClass:
-                      "text-lg text-gray-700 font-semibold capitalize"
-                  },
-                  [_vm._v("Kişisel Bilgilerim")]
-                ),
-                _vm._v(" "),
-                _c("form", [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4"
-                    },
-                    [
+                  "div",
+                  { staticClass: "p-6 bg-white rounded-md shadow-md" },
+                  [
+                    _c(
+                      "h2",
+                      {
+                        staticClass:
+                          "text-lg text-gray-700 font-semibold capitalize"
+                      },
+                      [_vm._v("Kişisel Bilgilerim")]
+                    ),
+                    _vm._v(" "),
+                    _c("form", [
                       _c(
                         "div",
                         {
                           staticClass:
-                            "bg-white p-2 rounded mt-1 border-b border-grey hover:bg-grey-lighter"
+                            "grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4"
                         },
                         [
                           _c(
-                            "label",
+                            "div",
                             {
-                              staticClass: "block text-sm text-black",
-                              attrs: { for: "first_last_name" }
-                            },
-                            [_vm._v("Ad Soyad")]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.settingsForms.first_last_name,
-                                expression: "settingsForms.first_last_name"
-                              }
-                            ],
-                            staticClass:
-                              "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
-                            attrs: {
-                              id: "first_last_name",
-                              name: "first_last_name",
-                              type: "text",
-                              required: "",
-                              placeholder: "Ad Soyad",
-                              "aria-label": "Ad Soyad"
-                            },
-                            domProps: {
-                              value: _vm.settingsForms.first_last_name
-                            },
-                            on: {
-                              change: function($event) {
-                                return _vm.updateSettings(
-                                  "first_last_name",
-                                  _vm.settingsForms.first_last_name
-                                )
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.settingsForms,
-                                  "first_last_name",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
-                        },
-                        [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "block text-sm text-black",
-                              attrs: { for: "email_adress" }
-                            },
-                            [_vm._v("E-mail adresim")]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.settingsForms.email_adress,
-                                expression: "settingsForms.email_adress"
-                              }
-                            ],
-                            staticClass:
-                              "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
-                            attrs: {
-                              id: "email_adress",
-                              name: "email_adress",
-                              type: "text",
-                              required: "",
-                              placeholder: "E-mail Adresim",
-                              "aria-label": "E-mail"
-                            },
-                            domProps: { value: _vm.settingsForms.email_adress },
-                            on: {
-                              change: function($event) {
-                                return _vm.updateSettings(
-                                  "email_adress",
-                                  _vm.settingsForms.email_adress
-                                )
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.settingsForms,
-                                  "email_adress",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
-                        },
-                        [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "block text-sm text-black",
-                              attrs: { for: "job_title" }
-                            },
-                            [_vm._v("Meslek")]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.settingsForms.job_title,
-                                expression: "settingsForms.job_title"
-                              }
-                            ],
-                            staticClass:
-                              "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
-                            attrs: {
-                              id: "job_title",
-                              name: "job_title",
-                              type: "text",
-                              required: "",
-                              placeholder: "Meslek",
-                              "aria-label": "Meslek"
-                            },
-                            domProps: { value: _vm.settingsForms.job_title },
-                            on: {
-                              change: function($event) {
-                                return _vm.updateSettings(
-                                  "job_title",
-                                  _vm.settingsForms.job_title
-                                )
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.settingsForms,
-                                  "job_title",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
-                        },
-                        [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "block text-sm text-gray-600",
-                              attrs: { for: "profile_image" }
-                            },
-                            [_vm._v("Resim")]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            staticClass:
-                              "w-full px-5 text-gray-700 bg-gray-200 rounded",
-                            attrs: {
-                              id: "profile_image",
-                              name: "profile_image",
-                              type: "file",
-                              required: "",
-                              "aria-label": "Verification"
-                            },
-                            on: { change: _vm.selectImage }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", [
-                        _vm.settingsForms.profile_image
-                          ? _c("img", {
-                              staticClass: "rounded-lg md:w-56",
-                              attrs: {
-                                src: _vm.settingsForms.profile_image,
-                                alt: "Profil Resmi"
-                              }
-                            })
-                          : _vm._e()
-                      ])
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mt-8" }, [
-            _c("div", { staticClass: "mt-4" }, [
-              _c("div", { staticClass: "p-6 bg-white rounded-md shadow-md" }, [
-                _c(
-                  "h2",
-                  {
-                    staticClass:
-                      "text-lg text-gray-700 font-semibold capitalize"
-                  },
-                  [_vm._v("Site Ayarları")]
-                ),
-                _vm._v(" "),
-                _c("form", [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4"
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
-                        },
-                        [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "block text-sm text-black",
-                              attrs: { for: "site_name" }
-                            },
-                            [_vm._v("Site Adı")]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.settingsForms.site_name,
-                                expression: "settingsForms.site_name"
-                              }
-                            ],
-                            staticClass:
-                              "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
-                            attrs: {
-                              id: "site_name",
-                              name: "site_name",
-                              type: "text",
-                              required: "",
-                              placeholder: "Site Adı",
-                              "aria-label": "Ad"
-                            },
-                            domProps: { value: _vm.settingsForms.site_name },
-                            on: {
-                              change: function($event) {
-                                return _vm.updateSettings(
-                                  "site_name",
-                                  _vm.settingsForms.site_name
-                                )
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.settingsForms,
-                                  "site_name",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
-                        },
-                        [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "block text-sm text-black",
-                              attrs: { for: "site_description" }
-                            },
-                            [_vm._v("Site Açıklaması")]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.settingsForms.site_description,
-                                expression: "settingsForms.site_description"
-                              }
-                            ],
-                            staticClass:
-                              "w-full px-5  py-1 text-gray-700 bg-gray-200 rounded",
-                            attrs: {
-                              id: "site_description",
-                              name: "site_description",
-                              type: "text",
-                              required: "",
-                              placeholder: "Site Açıklaması",
-                              "aria-label": "Açıklama"
-                            },
-                            domProps: {
-                              value: _vm.settingsForms.site_description
-                            },
-                            on: {
-                              change: function($event) {
-                                return _vm.updateSettings(
-                                  "site_description",
-                                  _vm.settingsForms.site_description
-                                )
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.settingsForms,
-                                  "site_description",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
-                        },
-                        [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "block text-sm text-black",
-                              attrs: { for: "site_verification" }
+                              staticClass:
+                                "bg-white p-2 rounded mt-1 border-b border-grey hover:bg-grey-lighter"
                             },
                             [
-                              _vm._v(
-                                "Verification\n                                    Kodları"
-                              )
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "block text-sm text-black",
+                                  attrs: { for: "first_last_name" }
+                                },
+                                [_vm._v("Ad Soyad")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.settingsForms.first_last_name,
+                                    expression: "settingsForms.first_last_name"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
+                                attrs: {
+                                  id: "first_last_name",
+                                  name: "first_last_name",
+                                  type: "text",
+                                  required: "",
+                                  placeholder: "Ad Soyad",
+                                  "aria-label": "Ad Soyad"
+                                },
+                                domProps: {
+                                  value: _vm.settingsForms.first_last_name
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.updateSettings(
+                                      "first_last_name",
+                                      _vm.settingsForms.first_last_name
+                                    )
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.settingsForms,
+                                      "first_last_name",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
                             ]
                           ),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.settingsForms.site_verification,
-                                expression: "settingsForms.site_verification"
-                              }
-                            ],
-                            staticClass:
-                              "w-full px-5  py-4 text-gray-700 bg-gray-200 rounded",
-                            attrs: {
-                              id: "site_verification",
-                              name: "site_verification",
-                              type: "text",
-                              required: "",
-                              placeholder: "Site Verification Kodları",
-                              "aria-label": "Verification"
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
                             },
-                            domProps: {
-                              value: _vm.settingsForms.site_verification
-                            },
-                            on: {
-                              change: function($event) {
-                                return _vm.updateSettings(
-                                  "site_verification",
-                                  _vm.settingsForms.site_verification
-                                )
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "block text-sm text-black",
+                                  attrs: { for: "email_adress" }
+                                },
+                                [_vm._v("E-mail adresim")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.settingsForms.email_adress,
+                                    expression: "settingsForms.email_adress"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
+                                attrs: {
+                                  id: "email_adress",
+                                  name: "email_adress",
+                                  type: "text",
+                                  required: "",
+                                  placeholder: "E-mail Adresim",
+                                  "aria-label": "E-mail"
+                                },
+                                domProps: {
+                                  value: _vm.settingsForms.email_adress
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.updateSettings(
+                                      "email_adress",
+                                      _vm.settingsForms.email_adress
+                                    )
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.settingsForms,
+                                      "email_adress",
+                                      $event.target.value
+                                    )
+                                  }
                                 }
-                                _vm.$set(
-                                  _vm.settingsForms,
-                                  "site_verification",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "block text-sm text-black",
+                                  attrs: { for: "job_title" }
+                                },
+                                [_vm._v("Meslek")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.settingsForms.job_title,
+                                    expression: "settingsForms.job_title"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
+                                attrs: {
+                                  id: "job_title",
+                                  name: "job_title",
+                                  type: "text",
+                                  required: "",
+                                  placeholder: "Meslek",
+                                  "aria-label": "Meslek"
+                                },
+                                domProps: {
+                                  value: _vm.settingsForms.job_title
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.updateSettings(
+                                      "job_title",
+                                      _vm.settingsForms.job_title
+                                    )
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.settingsForms,
+                                      "job_title",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "block text-sm text-gray-600",
+                                  attrs: { for: "profile_image" }
+                                },
+                                [_vm._v("Resim")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                staticClass:
+                                  "w-full px-5 text-gray-700 bg-gray-200 rounded",
+                                attrs: {
+                                  id: "profile_image",
+                                  name: "profile_image",
+                                  type: "file",
+                                  required: "",
+                                  "aria-label": "Verification"
+                                },
+                                on: { change: _vm.selectImage }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", [
+                            _vm.settingsForms.profile_image
+                              ? _c("img", {
+                                  staticClass: "rounded-lg md:w-56",
+                                  attrs: {
+                                    src: _vm.settingsForms.profile_image,
+                                    alt: "Profil Resmi"
+                                  }
+                                })
+                              : _vm._e()
+                          ])
                         ]
                       )
-                    ]
-                  )
-                ])
+                    ])
+                  ]
+                )
               ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mt-8" }, [
-            _c("div", { staticClass: "mt-4" }, [
-              _c("div", { staticClass: "p-6 bg-white rounded-md shadow-md" }, [
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mt-8" }, [
+              _c("div", { staticClass: "mt-4" }, [
                 _c(
-                  "h2",
-                  {
-                    staticClass:
-                      "text-lg text-gray-700 font-semibold capitalize"
-                  },
-                  [_vm._v("Sosyal Medya Hesapları")]
-                ),
-                _vm._v(" "),
-                _c("form", [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4"
-                    },
-                    [
+                  "div",
+                  { staticClass: "p-6 bg-white rounded-md shadow-md" },
+                  [
+                    _c(
+                      "h2",
+                      {
+                        staticClass:
+                          "text-lg text-gray-700 font-semibold capitalize"
+                      },
+                      [_vm._v("Site Ayarları")]
+                    ),
+                    _vm._v(" "),
+                    _c("form", [
                       _c(
                         "div",
                         {
                           staticClass:
-                            "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                            "grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4"
                         },
                         [
                           _c(
-                            "label",
+                            "div",
                             {
-                              staticClass: "block text-sm text-black",
-                              attrs: { for: "site_linkedin" }
+                              staticClass:
+                                "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
                             },
-                            [_vm._v("Linkedin Adresi")]
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "block text-sm text-black",
+                                  attrs: { for: "site_name" }
+                                },
+                                [_vm._v("Site Adı")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.settingsForms.site_name,
+                                    expression: "settingsForms.site_name"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
+                                attrs: {
+                                  id: "site_name",
+                                  name: "site_name",
+                                  type: "text",
+                                  required: "",
+                                  placeholder: "Site Adı",
+                                  "aria-label": "Ad"
+                                },
+                                domProps: {
+                                  value: _vm.settingsForms.site_name
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.updateSettings(
+                                      "site_name",
+                                      _vm.settingsForms.site_name
+                                    )
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.settingsForms,
+                                      "site_name",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
                           ),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.settingsForms.site_linkedin,
-                                expression: "settingsForms.site_linkedin"
-                              }
-                            ],
-                            staticClass:
-                              "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
-                            attrs: {
-                              id: "site_linkedin",
-                              name: "site_linkedin",
-                              type: "text",
-                              required: "",
-                              placeholder: "Linkedin Adresi",
-                              "aria-label": "Linkedin"
-                            },
-                            domProps: {
-                              value: _vm.settingsForms.site_linkedin
-                            },
-                            on: {
-                              change: function($event) {
-                                return _vm.updateSettings(
-                                  "site_linkedin",
-                                  _vm.settingsForms.site_linkedin
-                                )
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.settingsForms,
-                                  "site_linkedin",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
-                        },
-                        [
                           _c(
-                            "label",
+                            "div",
                             {
-                              staticClass: "block text-sm text-black",
-                              attrs: { for: "site_instagram" }
+                              staticClass:
+                                "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
                             },
-                            [_vm._v("Instagram Adresi")]
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "block text-sm text-black",
+                                  attrs: { for: "site_description" }
+                                },
+                                [_vm._v("Site Açıklaması")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.settingsForms.site_description,
+                                    expression: "settingsForms.site_description"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full px-5  py-1 text-gray-700 bg-gray-200 rounded",
+                                attrs: {
+                                  id: "site_description",
+                                  name: "site_description",
+                                  type: "text",
+                                  required: "",
+                                  placeholder: "Site Açıklaması",
+                                  "aria-label": "Açıklama"
+                                },
+                                domProps: {
+                                  value: _vm.settingsForms.site_description
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.updateSettings(
+                                      "site_description",
+                                      _vm.settingsForms.site_description
+                                    )
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.settingsForms,
+                                      "site_description",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
                           ),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.settingsForms.site_instagram,
-                                expression: "settingsForms.site_instagram"
-                              }
-                            ],
-                            staticClass:
-                              "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
-                            attrs: {
-                              id: "site_instagram",
-                              name: "site_instagram",
-                              type: "text",
-                              required: "",
-                              placeholder: "Instagram Adresi",
-                              "aria-label": "Instagram"
-                            },
-                            domProps: {
-                              value: _vm.settingsForms.site_instagram
-                            },
-                            on: {
-                              change: function($event) {
-                                return _vm.updateSettings(
-                                  "site_instagram",
-                                  _vm.settingsForms.site_instagram
-                                )
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.settingsForms,
-                                  "site_instagram",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
-                        },
-                        [
                           _c(
-                            "label",
+                            "div",
                             {
-                              staticClass: "block text-sm text-black",
-                              attrs: { for: "site_github" }
+                              staticClass:
+                                "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
                             },
-                            [_vm._v("Github Adresi")]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.settingsForms.site_github,
-                                expression: "settingsForms.site_github"
-                              }
-                            ],
-                            staticClass:
-                              "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
-                            attrs: {
-                              id: "site_github",
-                              name: "site_github",
-                              type: "text",
-                              required: "",
-                              placeholder: "Github Adresi",
-                              "aria-label": "Github"
-                            },
-                            domProps: { value: _vm.settingsForms.site_github },
-                            on: {
-                              change: function($event) {
-                                return _vm.updateSettings(
-                                  "site_github",
-                                  _vm.settingsForms.site_github
-                                )
-                              },
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "block text-sm text-black",
+                                  attrs: { for: "site_verification" }
+                                },
+                                [
+                                  _vm._v(
+                                    "Verification\n                                    Kodları"
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.settingsForms.site_verification,
+                                    expression:
+                                      "settingsForms.site_verification"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full px-5  py-4 text-gray-700 bg-gray-200 rounded",
+                                attrs: {
+                                  id: "site_verification",
+                                  name: "site_verification",
+                                  type: "text",
+                                  required: "",
+                                  placeholder: "Site Verification Kodları",
+                                  "aria-label": "Verification"
+                                },
+                                domProps: {
+                                  value: _vm.settingsForms.site_verification
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.updateSettings(
+                                      "site_verification",
+                                      _vm.settingsForms.site_verification
+                                    )
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.settingsForms,
+                                      "site_verification",
+                                      $event.target.value
+                                    )
+                                  }
                                 }
-                                _vm.$set(
-                                  _vm.settingsForms,
-                                  "site_github",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
+                              })
+                            ]
+                          )
                         ]
                       )
-                    ]
-                  )
-                ])
+                    ])
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mt-8" }, [
+              _c("div", { staticClass: "mt-4" }, [
+                _c(
+                  "div",
+                  { staticClass: "p-6 bg-white rounded-md shadow-md" },
+                  [
+                    _c(
+                      "h2",
+                      {
+                        staticClass:
+                          "text-lg text-gray-700 font-semibold capitalize"
+                      },
+                      [_vm._v("Sosyal Medya Hesapları")]
+                    ),
+                    _vm._v(" "),
+                    _c("form", [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4"
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "block text-sm text-black",
+                                  attrs: { for: "site_linkedin" }
+                                },
+                                [_vm._v("Linkedin Adresi")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.settingsForms.site_linkedin,
+                                    expression: "settingsForms.site_linkedin"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
+                                attrs: {
+                                  id: "site_linkedin",
+                                  name: "site_linkedin",
+                                  type: "text",
+                                  required: "",
+                                  placeholder: "Linkedin Adresi",
+                                  "aria-label": "Linkedin"
+                                },
+                                domProps: {
+                                  value: _vm.settingsForms.site_linkedin
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.updateSettings(
+                                      "site_linkedin",
+                                      _vm.settingsForms.site_linkedin
+                                    )
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.settingsForms,
+                                      "site_linkedin",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "block text-sm text-black",
+                                  attrs: { for: "site_instagram" }
+                                },
+                                [_vm._v("Instagram Adresi")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.settingsForms.site_instagram,
+                                    expression: "settingsForms.site_instagram"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
+                                attrs: {
+                                  id: "site_instagram",
+                                  name: "site_instagram",
+                                  type: "text",
+                                  required: "",
+                                  placeholder: "Instagram Adresi",
+                                  "aria-label": "Instagram"
+                                },
+                                domProps: {
+                                  value: _vm.settingsForms.site_instagram
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.updateSettings(
+                                      "site_instagram",
+                                      _vm.settingsForms.site_instagram
+                                    )
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.settingsForms,
+                                      "site_instagram",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "block text-sm text-black",
+                                  attrs: { for: "site_github" }
+                                },
+                                [_vm._v("Github Adresi")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.settingsForms.site_github,
+                                    expression: "settingsForms.site_github"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full px-5 py-1 text-gray-700 bg-gray-200 rounded",
+                                attrs: {
+                                  id: "site_github",
+                                  name: "site_github",
+                                  type: "text",
+                                  required: "",
+                                  placeholder: "Github Adresi",
+                                  "aria-label": "Github"
+                                },
+                                domProps: {
+                                  value: _vm.settingsForms.site_github
+                                },
+                                on: {
+                                  change: function($event) {
+                                    return _vm.updateSettings(
+                                      "site_github",
+                                      _vm.settingsForms.site_github
+                                    )
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.settingsForms,
+                                      "site_github",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ])
+                  ]
+                )
               ])
             ])
           ])
-        ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -68287,264 +65764,160 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16"
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass:
-              "mb-4 lg:mb-0  p-4 lg:p-0 w-full md:w-4/7 relative rounded block"
-          },
-          [
-            _c("img", {
-              staticClass: "rounded-md object-cover w-full h-64",
-              attrs: {
-                src:
-                  "https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "span",
-              { staticClass: "text-red-700 text-sm hidden md:block mt-4" },
-              [_vm._v(" Technology ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "h1",
-              {
-                staticClass:
-                  "text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight"
-              },
-              [
-                _vm._v(
-                  "\n            Ignorant branched humanity led now marianne too.\n        "
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-gray-600 mb-4" }, [
-              _vm._v(
-                "\n            Necessary ye contented newspaper zealously breakfast he prevailed. Melancholy middletons yet understood\n            decisively boy law she. Answer him easily are its barton little. Oh no though mother be things simple\n            itself.\n            Oh be me, sure wise sons, no. Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up.\n        "
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass:
-                  "bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded",
-                attrs: { href: "./blog.html" }
-              },
-              [_vm._v("\n            Devamını Gör\n        ")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "w-full md:w-4/7" }, [
+    return _c("div", [
+      _c("div", { staticClass: "mt-10" }, [
+        _c("div", { staticClass: "block md:flex md:space-x-2 px-2 lg:p-0" }, [
           _c(
-            "div",
-            { staticClass: "rounded w-full flex flex-col md:flex-row mb-10" },
+            "a",
+            {
+              staticClass:
+                "mb-4 md:mb-0 w-full md:w-2/3 relative rounded inline-block",
+              staticStyle: { height: "24em" },
+              attrs: { href: "./blog.html" }
+            },
             [
-              _c("img", {
-                staticClass:
-                  "block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0",
-                attrs: {
-                  src:
-                    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+              _c("div", {
+                staticClass: "absolute left-0 bottom-0 w-full h-full z-0",
+                staticStyle: {
+                  "background-image":
+                    "linear-gradient(180deg,transparent,rgba(0,0,0,.7))"
                 }
               }),
               _vm._v(" "),
-              _c("div", { staticClass: "bg-white rounded px-4" }, [
+              _c("img", {
+                staticClass:
+                  "absolute left-0 top-0 w-full h-full rounded z-0 object-cover",
+                attrs: {
+                  src:
+                    "https://icdn.ensonhaber.com/resimler/diger/kok/2020/10/28/cyberpunk-2077_8316.jpg"
+                }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "p-4 absolute bottom-0 left-0 z-0" }, [
                 _c(
                   "span",
-                  { staticClass: "text-red-700 text-sm hidden md:block" },
-                  [_vm._v(" Gadgets ")]
+                  {
+                    staticClass:
+                      "px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2"
+                  },
+                  [_vm._v("Nutrition")]
                 ),
                 _vm._v(" "),
                 _c(
-                  "div",
+                  "h2",
                   {
                     staticClass:
-                      "md:mt-0 text-gray-800 font-semibold text-xl mb-2"
+                      "text-4xl font-semibold text-gray-100 leading-tight"
                   },
                   [
                     _vm._v(
-                      "\n                    At every tiled on ye defer do. No attention suspected oh difficult.\n                "
+                      "\n                        Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.\n                    "
                     )
                   ]
                 ),
                 _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600"
-                  },
-                  [
-                    _vm._v(
-                      "\n                    Wonder matter now can estate esteem assure fat roused. Am performed on existence as discourse is. Pleasure friendly at marriage blessing or\n                "
+                _c("div", { staticClass: "flex mt-3" }, [
+                  _c("img", {
+                    staticClass: "h-10 w-10 rounded-full mr-2 object-cover",
+                    attrs: {
+                      src: "https://randomuser.me/api/portraits/men/97.jpg"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "p",
+                      { staticClass: "font-semibold text-gray-200 text-sm" },
+                      [_vm._v(" Mike Sullivan ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      { staticClass: "font-semibold text-gray-400 text-xs" },
+                      [_vm._v(" 14 Aug ")]
                     )
-                  ]
-                )
+                  ])
+                ])
               ])
             ]
           ),
           _vm._v(" "),
           _c(
-            "div",
-            { staticClass: "rounded w-full flex flex-col md:flex-row mb-10" },
+            "a",
+            {
+              staticClass:
+                "mb-4 md:mb-0 w-full md:w-2/3 relative rounded inline-block",
+              staticStyle: { height: "24em" },
+              attrs: { href: "./blog.html" }
+            },
             [
-              _c("img", {
-                staticClass:
-                  "block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0",
-                attrs: {
-                  src:
-                    "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+              _c("div", {
+                staticClass: "absolute left-0 bottom-0 w-full h-full z-0",
+                staticStyle: {
+                  "background-image":
+                    "linear-gradient(180deg,transparent,rgba(0,0,0,.7))"
                 }
               }),
               _vm._v(" "),
-              _c("div", { staticClass: "bg-white rounded px-4" }, [
-                _c(
-                  "span",
-                  { staticClass: "text-red-700 text-sm hidden md:block" },
-                  [_vm._v(" Bitcoin ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "md:mt-0 text-gray-800 font-semibold text-xl mb-2"
-                  },
-                  [
-                    _vm._v(
-                      "\n                    Fond his say old meet cold find come whom. The sir park sake bred.\n                "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600"
-                  },
-                  [
-                    _vm._v(
-                      "\n                    Integer commodo, sapien ut vulputate viverra, Integer commodo\n                    Integer commodo, sapien ut vulputate viverra, Integer commodo\n                "
-                    )
-                  ]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "rounded w-full flex flex-col md:flex-row mb-10" },
-            [
               _c("img", {
                 staticClass:
-                  "block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0",
+                  "absolute left-0 top-0 w-full h-full rounded z-0 object-cover",
                 attrs: {
-                  src:
-                    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                  src: "https://cdn.otuzbeslik.com/img/yazi/40599vijze5fqnq.jpg"
                 }
               }),
               _vm._v(" "),
-              _c("div", { staticClass: "bg-white rounded px-4" }, [
+              _c("div", { staticClass: "p-4 absolute bottom-0 left-0 z-0" }, [
                 _c(
                   "span",
-                  { staticClass: "text-red-700 text-sm hidden md:block" },
-                  [_vm._v(" Insights ")]
+                  {
+                    staticClass:
+                      "px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2"
+                  },
+                  [_vm._v("Nutrition")]
                 ),
                 _vm._v(" "),
                 _c(
-                  "div",
+                  "h2",
                   {
                     staticClass:
-                      "md:mt-0 text-gray-800 font-semibold text-xl mb-2"
+                      "text-4xl font-semibold text-gray-100 leading-tight"
                   },
                   [
                     _vm._v(
-                      "\n                    Advice me cousin an spring of needed. Tell use paid law ever yet new.\n                "
+                      "\n                        Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.\n                    "
                     )
                   ]
                 ),
                 _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600"
-                  },
-                  [
-                    _vm._v(
-                      "\n                    Meant to learn of vexed if style allow he there. Tiled man stand tears ten joy there terms any widen.\n                "
+                _c("div", { staticClass: "flex mt-3" }, [
+                  _c("img", {
+                    staticClass: "h-10 w-10 rounded-full mr-2 object-cover",
+                    attrs: {
+                      src: "https://randomuser.me/api/portraits/men/97.jpg"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "p",
+                      { staticClass: "font-semibold text-gray-200 text-sm" },
+                      [_vm._v(" Mike Sullivan ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      { staticClass: "font-semibold text-gray-400 text-xs" },
+                      [_vm._v(" 14 Aug ")]
                     )
-                  ]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "rounded w-full flex flex-col md:flex-row mb-10" },
-            [
-              _c("img", {
-                staticClass:
-                  "block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0",
-                attrs: {
-                  src:
-                    "https://images.unsplash.com/photo-1489844097929-c8d5b91c456e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "bg-white rounded px-4" }, [
-                _c(
-                  "span",
-                  { staticClass: "text-red-700 text-sm hidden md:block" },
-                  [_vm._v(" Cryptocurrency ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "md:mt-0 text-gray-800 font-semibold text-xl mb-2"
-                  },
-                  [
-                    _vm._v(
-                      "\n                    Advice me cousin an spring of needed. Tell use paid law ever yet new.\n                "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600"
-                  },
-                  [
-                    _vm._v(
-                      "\n                    Meant to learn of vexed if style allow he there. Tiled man stand tears ten joy there terms any widen.\n                "
-                    )
-                  ]
-                )
+                  ])
+                ])
               ])
             ]
           )
         ])
-      ]
-    )
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -68571,123 +65944,179 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "block space-x-0 lg:flex lg:space-x-6" }, [
-      _c("section", { staticClass: "blog text-gray-700 body-font" }, [
-        _c("div", { staticClass: "container px-5 py-24 mx-auto" }, [
-          _c(
-            "div",
-            { staticClass: "flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4" },
-            _vm._l(_vm.recentPost, function(post, index) {
-              return _c(
-                "div",
-                {
-                  key: post.id,
-                  staticClass:
-                    "p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto"
-                },
-                [
-                  _c("div", {
-                    staticClass:
-                      "bg-gray-300 h-56 w-full rounded-lg shadow-md bg-cover bg-center",
-                    style: "background-image: url(" + post.image.image_url + ")"
-                  }),
-                  _vm._v(" "),
+    _c("div", { staticClass: "text-gray-700 body-font" }, [
+      _c("div", { staticClass: "container px-5 py-24 mx-auto" }, [
+        _c(
+          "div",
+          { staticClass: "flex flex-wrap -m-4" },
+          _vm._l(_vm.recentPost, function(post, index) {
+            return _vm.recentPost
+              ? _c("div", { key: post.id, staticClass: "p-4 md:w-1/3" }, [
                   _c(
                     "div",
                     {
                       staticClass:
-                        " w-70 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden p-5"
+                        "h-full border-2 border-gray-200 rounded-lg overflow-hidden"
                     },
                     [
-                      _c(
-                        "div",
-                        { staticClass: "header-content inline-flex " },
-                        [
-                          _vm._m(1, true),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "category-title flex-1 text-sm mt-1"
-                            },
-                            [_vm._v(" " + _vm._s(post.categories.name))]
-                          )
-                        ]
-                      ),
+                      _c("img", {
+                        staticClass:
+                          "lg:h-48 md:h-36 w-full object-cover object-center",
+                        attrs: { src: post.image.image_url, alt: post.title }
+                      }),
                       _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "title-post font-extrabold mt-2" },
-                        [_c("strong", [_vm._v(_vm._s(post.title))])]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "summary-post text-base text-justify mt-3"
-                        },
-                        [
-                          _vm._v(
-                            _vm._s(post.description) +
-                              "\n\n                                "
-                          ),
-                          _c(
-                            "div",
-                            { staticClass: "m-2 text-center" },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  staticClass:
-                                    "text-center bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center",
-                                  attrs: {
-                                    to: {
-                                      name: "home.article.list",
-                                      params: { id: post.slug }
-                                    }
+                      _c("div", { staticClass: "p-6" }, [
+                        _c(
+                          "h2",
+                          {
+                            staticClass:
+                              "tracking-widest text-xs title-font font-medium text-gray-500 mb-1"
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(post.categories.name)
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "h1",
+                          {
+                            staticClass:
+                              "title-font text-lg font-medium text-gray-900 mb-3"
+                          },
+                          [_vm._v(_vm._s(post.title))]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "leading-relaxed mb-3" }, [
+                          _vm._v(_vm._s(post.description))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "flex items-center flex-wrap " },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass:
+                                  "text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0",
+                                attrs: {
+                                  to: {
+                                    name: "home.article.list",
+                                    params: { id: post.slug }
                                   }
-                                },
-                                [
-                                  _c("span", { staticClass: "mr-2" }, [
-                                    _vm._v("İncele")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "svg",
-                                    {
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    Devamını Gör\n                                    "
+                                ),
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "w-4 h-4 ml-2",
+                                    attrs: {
+                                      viewBox: "0 0 24 24",
+                                      stroke: "currentColor",
+                                      "stroke-width": "2",
+                                      fill: "none",
+                                      "stroke-linecap": "round",
+                                      "stroke-linejoin": "round"
+                                    }
+                                  },
+                                  [
+                                    _c("path", { attrs: { d: "M5 12h14" } }),
+                                    _vm._v(" "),
+                                    _c("path", {
+                                      attrs: { d: "M12 5l7 7-7 7" }
+                                    })
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "w-4 h-4 mr-1",
+                                    attrs: {
+                                      stroke: "currentColor",
+                                      "stroke-width": "2",
+                                      fill: "none",
+                                      "stroke-linecap": "round",
+                                      "stroke-linejoin": "round",
+                                      viewBox: "0 0 24 24"
+                                    }
+                                  },
+                                  [
+                                    _c("path", {
                                       attrs: {
-                                        xmlns: "http://www.w3.org/2000/svg",
-                                        width: "24",
-                                        height: "24",
-                                        viewBox: "0 0 24 24"
+                                        d:
+                                          "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
                                       }
-                                    },
-                                    [
-                                      _c("path", {
-                                        attrs: {
-                                          fill: "currentcolor",
-                                          d:
-                                            "M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        ]
-                      )
+                                    }),
+                                    _vm._v(" "),
+                                    _c("circle", {
+                                      attrs: { cx: "12", cy: "12", r: "3" }
+                                    })
+                                  ]
+                                ),
+                                _vm._v("1.2K\n          ")
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "text-gray-600 inline-flex items-center leading-none text-sm"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "w-4 h-4 mr-1",
+                                    attrs: {
+                                      stroke: "currentColor",
+                                      "stroke-width": "2",
+                                      fill: "none",
+                                      "stroke-linecap": "round",
+                                      "stroke-linejoin": "round",
+                                      viewBox: "0 0 24 24"
+                                    }
+                                  },
+                                  [
+                                    _c("path", {
+                                      attrs: {
+                                        d:
+                                          "M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+                                      }
+                                    })
+                                  ]
+                                ),
+                                _vm._v("6\n          ")
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ])
                     ]
                   )
-                ]
-              )
-            }),
-            0
-          )
-        ])
+                ])
+              : _c("div", { staticClass: "p-4 md:w-1/3" }, [_vm._m(1)])
+          }),
+          0
+        )
       ])
     ])
   ])
@@ -68726,9 +66155,47 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "category-badge flex-1  h-4 w-4 m rounded-full m-1 bg-green-100"
+          "h-full border-2 border-gray-200 rounded-lg overflow-hidden"
       },
-      [_c("div", { staticClass: "h-2 w-2 rounded-full m-1 bg-green-500 " })]
+      [
+        _c("div", {
+          staticClass:
+            "lg:h-48 bg-gray-400 md:h-36 w-full object-cover object-center"
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "p-6" }, [
+          _c("h2", { staticClass: "bg-gray-400 animate-pulse h-4 w-1/4 mb-2" }),
+          _vm._v(" "),
+          _c("h1", { staticClass: "w-1/2 mb-4 h-6 animate-pulse bg-gray-500" }),
+          _vm._v(" "),
+          _c("p", {
+            staticClass:
+              "leading-relaxed mb-3 w-full h-3 animate-pulse bg-gray-400"
+          }),
+          _vm._v(" "),
+          _c("p", {
+            staticClass:
+              "leading-relaxed mb-3 w-2/3 h-3 animate-pulse bg-gray-400"
+          }),
+          _vm._v(" "),
+          _c("p", {
+            staticClass:
+              "leading-relaxed mb-3 w-1/2 h-3 animate-pulse bg-gray-400"
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex items-center flex-wrap " }, [
+            _c("a", {
+              staticClass:
+                "bg-indigo-300 h-4 animate-pulse mt-2 w-32 inline-flex items-center md:mb-2 lg:mb-0"
+            }),
+            _vm._v(" "),
+            _c("span", {
+              staticClass:
+                "bg-indigo-300 w-16 mt-2 h-4 animate-pulse mr-3 px-2 inline-flex items-center ml-auto leading-none text-sm pr-5 py-1"
+            })
+          ])
+        ])
+      ]
     )
   }
 ]
@@ -70654,7 +68121,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
-  * vue-router v3.4.5
+  * vue-router v3.4.9
   * (c) 2020 Evan You
   * @license MIT
   */
@@ -70679,158 +68146,6 @@ function extend (a, b) {
   return a
 }
 
-var View = {
-  name: 'RouterView',
-  functional: true,
-  props: {
-    name: {
-      type: String,
-      default: 'default'
-    }
-  },
-  render: function render (_, ref) {
-    var props = ref.props;
-    var children = ref.children;
-    var parent = ref.parent;
-    var data = ref.data;
-
-    // used by devtools to display a router-view badge
-    data.routerView = true;
-
-    // directly use parent context's createElement() function
-    // so that components rendered by router-view can resolve named slots
-    var h = parent.$createElement;
-    var name = props.name;
-    var route = parent.$route;
-    var cache = parent._routerViewCache || (parent._routerViewCache = {});
-
-    // determine current view depth, also check to see if the tree
-    // has been toggled inactive but kept-alive.
-    var depth = 0;
-    var inactive = false;
-    while (parent && parent._routerRoot !== parent) {
-      var vnodeData = parent.$vnode ? parent.$vnode.data : {};
-      if (vnodeData.routerView) {
-        depth++;
-      }
-      if (vnodeData.keepAlive && parent._directInactive && parent._inactive) {
-        inactive = true;
-      }
-      parent = parent.$parent;
-    }
-    data.routerViewDepth = depth;
-
-    // render previous view if the tree is inactive and kept-alive
-    if (inactive) {
-      var cachedData = cache[name];
-      var cachedComponent = cachedData && cachedData.component;
-      if (cachedComponent) {
-        // #2301
-        // pass props
-        if (cachedData.configProps) {
-          fillPropsinData(cachedComponent, data, cachedData.route, cachedData.configProps);
-        }
-        return h(cachedComponent, data, children)
-      } else {
-        // render previous empty view
-        return h()
-      }
-    }
-
-    var matched = route.matched[depth];
-    var component = matched && matched.components[name];
-
-    // render empty node if no matched route or no config component
-    if (!matched || !component) {
-      cache[name] = null;
-      return h()
-    }
-
-    // cache component
-    cache[name] = { component: component };
-
-    // attach instance registration hook
-    // this will be called in the instance's injected lifecycle hooks
-    data.registerRouteInstance = function (vm, val) {
-      // val could be undefined for unregistration
-      var current = matched.instances[name];
-      if (
-        (val && current !== vm) ||
-        (!val && current === vm)
-      ) {
-        matched.instances[name] = val;
-      }
-    }
-
-    // also register instance in prepatch hook
-    // in case the same component instance is reused across different routes
-    ;(data.hook || (data.hook = {})).prepatch = function (_, vnode) {
-      matched.instances[name] = vnode.componentInstance;
-    };
-
-    // register instance in init hook
-    // in case kept-alive component be actived when routes changed
-    data.hook.init = function (vnode) {
-      if (vnode.data.keepAlive &&
-        vnode.componentInstance &&
-        vnode.componentInstance !== matched.instances[name]
-      ) {
-        matched.instances[name] = vnode.componentInstance;
-      }
-    };
-
-    var configProps = matched.props && matched.props[name];
-    // save route and configProps in cache
-    if (configProps) {
-      extend(cache[name], {
-        route: route,
-        configProps: configProps
-      });
-      fillPropsinData(component, data, route, configProps);
-    }
-
-    return h(component, data, children)
-  }
-};
-
-function fillPropsinData (component, data, route, configProps) {
-  // resolve props
-  var propsToPass = data.props = resolveProps(route, configProps);
-  if (propsToPass) {
-    // clone to prevent mutation
-    propsToPass = data.props = extend({}, propsToPass);
-    // pass non-declared props as attrs
-    var attrs = data.attrs = data.attrs || {};
-    for (var key in propsToPass) {
-      if (!component.props || !(key in component.props)) {
-        attrs[key] = propsToPass[key];
-        delete propsToPass[key];
-      }
-    }
-  }
-}
-
-function resolveProps (route, config) {
-  switch (typeof config) {
-    case 'undefined':
-      return
-    case 'object':
-      return config
-    case 'function':
-      return config(route)
-    case 'boolean':
-      return config ? route.params : undefined
-    default:
-      if (true) {
-        warn(
-          false,
-          "props in \"" + (route.path) + "\" is a " + (typeof config) + ", " +
-          "expecting an object, function or boolean."
-        );
-      }
-  }
-}
-
 /*  */
 
 var encodeReserveRE = /[!'()*]/g;
@@ -70844,7 +68159,16 @@ var encode = function (str) { return encodeURIComponent(str)
     .replace(encodeReserveRE, encodeReserveReplacer)
     .replace(commaRE, ','); };
 
-var decode = decodeURIComponent;
+function decode (str) {
+  try {
+    return decodeURIComponent(str)
+  } catch (err) {
+    if (true) {
+      warn(false, ("Error decoding \"" + str + "\". Leaving it intact."));
+    }
+  }
+  return str
+}
 
 function resolveQuery (
   query,
@@ -71037,13 +68361,15 @@ function isObjectEqual (a, b) {
 
   // handle null value #1566
   if (!a || !b) { return a === b }
-  var aKeys = Object.keys(a);
-  var bKeys = Object.keys(b);
+  var aKeys = Object.keys(a).sort();
+  var bKeys = Object.keys(b).sort();
   if (aKeys.length !== bKeys.length) {
     return false
   }
-  return aKeys.every(function (key) {
+  return aKeys.every(function (key, i) {
     var aVal = a[key];
+    var bKey = bKeys[i];
+    if (bKey !== key) { return false }
     var bVal = b[key];
     // query values can be null and undefined
     if (aVal == null || bVal == null) { return aVal === bVal }
@@ -71072,6 +68398,178 @@ function queryIncludes (current, target) {
     }
   }
   return true
+}
+
+function handleRouteEntered (route) {
+  for (var i = 0; i < route.matched.length; i++) {
+    var record = route.matched[i];
+    for (var name in record.instances) {
+      var instance = record.instances[name];
+      var cbs = record.enteredCbs[name];
+      if (!instance || !cbs) { continue }
+      delete record.enteredCbs[name];
+      for (var i$1 = 0; i$1 < cbs.length; i$1++) {
+        if (!instance._isBeingDestroyed) { cbs[i$1](instance); }
+      }
+    }
+  }
+}
+
+var View = {
+  name: 'RouterView',
+  functional: true,
+  props: {
+    name: {
+      type: String,
+      default: 'default'
+    }
+  },
+  render: function render (_, ref) {
+    var props = ref.props;
+    var children = ref.children;
+    var parent = ref.parent;
+    var data = ref.data;
+
+    // used by devtools to display a router-view badge
+    data.routerView = true;
+
+    // directly use parent context's createElement() function
+    // so that components rendered by router-view can resolve named slots
+    var h = parent.$createElement;
+    var name = props.name;
+    var route = parent.$route;
+    var cache = parent._routerViewCache || (parent._routerViewCache = {});
+
+    // determine current view depth, also check to see if the tree
+    // has been toggled inactive but kept-alive.
+    var depth = 0;
+    var inactive = false;
+    while (parent && parent._routerRoot !== parent) {
+      var vnodeData = parent.$vnode ? parent.$vnode.data : {};
+      if (vnodeData.routerView) {
+        depth++;
+      }
+      if (vnodeData.keepAlive && parent._directInactive && parent._inactive) {
+        inactive = true;
+      }
+      parent = parent.$parent;
+    }
+    data.routerViewDepth = depth;
+
+    // render previous view if the tree is inactive and kept-alive
+    if (inactive) {
+      var cachedData = cache[name];
+      var cachedComponent = cachedData && cachedData.component;
+      if (cachedComponent) {
+        // #2301
+        // pass props
+        if (cachedData.configProps) {
+          fillPropsinData(cachedComponent, data, cachedData.route, cachedData.configProps);
+        }
+        return h(cachedComponent, data, children)
+      } else {
+        // render previous empty view
+        return h()
+      }
+    }
+
+    var matched = route.matched[depth];
+    var component = matched && matched.components[name];
+
+    // render empty node if no matched route or no config component
+    if (!matched || !component) {
+      cache[name] = null;
+      return h()
+    }
+
+    // cache component
+    cache[name] = { component: component };
+
+    // attach instance registration hook
+    // this will be called in the instance's injected lifecycle hooks
+    data.registerRouteInstance = function (vm, val) {
+      // val could be undefined for unregistration
+      var current = matched.instances[name];
+      if (
+        (val && current !== vm) ||
+        (!val && current === vm)
+      ) {
+        matched.instances[name] = val;
+      }
+    }
+
+    // also register instance in prepatch hook
+    // in case the same component instance is reused across different routes
+    ;(data.hook || (data.hook = {})).prepatch = function (_, vnode) {
+      matched.instances[name] = vnode.componentInstance;
+    };
+
+    // register instance in init hook
+    // in case kept-alive component be actived when routes changed
+    data.hook.init = function (vnode) {
+      if (vnode.data.keepAlive &&
+        vnode.componentInstance &&
+        vnode.componentInstance !== matched.instances[name]
+      ) {
+        matched.instances[name] = vnode.componentInstance;
+      }
+
+      // if the route transition has already been confirmed then we weren't
+      // able to call the cbs during confirmation as the component was not
+      // registered yet, so we call it here.
+      handleRouteEntered(route);
+    };
+
+    var configProps = matched.props && matched.props[name];
+    // save route and configProps in cache
+    if (configProps) {
+      extend(cache[name], {
+        route: route,
+        configProps: configProps
+      });
+      fillPropsinData(component, data, route, configProps);
+    }
+
+    return h(component, data, children)
+  }
+};
+
+function fillPropsinData (component, data, route, configProps) {
+  // resolve props
+  var propsToPass = data.props = resolveProps(route, configProps);
+  if (propsToPass) {
+    // clone to prevent mutation
+    propsToPass = data.props = extend({}, propsToPass);
+    // pass non-declared props as attrs
+    var attrs = data.attrs = data.attrs || {};
+    for (var key in propsToPass) {
+      if (!component.props || !(key in component.props)) {
+        attrs[key] = propsToPass[key];
+        delete propsToPass[key];
+      }
+    }
+  }
+}
+
+function resolveProps (route, config) {
+  switch (typeof config) {
+    case 'undefined':
+      return
+    case 'object':
+      return config
+    case 'function':
+      return config(route)
+    case 'boolean':
+      return config ? route.params : undefined
+    default:
+      if (true) {
+        warn(
+          false,
+          "props in \"" + (route.path) + "\" is a " + (typeof config) + ", " +
+          "expecting an object, function or boolean."
+        );
+      }
+  }
 }
 
 /*  */
@@ -71989,6 +69487,14 @@ function addRouteRecord (
         path || name
       )) + " cannot be a " + "string id. Use an actual component instead."
     );
+
+    warn(
+      // eslint-disable-next-line no-control-regex
+      !/[^\u0000-\u007F]+/.test(path),
+      "Route with path \"" + path + "\" contains unencoded characters, make sure " +
+        "your path is correctly encoded before passing it to the router. Use " +
+        "encodeURI to encode static segments of your path."
+    );
   }
 
   var pathToRegexpOptions =
@@ -72004,6 +69510,7 @@ function addRouteRecord (
     regex: compileRouteRegex(normalizedPath, pathToRegexpOptions),
     components: route.components || { default: route.component },
     instances: {},
+    enteredCbs: {},
     name: name,
     parent: parent,
     matchAs: matchAs,
@@ -72303,10 +69810,9 @@ function matchRoute (
 
   for (var i = 1, len = m.length; i < len; ++i) {
     var key = regex.keys[i - 1];
-    var val = typeof m[i] === 'string' ? decodeURIComponent(m[i]) : m[i];
     if (key) {
       // Fix #1994: using * with props: true generates a param named 0
-      params[key.name || 'pathMatch'] = val;
+      params[key.name || 'pathMatch'] = typeof m[i] === 'string' ? decode(m[i]) : m[i];
     }
   }
 
@@ -72496,7 +70002,17 @@ function scrollToPosition (shouldScroll, position) {
   }
 
   if (position) {
-    window.scrollTo(position.x, position.y);
+    // $flow-disable-line
+    if ('scrollBehavior' in document.documentElement.style) {
+      window.scrollTo({
+        left: position.x,
+        top: position.y,
+        // $flow-disable-line
+        behavior: shouldScroll.behavior
+      });
+    } else {
+      window.scrollTo(position.x, position.y);
+    }
   }
 }
 
@@ -72934,11 +70450,9 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
   };
 
   runQueue(queue, iterator, function () {
-    var postEnterCbs = [];
-    var isValid = function () { return this$1.current === route; };
     // wait until async components are resolved before
     // extracting in-component enter guards
-    var enterGuards = extractEnterGuards(activated, postEnterCbs, isValid);
+    var enterGuards = extractEnterGuards(activated);
     var queue = enterGuards.concat(this$1.router.resolveHooks);
     runQueue(queue, iterator, function () {
       if (this$1.pending !== route) {
@@ -72948,9 +70462,7 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
       onComplete(route);
       if (this$1.router.app) {
         this$1.router.app.$nextTick(function () {
-          postEnterCbs.forEach(function (cb) {
-            cb();
-          });
+          handleRouteEntered(route);
         });
       }
     });
@@ -73063,15 +70575,13 @@ function bindGuard (guard, instance) {
 }
 
 function extractEnterGuards (
-  activated,
-  cbs,
-  isValid
+  activated
 ) {
   return extractGuards(
     activated,
     'beforeRouteEnter',
     function (guard, _, match, key) {
-      return bindEnterGuard(guard, match, key, cbs, isValid)
+      return bindEnterGuard(guard, match, key)
     }
   )
 }
@@ -73079,42 +70589,18 @@ function extractEnterGuards (
 function bindEnterGuard (
   guard,
   match,
-  key,
-  cbs,
-  isValid
+  key
 ) {
   return function routeEnterGuard (to, from, next) {
     return guard(to, from, function (cb) {
       if (typeof cb === 'function') {
-        cbs.push(function () {
-          // #750
-          // if a router-view is wrapped with an out-in transition,
-          // the instance may not have been registered at this time.
-          // we will need to poll for registration until current route
-          // is no longer valid.
-          poll(cb, match.instances, key, isValid);
-        });
+        if (!match.enteredCbs[key]) {
+          match.enteredCbs[key] = [];
+        }
+        match.enteredCbs[key].push(cb);
       }
       next(cb);
     })
-  }
-}
-
-function poll (
-  cb, // somehow flow cannot infer this is a function
-  instances,
-  key,
-  isValid
-) {
-  if (
-    instances[key] &&
-    !instances[key]._isBeingDestroyed // do not reuse being destroyed instance
-  ) {
-    cb(instances[key]);
-  } else if (isValid()) {
-    setTimeout(function () {
-      poll(cb, instances, key, isValid);
-    }, 16);
   }
 }
 
@@ -73211,7 +70697,7 @@ var HTML5History = /*@__PURE__*/(function (History) {
 }(History));
 
 function getLocation (base) {
-  var path = decodeURI(window.location.pathname);
+  var path = window.location.pathname;
   if (base && path.toLowerCase().indexOf(base.toLowerCase()) === 0) {
     path = path.slice(base.length);
   }
@@ -73351,18 +70837,6 @@ function getHash () {
   if (index < 0) { return '' }
 
   href = href.slice(index + 1);
-  // decode the hash but not the search or hash
-  // as search(query) is already decoded
-  // https://github.com/vuejs/vue-router/issues/2708
-  var searchIndex = href.indexOf('?');
-  if (searchIndex < 0) {
-    var hashIndex = href.indexOf('#');
-    if (hashIndex > -1) {
-      href = decodeURI(href.slice(0, hashIndex)) + href.slice(hashIndex);
-    } else { href = decodeURI(href); }
-  } else {
-    href = decodeURI(href.slice(0, searchIndex)) + href.slice(searchIndex);
-  }
 
   return href
 }
@@ -73703,7 +71177,7 @@ function createHref (base, fullPath, mode) {
 }
 
 VueRouter.install = install;
-VueRouter.version = '3.4.5';
+VueRouter.version = '3.4.9';
 VueRouter.isNavigationFailure = isNavigationFailure;
 VueRouter.NavigationFailureType = NavigationFailureType;
 
@@ -86735,7 +84209,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
 /*!
- * vuex v3.5.1
+ * vuex v3.6.0
  * (c) 2020 Evan You
  * @license MIT
  */
@@ -87022,7 +84496,11 @@ ModuleCollection.prototype.isRegistered = function isRegistered (path) {
   var parent = this.get(path.slice(0, -1));
   var key = path[path.length - 1];
 
-  return parent.hasChild(key)
+  if (parent) {
+    return parent.hasChild(key)
+  }
+
+  return false
 };
 
 function update (path, targetModule, newModule) {
@@ -87962,7 +85440,7 @@ function pad (num, maxLength) {
 var index = {
   Store: Store,
   install: install,
-  version: '3.5.1',
+  version: '3.6.0',
   mapState: mapState,
   mapMutations: mapMutations,
   mapGetters: mapGetters,
@@ -88278,6 +85756,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_6bdc8b8e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_6bdc8b8e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Spinner.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Spinner.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Spinner_vue_vue_type_template_id_7ae326fe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Spinner.vue?vue&type=template&id=7ae326fe& */ "./resources/js/components/Spinner.vue?vue&type=template&id=7ae326fe&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _Spinner_vue_vue_type_template_id_7ae326fe___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Spinner_vue_vue_type_template_id_7ae326fe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Spinner.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Spinner.vue?vue&type=template&id=7ae326fe&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Spinner.vue?vue&type=template&id=7ae326fe& ***!
+  \****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Spinner_vue_vue_type_template_id_7ae326fe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Spinner.vue?vue&type=template&id=7ae326fe& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Spinner.vue?vue&type=template&id=7ae326fe&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Spinner_vue_vue_type_template_id_7ae326fe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Spinner_vue_vue_type_template_id_7ae326fe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -90207,8 +87738,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/macbook/Desktop/LaravelApplication/blog/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/macbook/Desktop/LaravelApplication/blog/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/volkan.kocaali/Desktop/Application/Laravel-Blog/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/volkan.kocaali/Desktop/Application/Laravel-Blog/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),

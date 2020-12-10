@@ -1,81 +1,56 @@
 <template>
-    <div class="flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16">
-        <!-- main post -->
-        <div class="mb-4 lg:mb-0  p-4 lg:p-0 w-full md:w-4/7 relative rounded block">
-            <img src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60" class="rounded-md object-cover w-full h-64">
-            <span class="text-red-700 text-sm hidden md:block mt-4"> Technology </span>
-            <h1 class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
-                Ignorant branched humanity led now marianne too.
-            </h1>
-            <p class="text-gray-600 mb-4">
-                Necessary ye contented newspaper zealously breakfast he prevailed. Melancholy middletons yet understood
-                decisively boy law she. Answer him easily are its barton little. Oh no though mother be things simple
-                itself.
-                Oh be me, sure wise sons, no. Piqued ye of am spirit regret. Stimulated discretion impossible admiration in particular conviction up.
-            </p>
-            <a href="./blog.html" class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
-                Devamını Gör
-            </a>
-        </div>
-
-        <!-- sub-main posts -->
-        <div class="w-full md:w-4/7">
-            <!-- post 1 -->
-            <div class="rounded w-full flex flex-col md:flex-row mb-10">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60" class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0" />
-                <div class="bg-white rounded px-4">
-                    <span class="text-red-700 text-sm hidden md:block"> Gadgets </span>
-                    <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
-                        At every tiled on ye defer do. No attention suspected oh difficult.
+    <div>
+        <div class="mt-10">
+            <div class="block md:flex md:space-x-2 px-2 lg:p-0">
+                <a
+                    class="mb-4 md:mb-0 w-full md:w-2/3 relative rounded inline-block"
+                    style="height: 24em;"
+                    href="./blog.html"
+                >
+                    <div class="absolute left-0 bottom-0 w-full h-full z-0"
+                         style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+                    <img src="https://icdn.ensonhaber.com/resimler/diger/kok/2020/10/28/cyberpunk-2077_8316.jpg" class="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
+                    <div class="p-4 absolute bottom-0 left-0 z-0">
+                        <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">Nutrition</span>
+                        <h2 class="text-4xl font-semibold text-gray-100 leading-tight">
+                            Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.
+                        </h2>
+                        <div class="flex mt-3">
+                            <img src="https://randomuser.me/api/portraits/men/97.jpg"
+                                 class="h-10 w-10 rounded-full mr-2 object-cover" />
+                            <div>
+                                <p class="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
+                                <p class="font-semibold text-gray-400 text-xs"> 14 Aug </p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
-                        Wonder matter now can estate esteem assure fat roused. Am performed on existence as discourse is. Pleasure friendly at marriage blessing or
-                    </p>
-                </div>
-            </div>
-
-            <!-- post 2 -->
-            <div class="rounded w-full flex flex-col md:flex-row mb-10">
-                <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60" class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0" />
-                <div class="bg-white rounded px-4">
-                    <span class="text-red-700 text-sm hidden md:block"> Bitcoin </span>
-                    <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
-                        Fond his say old meet cold find come whom. The sir park sake bred.
+                </a>
+                <a
+                    class="mb-4 md:mb-0 w-full md:w-2/3 relative rounded inline-block"
+                    style="height: 24em;"
+                    href="./blog.html"
+                >
+                    <div class="absolute left-0 bottom-0 w-full h-full z-0"
+                         style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+                    <img src="https://cdn.otuzbeslik.com/img/yazi/40599vijze5fqnq.jpg" class="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
+                    <div class="p-4 absolute bottom-0 left-0 z-0">
+                        <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">Nutrition</span>
+                        <h2 class="text-4xl font-semibold text-gray-100 leading-tight">
+                            Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.
+                        </h2>
+                        <div class="flex mt-3">
+                            <img src="https://randomuser.me/api/portraits/men/97.jpg"
+                                 class="h-10 w-10 rounded-full mr-2 object-cover" />
+                            <div>
+                                <p class="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
+                                <p class="font-semibold text-gray-400 text-xs"> 14 Aug </p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
-                        Integer commodo, sapien ut vulputate viverra, Integer commodo
-                        Integer commodo, sapien ut vulputate viverra, Integer commodo
-                    </p>
-                </div>
+                </a>
             </div>
-            <!-- post 3 -->
-            <div class="rounded w-full flex flex-col md:flex-row mb-10">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60" class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0" />
-                <div class="bg-white rounded px-4">
-                    <span class="text-red-700 text-sm hidden md:block"> Insights </span>
-                    <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
-                        Advice me cousin an spring of needed. Tell use paid law ever yet new.
-                    </div>
-                    <p class="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
-                        Meant to learn of vexed if style allow he there. Tiled man stand tears ten joy there terms any widen.
-                    </p>
-                </div>
-            </div>
-            <!-- post 4 -->
-            <div class="rounded w-full flex flex-col md:flex-row mb-10">
-                <img src="https://images.unsplash.com/photo-1489844097929-c8d5b91c456e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60" class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0" />
-                <div class="bg-white rounded px-4">
-                    <span class="text-red-700 text-sm hidden md:block"> Cryptocurrency </span>
-                    <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
-                        Advice me cousin an spring of needed. Tell use paid law ever yet new.
-                    </div>
-                    <p class="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
-                        Meant to learn of vexed if style allow he there. Tiled man stand tears ten joy there terms any widen.
-                    </p>
-                </div>
-            </div>
-
         </div>
 
     </div>
+
 </template>

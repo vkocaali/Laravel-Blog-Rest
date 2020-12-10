@@ -1,9 +1,8 @@
 <template>
     <admin-layout>
 
-        <div v-if="!loading" class="fixed top-0 right-0 h-screen w-screen z-50 flex justify-center items-center">
-            <div class="animate-spin rounded-full h-20 w-20 border-t-2 border-b-2 border-gray-900"></div>
-        </div>
+
+        <Spinner v-if="!loading"/>
 
         <div v-else>
             <div class="mt-8">
@@ -149,9 +148,11 @@
     import AdminLayout from "../../../layout/AdminLayout";
     import {VueEditor} from "vue2-editor";
     import vueDropzone from "vue2-dropzone";
+    import Spinner from "../../../components/Spinner";
 
     export default {
         components: {
+            Spinner,
             AdminLayout,
         },
         data() {

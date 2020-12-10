@@ -1,12 +1,11 @@
 <template>
     <div class="max-w-screen-lg mx-auto">
-        <header class="flex items-center justify-between py-2">
+        <header class="flex items-center  justify-between py-2">
             <navbar/>
         </header>
 
         <main class="mt-12">
            <slot>
-
            </slot>
         </main>
         <!-- main ends here -->

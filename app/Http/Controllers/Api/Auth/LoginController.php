@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
-use App\Models\User;
 use App\Repositories\UserRepositoryInterface;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
@@ -21,8 +19,6 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request){
         $request->validated();
-
-
 
         $credentials = $request->only('email','password');
 
