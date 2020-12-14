@@ -8,7 +8,7 @@ interface ArticlesRepositoryInterface{
 
     public function first($id);
 
-    public function orderBy($column , $sort , $take);
+    public function orderBy($column , $sort , $where , $take);
 
     public function all($request);
 
@@ -19,6 +19,8 @@ interface ArticlesRepositoryInterface{
     public function update($id,$data);
 
     public function max($varaible);
+
+    public function where($column , $varaible);
 
     public function getTags();
 }

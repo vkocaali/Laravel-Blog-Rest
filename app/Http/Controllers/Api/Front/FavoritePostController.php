@@ -7,7 +7,7 @@ use App\Http\Resources\ArticleResource;
 use App\Repositories\ArticlesRepository;
 use Illuminate\Http\Request;
 
-class RecentPostController extends Controller
+class FavoritePostController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -15,7 +15,6 @@ class RecentPostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
     private $articleRepository;
 
     public function __construct(ArticlesRepository $articleRepository)
@@ -25,6 +24,6 @@ class RecentPostController extends Controller
 
     public function __invoke(Request $request)
     {
-        return ArticleResource::collection($this->articleRepository->orderBy('created_at','DESC',1,'3'));
+        return ArticleResource::collection($this->articleRepository->where('favorite',1)->where('is_active',1)->take(2));
     }
 }

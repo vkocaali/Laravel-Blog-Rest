@@ -20,6 +20,7 @@ class CreateArticlesTable extends Migration
             $table->unsignedBigInteger('storage_id');
             $table->string('is_active');
             $table->string('rank');
+            $table->string('favorite');
             $table->foreign('storage_id')->references('id')->on('storage')->onDelete('cascade');
             $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');

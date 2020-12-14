@@ -2935,6 +2935,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -3019,6 +3023,43 @@ __webpack_require__.r(__webpack_exports__);
           title: "Başarılı",
           text: "Kayıt silindi."
         }, 2000);
+      });
+    },
+    addFavorite: function addFavorite(id, favorite) {
+      var _this3 = this;
+
+      this.loading = false;
+      var token = localStorage.getItem('token');
+      axios({
+        url: "/articles/favorite/".concat(id, "/").concat(favorite),
+        method: "GET",
+        headers: {
+          Authorization: "Bearer ".concat(token)
+        }
+      }).then(function (response) {
+        if (response.data.result === 1) {
+          _this3.loading = true;
+
+          _this3.getArticles();
+
+          _this3.$notify({
+            group: "success",
+            title: "Başarılı",
+            text: response.data.message
+          }, 3000);
+        } else {
+          _this3.loading = true;
+
+          _this3.getArticles();
+
+          _this3.$notify({
+            group: "error",
+            title: "Başarısız",
+            text: response.data.message
+          }, 3000);
+        }
+      })["catch"](function (err) {
+        return console.log(err);
       });
     }
   }
@@ -4960,6 +5001,78 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/front-end/component/FeaturedPost.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/front-end/component/FeaturedPost.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      favoritePost: {}
+    };
+  },
+  mounted: function mounted() {
+    this.getFavoritePost();
+  },
+  methods: {
+    getFavoritePost: function getFavoritePost() {
+      var _this = this;
+
+      this.loading = false;
+      axios.get("/favorite-post").then(function (response) {
+        console.log(response.data.data);
+        _this.loading = true;
+        _this.favoritePost = response.data.data;
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/front-end/component/RecentPost.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/front-end/component/RecentPost.vue?vue&type=script&lang=js& ***!
@@ -5060,7 +5173,6 @@ __webpack_require__.r(__webpack_exports__);
       this.loading = false;
       axios.get("/recent-post").then(function (response) {
         _this.loading = true;
-        console.log(response.data.data);
         _this.recentPost = response.data.data;
       })["catch"](function (err) {
         return console.log(err);
@@ -61357,6 +61469,36 @@ var render = function() {
                                               })
                                             ])
                                           ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "whitespace-no-wrap hover:bg-red-600 text-white font-bold py-2 px-4 rounded inline-flex items-center",
+                                            class:
+                                              article.favorite == 1
+                                                ? "bg-red-500"
+                                                : "bg-green-500",
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.addFavorite(
+                                                  article.id,
+                                                  article.favorite
+                                                )
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("span", [
+                                              _c("i", {
+                                                class:
+                                                  article.favorite == 1
+                                                    ? "fa fa-minus"
+                                                    : "fa fa-plus"
+                                              })
+                                            ])
+                                          ]
                                         )
                                       ],
                                       1
@@ -65757,23 +65899,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "mt-10" }, [
-        _c("div", { staticClass: "block md:flex md:space-x-2 px-2 lg:p-0" }, [
-          _c(
-            "a",
+  return _c("div", [
+    _c("div", { staticClass: "mt-10" }, [
+      _c(
+        "div",
+        { staticClass: "block md:flex md:space-x-2 px-2 lg:p-0" },
+        _vm._l(_vm.favoritePost, function(item) {
+          return _c(
+            "router-link",
             {
+              key: item.id,
               staticClass:
                 "mb-4 md:mb-0 w-full md:w-2/3 relative rounded inline-block",
               staticStyle: { height: "24em" },
-              attrs: { href: "./blog.html" }
+              attrs: {
+                to: { name: "home.article.list", params: { id: item.slug } }
+              }
             },
             [
               _c("div", {
@@ -65787,10 +65928,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass:
                   "absolute left-0 top-0 w-full h-full rounded z-0 object-cover",
-                attrs: {
-                  src:
-                    "https://icdn.ensonhaber.com/resimler/diger/kok/2020/10/28/cyberpunk-2077_8316.jpg"
-                }
+                attrs: { src: item.image.image_url }
               }),
               _vm._v(" "),
               _c("div", { staticClass: "p-4 absolute bottom-0 left-0 z-0" }, [
@@ -65800,7 +65938,7 @@ var staticRenderFns = [
                     staticClass:
                       "px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2"
                   },
-                  [_vm._v("Nutrition")]
+                  [_vm._v(_vm._s(item.categories.name))]
                 ),
                 _vm._v(" "),
                 _c(
@@ -65811,7 +65949,9 @@ var staticRenderFns = [
                   },
                   [
                     _vm._v(
-                      "\n                        Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.\n                    "
+                      "\n                        " +
+                        _vm._s(item.title) +
+                        "\n                    "
                     )
                   ]
                 ),
@@ -65828,98 +65968,32 @@ var staticRenderFns = [
                     _c(
                       "p",
                       { staticClass: "font-semibold text-gray-200 text-sm" },
-                      [_vm._v(" Mike Sullivan ")]
+                      [_vm._v(" " + _vm._s(item.author.author_name) + " ")]
                     ),
                     _vm._v(" "),
                     _c(
                       "p",
                       { staticClass: "font-semibold text-gray-400 text-xs" },
-                      [_vm._v(" 14 Aug ")]
-                    )
-                  ])
-                ])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass:
-                "mb-4 md:mb-0 w-full md:w-2/3 relative rounded inline-block",
-              staticStyle: { height: "24em" },
-              attrs: { href: "./blog.html" }
-            },
-            [
-              _c("div", {
-                staticClass: "absolute left-0 bottom-0 w-full h-full z-0",
-                staticStyle: {
-                  "background-image":
-                    "linear-gradient(180deg,transparent,rgba(0,0,0,.7))"
-                }
-              }),
-              _vm._v(" "),
-              _c("img", {
-                staticClass:
-                  "absolute left-0 top-0 w-full h-full rounded z-0 object-cover",
-                attrs: {
-                  src: "https://cdn.otuzbeslik.com/img/yazi/40599vijze5fqnq.jpg"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "p-4 absolute bottom-0 left-0 z-0" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2"
-                  },
-                  [_vm._v("Nutrition")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "h2",
-                  {
-                    staticClass:
-                      "text-4xl font-semibold text-gray-100 leading-tight"
-                  },
-                  [
-                    _vm._v(
-                      "\n                        Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex mt-3" }, [
-                  _c("img", {
-                    staticClass: "h-10 w-10 rounded-full mr-2 object-cover",
-                    attrs: {
-                      src: "https://randomuser.me/api/portraits/men/97.jpg"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c(
-                      "p",
-                      { staticClass: "font-semibold text-gray-200 text-sm" },
-                      [_vm._v(" Mike Sullivan ")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "font-semibold text-gray-400 text-xs" },
-                      [_vm._v(" 14 Aug ")]
+                      [
+                        _vm._v(
+                          " " +
+                            _vm._s(_vm._f("formatDate")(item.publish_date)) +
+                            " "
+                        )
+                      ]
                     )
                   ])
                 ])
               ])
             ]
           )
-        ])
-      ])
+        }),
+        1
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -87053,15 +87127,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FeaturedPost_vue_vue_type_template_id_148da321___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FeaturedPost.vue?vue&type=template&id=148da321& */ "./resources/js/pages/front-end/component/FeaturedPost.vue?vue&type=template&id=148da321&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _FeaturedPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FeaturedPost.vue?vue&type=script&lang=js& */ "./resources/js/pages/front-end/component/FeaturedPost.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FeaturedPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _FeaturedPost_vue_vue_type_template_id_148da321___WEBPACK_IMPORTED_MODULE_0__["render"],
   _FeaturedPost_vue_vue_type_template_id_148da321___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -87075,6 +87151,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/pages/front-end/component/FeaturedPost.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/front-end/component/FeaturedPost.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/pages/front-end/component/FeaturedPost.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FeaturedPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FeaturedPost.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/front-end/component/FeaturedPost.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FeaturedPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\CategoriesController;
 use App\Http\Controllers\Api\AuthorController;
+use App\Http\Controllers\Api\Front\FavoritePostController;
 use App\Http\Controllers\Api\Front\RecentPostController;
 use App\Http\Controllers\Api\SettingsController;
 use App\Http\Controllers\Api\UploadController;
@@ -23,10 +24,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::post('login',[LoginController::class,'login']);
 Route::post('register',[RegisterController::class,'register']);
 
 Route::get('recent-post',RecentPostController::class);
+Route::get('favorite-post',FavoritePostController::class);
 
 Route::middleware('auth:sanctum')->group(function () {
 
@@ -38,7 +41,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('/categories',CategoriesController::class);
     Route::resource('/authors',AuthorController::class);
     Route::resource('/articles',ArticleController::class);
-    Route::resource('/subscriptions',SubscriptionController::class);
+    Route::get('/articles/favorite/{id}/{status}',[ArticleController::class,'addFavorite']);
+    Route::resource('/subscriptions',ArticleController::class);
 
     // Other
 

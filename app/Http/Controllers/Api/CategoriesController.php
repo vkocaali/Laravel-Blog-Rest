@@ -88,7 +88,7 @@ class CategoriesController extends Controller
         $categories = $this->categoriesRepository->first($id);
         $storage = \App\Models\Storage::find($categories->storage_id);
 
-        if($request->has('image')){
+        if(is_int($request->input('image'))){
             Storage::delete($storage->image_url);
             $this->categoriesRepository->update($id,[
                 'storage_id' => $request->image,

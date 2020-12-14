@@ -16,10 +16,11 @@ class ArticlesRepository implements ArticlesRepositoryInterface {
         return Article::find($id)->firstOrFail();
     }
 
-    public function orderBy($column, $sort, $take)
+    public function orderBy($column, $sort, $where , $take)
     {
-        return Article::orderBy($column,$sort)->take($take)->get();
+        return Article::orderBy($column,$sort)->where('is_active',$where ?? '1')->take($take)->get();
     }
+
 
     public function all($request){
 
@@ -59,6 +60,9 @@ class ArticlesRepository implements ArticlesRepositoryInterface {
         return Article::all()->tags->where('tag_type',Article::class);
     }
 
+    public function where($column , $varaible){
+        return Article::where($column , $varaible)->get();
+    }
     public function max($varaible){
         return Article::all()->max($varaible);
     }

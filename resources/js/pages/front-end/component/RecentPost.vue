@@ -88,7 +88,6 @@ export default {
             this.loading = false;
             axios.get(`/recent-post`).then(response => {
                 this.loading = true;
-                console.log(response.data.data);
                 this.recentPost = response.data.data;
             }).catch(err => console.log(err));
         }

@@ -31,7 +31,7 @@ class ArticleRequest extends FormRequest
                 'title' => 'required',
                 'description' => 'required',
                 'content' => 'required',
-                'slug' => 'required',
+                'slug' => 'required|unique:articles',
                 'categories_id' => 'required',
                 'author_id' => 'required',
                 'tags' => 'required',

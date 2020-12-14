@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Article;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ArticleResource extends JsonResource
@@ -18,8 +19,9 @@ class ArticleResource extends JsonResource
             'author' => new AuthorResource($this->author),
             'is_active' => $this->is_active,
             'rank' => $this->rank,
-            'tags' => TagsResource::collection($this->tags),
+            'tags' => TagsResource::collection($this->tags->where('tag_type',Article::class)),
             'image' => $this->storage,
+            'favorite' => $this->favorite,
             'publish_date' => $this->created_at,
         ];
     }

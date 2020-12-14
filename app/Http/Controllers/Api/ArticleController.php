@@ -47,6 +47,7 @@ class ArticleController extends Controller
             'categories_id' => $request->post('categories_id'),
             'author_id' => $request->post('author_id'),
             'is_active' => 1,
+            'favorite' => false,
             'rank' => is_null($rank) ? 1 : $rank +1,
         ]);
 
@@ -94,9 +95,9 @@ class ArticleController extends Controller
 
         // delete old image this storage
         $articles = $this->articleRepository->first($id);
-        $storage = \App\Models\Storage::find($articles->storage_id);
 
-        if($request->has('image')){
+        if(is_int($request->input('image'))){
+            $storage = \App\Models\Storage::find($articles->storage_id);
             Storage::delete($storage->image_url);
             $this->articleRepository->update($id,[
                 'storage_id' => $request->image,
@@ -123,5 +124,26 @@ class ArticleController extends Controller
     {
         $this->articleRepository->delete($id);
         return response()->json(['result'=> 1 , 'message' => 'İşlem Başarılı'],200);
+    }
+
+    public function addFavorite($id, $status){
+        $count = $this->articleRepository->where('favorite','1')->count();
+        if ($status == 0) {
+            if ($count >= 2) {
+                return response()->json(['result' => 0,'message' => '2 den fazla yazıyı favoriye ekleyemezsiniz.']);
+            }
+        }
+
+        $this->articleRepository->update($id,[
+            'favorite' => !$status,
+        ]);
+
+        return response()->json(['result' => 1,'message' => !$status == 1 ? 'Seçtiğiniz kayıt favorilere eklenmiştir' :  'Seçtiğiniz kayıt favorilerden kaldırılmıştır.']);
+
+
+
+
+
+
     }
 }

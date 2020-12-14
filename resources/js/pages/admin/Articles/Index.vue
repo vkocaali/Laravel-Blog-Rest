@@ -94,6 +94,10 @@
                                         <span><i class="fa fa-trash"></i></span>
                                     </button>
 
+                                    <button @click="addFavorite(article.id,article.favorite)" :class="article.favorite == 1 ? 'bg-red-500' : 'bg-green-500'" class="whitespace-no-wrap hover:bg-red-600 text-white font-bold py-2 px-4 rounded inline-flex items-center">
+                                        <span> <i :class="article.favorite == 1 ? 'fa fa-minus' : 'fa fa-plus'"></i></span>
+                                    </button>
+
                                 </td>
                             </tr>
 
@@ -192,6 +196,32 @@
                     );
                 })
             },
+            addFavorite(id,favorite){
+                this.loading = false;
+                var token = localStorage.getItem('token');
+                axios({
+                    url: `/articles/favorite/${id}/${favorite}`,
+                    method: "GET",
+                    headers: {Authorization: `Bearer ${token}`},
+                }).then(response => {
+                    if(response.data.result === 1){
+                        this.loading = true;
+                        this.getArticles();
+                        this.$notify(
+                            { group: "success", title: "Başarılı", text: response.data.message },
+                            3000
+                        );
+                    }
+                    else{
+                        this.loading = true;
+                        this.getArticles();
+                        this.$notify(
+                            { group: "error", title: "Başarısız", text: response.data.message },
+                            3000
+                        );
+                    }
+                }).catch(err => console.log(err));
+            }
         },
     }
 </script>
